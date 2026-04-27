@@ -1,0 +1,368 @@
+/* Variant 2 — NEO-TOKYO (cyberpunk-synthwave) */
+:root {
+  color-scheme: dark;
+  --bg: #050505;
+  --bg-elev: #0c0c10;
+  --yellow: #ffea00;
+  --magenta: #ff006e;
+  --green: #00ff9d;
+  --cyan: #00d4ff;
+  --ink: #ededed;
+  --muted: #7a7a85;
+  --line: rgba(255, 234, 0, 0.4);
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Share Tech Mono", "JetBrains Mono", monospace;
+  scroll-snap-type: y mandatory;
+  overflow-x: hidden;
+}
+
+/* global scanline + noise overlay */
+body::before {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 100;
+  background:
+    repeating-linear-gradient(0deg,
+      transparent 0px, transparent 2px,
+      rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.03) 3px);
+  mix-blend-mode: overlay;
+}
+body::after {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 99;
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    radial-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 3px 3px, 5px 5px;
+  background-position: 0 0, 1px 1px;
+  opacity: 0.7;
+}
+
+/* tab nav */
+nav.tabs {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 200;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0.5rem 1.2rem;
+  background: rgba(5, 5, 5, 0.92);
+  border-bottom: 1px solid var(--line);
+  font-family: "Share Tech Mono", monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+nav.tabs .left, nav.tabs .right { display: flex; gap: 0.25rem; }
+nav.tabs a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid transparent;
+  transition: all 120ms;
+}
+nav.tabs a:hover {
+  color: var(--yellow);
+  border-color: var(--yellow);
+  background: rgba(255, 234, 0, 0.08);
+}
+nav.tabs .home { color: var(--magenta); border-color: rgba(255, 0, 110, 0.3); }
+nav.tabs .home:hover { color: var(--magenta); border-color: var(--magenta); background: rgba(255, 0, 110, 0.1); }
+nav.tabs .ts { color: var(--green); }
+
+/* slide container */
+.slide {
+  min-height: 100vh; width: 100vw;
+  position: relative;
+  scroll-snap-align: start;
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  padding: 5rem 6vw 4rem;
+}
+
+/* HUD corner brackets shared on most slides */
+.brackets::before, .brackets::after,
+.brackets > .br-tr::before, .brackets > .br-bl::before {
+  content: "";
+  position: absolute;
+  width: 38px; height: 38px;
+  border: 2px solid var(--yellow);
+  pointer-events: none;
+}
+.brackets::before { top: 5rem; left: 1.5rem; border-right: none; border-bottom: none; }
+.brackets::after { bottom: 1.5rem; right: 1.5rem; border-left: none; border-top: none; }
+.brackets > .br-tr::before { top: 5rem; right: 1.5rem; border-left: none; border-bottom: none; }
+.brackets > .br-bl::before { bottom: 1.5rem; left: 1.5rem; border-right: none; border-top: none; }
+
+/* kana corner flourishes */
+.kana {
+  position: absolute;
+  font-family: "Share Tech Mono", monospace;
+  color: var(--magenta);
+  opacity: 0.35;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  pointer-events: none;
+  z-index: 1;
+  line-height: 1.4;
+}
+.kana.tr { top: 4.5rem; right: 4rem; text-align: right; }
+.kana.bl { bottom: 1.5rem; left: 4rem; }
+
+/* ───── HERO ───── */
+.slide.hero {
+  background:
+    radial-gradient(ellipse at center, rgba(255, 0, 110, 0.18) 0%, transparent 55%),
+    linear-gradient(180deg, #050505 0%, #0a0010 100%);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.slide.hero .frame {
+  position: relative; z-index: 2;
+  padding: 3rem 4rem;
+}
+.slide.hero .id-line {
+  font-size: 0.85rem; color: var(--green);
+  letter-spacing: 0.4em; margin: 0 0 1.5rem;
+}
+.slide.hero h1 {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 900;
+  font-size: clamp(3rem, 9vw, 8rem);
+  letter-spacing: -0.02em;
+  line-height: 0.9;
+  margin: 0;
+  color: var(--ink);
+  position: relative;
+}
+.slide.hero h1::before, .slide.hero h1::after {
+  content: attr(data-text);
+  position: absolute; top: 0; left: 0; width: 100%;
+  pointer-events: none;
+}
+.slide.hero h1::before {
+  color: var(--magenta);
+  transform: translate(-3px, 0);
+  mix-blend-mode: screen;
+  animation: glitch-1 3s infinite linear alternate;
+}
+.slide.hero h1::after {
+  color: var(--cyan);
+  transform: translate(3px, 0);
+  mix-blend-mode: screen;
+  animation: glitch-2 2.5s infinite linear alternate;
+}
+@keyframes glitch-1 {
+  0%, 92%, 100% { transform: translate(-3px, 0); }
+  93% { transform: translate(-3px, 2px); clip-path: inset(20% 0 60% 0); }
+  95% { transform: translate(-6px, -1px); clip-path: inset(70% 0 10% 0); }
+  97% { transform: translate(-3px, 0); clip-path: inset(0 0 0 0); }
+}
+@keyframes glitch-2 {
+  0%, 90%, 100% { transform: translate(3px, 0); }
+  91% { transform: translate(5px, -2px); clip-path: inset(40% 0 30% 0); }
+  94% { transform: translate(2px, 1px); clip-path: inset(10% 0 80% 0); }
+  96% { transform: translate(3px, 0); clip-path: inset(0 0 0 0); }
+}
+.slide.hero h2 {
+  font-family: "Share Tech Mono", monospace;
+  font-size: clamp(0.9rem, 1.6vw, 1.2rem);
+  letter-spacing: 0.6em;
+  margin: 1rem 0 1.5rem;
+  color: var(--yellow);
+  text-transform: uppercase;
+}
+.slide.hero .build {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--muted);
+  letter-spacing: 0.3em;
+  border: 1px solid var(--magenta);
+  padding: 0.4rem 1rem;
+  background: rgba(255, 0, 110, 0.05);
+}
+.slide.hero .build span { color: var(--magenta); }
+
+/* ───── TITLE / SECTION DIVIDER ───── */
+.slide.title {
+  background: var(--bg);
+  justify-content: center;
+}
+.slide.title .num-row {
+  display: flex; align-items: center; gap: 1.5rem;
+  margin-bottom: 1rem;
+  position: relative; z-index: 2;
+}
+.slide.title .num-row .ch {
+  font-size: 1rem;
+  color: var(--green);
+  letter-spacing: 0.3em;
+}
+.slide.title .num-row .bar {
+  flex: 1; height: 1px;
+  background: linear-gradient(90deg, var(--green) 0%, transparent 100%);
+}
+.slide.title .num {
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(6rem, 14vw, 12rem);
+  font-weight: 900;
+  line-height: 0.85;
+  margin: 0;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--yellow);
+  position: relative; z-index: 2;
+}
+.slide.title h2 {
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 900;
+  margin: 0.5rem 0 1.5rem;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  position: relative; z-index: 2;
+}
+.slide.title h2 em {
+  font-style: normal;
+  color: var(--magenta);
+  text-shadow: 0 0 20px rgba(255, 0, 110, 0.6);
+}
+.slide.title .desc {
+  font-family: "Share Tech Mono", monospace;
+  font-size: 1rem;
+  color: var(--muted);
+  letter-spacing: 0.15em;
+  max-width: 60ch;
+  position: relative; z-index: 2;
+}
+
+/* ───── REGULAR ───── */
+.slide.regular {
+  background: var(--bg);
+  justify-content: flex-start;
+  padding-top: 6rem;
+}
+.slide.regular .head {
+  display: flex; align-items: baseline; gap: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.8rem;
+  position: relative; z-index: 2;
+}
+.slide.regular .head .id {
+  font-size: 0.9rem;
+  color: var(--green);
+  letter-spacing: 0.3em;
+}
+.slide.regular .head h2 {
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  margin: 0;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  flex: 1;
+}
+.slide.regular .head .ts {
+  font-size: 0.8rem;
+  color: var(--magenta);
+  letter-spacing: 0.2em;
+}
+.slide.regular ul {
+  list-style: none;
+  margin: 0; padding: 0;
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  line-height: 1.6;
+  position: relative; z-index: 2;
+}
+.slide.regular ul li {
+  padding: 0.7rem 0 0.7rem 2.5rem;
+  position: relative;
+  border-bottom: 1px dashed rgba(255, 234, 0, 0.18);
+}
+.slide.regular ul li::before {
+  content: ">_";
+  position: absolute; left: 0;
+  color: var(--green);
+  font-weight: bold;
+}
+.slide.regular ul li strong { color: var(--yellow); }
+.slide.regular ul li em { font-style: normal; color: var(--magenta); }
+
+/* ───── PHOTO ───── */
+.slide.photo {
+  padding: 0;
+  background: #000;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+.slide.photo .img-wrap {
+  position: relative;
+  overflow: hidden;
+}
+.slide.photo .img-wrap img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: contrast(1.1) saturate(1.2) hue-rotate(-15deg) brightness(0.85);
+}
+.slide.photo .img-wrap::after {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, 0.85) 100%),
+    repeating-linear-gradient(0deg,
+      transparent 0px, transparent 2px,
+      rgba(255, 234, 0, 0.06) 2px, rgba(255, 234, 0, 0.06) 3px);
+}
+.slide.photo .hud {
+  position: absolute; top: 5.5rem; left: 1.5rem; right: 1.5rem;
+  display: flex; justify-content: space-between;
+  font-size: 0.8rem; letter-spacing: 0.25em;
+  color: var(--yellow);
+  z-index: 5;
+}
+.slide.photo .hud .blink { color: var(--magenta); animation: blink 1.5s steps(2) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+.slide.photo .meta {
+  background: var(--bg);
+  border-top: 2px solid var(--yellow);
+  padding: 2rem 6vw 3rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2.5rem;
+  align-items: end;
+  position: relative;
+}
+.slide.photo .meta .label {
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  color: var(--green);
+  margin: 0 0 0.5rem;
+}
+.slide.photo .meta h2 {
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 900;
+  margin: 0;
+  color: var(--ink);
+  line-height: 1;
+}
+.slide.photo .meta h2 em { font-style: normal; color: var(--magenta); }
+.slide.photo .meta p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0;
+  max-width: 50ch;
+}
+
+/* footer logo */
+.logo-mark {
+  position: absolute;
+  bottom: 1.2rem; right: 5rem;
+  width: 64px;
+  opacity: 0.55;
+  filter: invert(1) brightness(1.2) drop-shadow(0 0 6px var(--yellow));
+  z-index: 3;
+}
+.slide.photo .logo-mark { right: 1.5rem; bottom: 2.5rem; }

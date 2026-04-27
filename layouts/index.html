@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>XR VisionDevCamp Fukuoka 2026 — Coming Summer 2026</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="XR VisionDevCamp returns to Fukuoka, Japan in Summer 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;600&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    color-scheme: dark;
+    --ink: #f4f0ff;
+    --muted: #b6acd9;
+    --c1: #7ad7ff;
+    --c2: #b085ff;
+    --c3: #ff8fcf;
+    --c4: #ffd9a8;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; height: 100%; }
+  body {
+    background:
+      radial-gradient(ellipse at 15% 0%, rgba(122, 215, 255, 0.20) 0%, transparent 50%),
+      radial-gradient(ellipse at 85% 100%, rgba(255, 143, 207, 0.20) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 50%, rgba(176, 133, 255, 0.10) 0%, transparent 65%),
+      #050414;
+    color: var(--ink);
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+  .orb {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(80px);
+    opacity: 0.5;
+    z-index: 0;
+    animation: drift 22s ease-in-out infinite alternate;
+  }
+  .orb.a { width: 520px; height: 520px; background: var(--c1); top: -140px; left: -100px; }
+  .orb.b { width: 600px; height: 600px; background: var(--c3); bottom: -200px; right: -140px; animation-duration: 28s; animation-delay: -10s; }
+  .orb.c { width: 420px; height: 420px; background: var(--c2); top: 35%; left: 45%; animation-duration: 36s; animation-delay: -16s; }
+  @keyframes drift {
+    0%   { transform: translate(0, 0) scale(1); }
+    50%  { transform: translate(50px, -40px) scale(1.1); }
+    100% { transform: translate(-40px, 50px) scale(0.95); }
+  }
+
+  main {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5rem 1.5rem 3rem;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.5rem 1.1rem;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 2.25rem;
+  }
+  .badge::before {
+    content: "";
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--c1);
+    box-shadow: 0 0 12px var(--c1);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%      { opacity: 0.5; transform: scale(1.3); }
+  }
+  h1 {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 900;
+    font-size: clamp(2.5rem, 9vw, 7rem);
+    letter-spacing: -0.02em;
+    line-height: 0.95;
+    margin: 0;
+    background: linear-gradient(120deg, #7ad7ff 0%, #b085ff 35%, #ff8fcf 70%, #ffd9a8 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 9s ease-in-out infinite;
+  }
+  @keyframes shimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50%      { background-position: 100% 50%; }
+  }
+  .sub {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(1.1rem, 2.4vw, 1.6rem);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    margin: 1rem 0 0.25rem;
+    color: var(--ink);
+  }
+  .where {
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    color: var(--muted);
+    margin: 0;
+  }
+  .where strong { color: var(--c1); font-weight: 500; }
+
+  .links {
+    margin-top: 3rem;
+    display: flex; flex-wrap: wrap; gap: 0.75rem;
+    justify-content: center;
+  }
+  .links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.25rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 999px;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 0.06em;
+    transition: all 200ms ease;
+  }
+  .links a:hover {
+    color: var(--ink);
+    border-color: rgba(255, 255, 255, 0.32);
+    background: rgba(255, 255, 255, 0.10);
+    transform: translateY(-1px);
+  }
+  .logo {
+    width: 64px;
+    margin-bottom: 1.25rem;
+    opacity: 0.85;
+    filter: drop-shadow(0 0 16px rgba(176, 133, 255, 0.45));
+  }
+  footer {
+    position: relative; z-index: 1;
+    padding: 1.25rem;
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.6;
+  }
+</style>
+</head>
+<body>
+
+<div class="orb a"></div>
+<div class="orb b"></div>
+<div class="orb c"></div>
+
+<main>
+  <img class="logo" src="/images/logo.png" alt="VisionDevCamp">
+  <span class="badge">Coming Summer 2026</span>
+  <h1>XR VisionDevCamp</h1>
+  <p class="sub">A multi-site hackathon for the next generation of spatial computing.</p>
+  <p class="where"><strong>Fukuoka, Japan</strong> · June – July 2026</p>
+
+  <div class="links">
+    <a href="https://visiondevcamp.org">visiondevcamp.org →</a>
+    <a href="https://vdctokyo.org">vdctokyo.org →</a>
+    <a href="https://visiondevcamp-fukoka.pages.dev">Fukuoka site →</a>
+  </div>
+</main>
+
+<footer>
+  Sponsorships, partnerships, and questions — <a href="mailto:hello@visiondevcamp.org" style="color: inherit;">hello@visiondevcamp.org</a>
+</footer>
+
+</body>
+</html>

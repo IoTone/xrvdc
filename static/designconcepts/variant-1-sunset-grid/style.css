@@ -1,0 +1,320 @@
+/* Variant 1 — SUNSET GRID (classic synthwave) */
+:root {
+  color-scheme: dark;
+  --pink: #ff2bd6;
+  --cyan: #00f5ff;
+  --purple: #6b1f9a;
+  --orange: #ff7a18;
+  --yellow: #ffd23f;
+  --bg-top: #1a0033;
+  --bg-bottom: #2d004d;
+  --ink: #fff7fb;
+  --muted: #c8a8e9;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg-bottom);
+  color: var(--ink);
+  font-family: "Orbitron", system-ui, sans-serif;
+  scroll-snap-type: y mandatory;
+  overflow-x: hidden;
+}
+
+/* ───── tab nav ───── */
+nav.tabs {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 50;
+  display: flex; justify-content: center; gap: 0;
+  padding: 0.6rem 1rem;
+  background: rgba(10, 0, 25, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 43, 214, 0.4);
+  font-family: "VT323", monospace;
+  font-size: 1.1rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+nav.tabs a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.4rem 1.2rem;
+  border: 1px solid transparent;
+  margin: 0 0.25rem;
+  transition: all 150ms ease;
+}
+nav.tabs a:hover {
+  color: var(--cyan);
+  border-color: var(--cyan);
+  text-shadow: 0 0 12px var(--cyan);
+}
+nav.tabs .home { color: var(--pink); border-color: rgba(255, 43, 214, 0.3); }
+nav.tabs .home:hover { text-shadow: 0 0 12px var(--pink); }
+
+/* ───── slide page ───── */
+.slide {
+  min-height: 100vh;
+  width: 100vw;
+  position: relative;
+  scroll-snap-align: start;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem 6vw 4rem;
+}
+
+/* ───── grid horizon background (used in hero + photo) ───── */
+.horizon {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, #1a0033 0%, #4a0e6e 35%, #ff2bd6 60%, #ff7a18 75%, #ffd23f 100%);
+  z-index: 0;
+}
+.horizon::before {
+  /* sun */
+  content: "";
+  position: absolute;
+  bottom: 35%;
+  left: 50%;
+  width: 50vh; height: 50vh;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background:
+    repeating-linear-gradient(180deg,
+      transparent 0px, transparent 10px,
+      rgba(26, 0, 51, 0.55) 10px, rgba(26, 0, 51, 0.55) 12px),
+    radial-gradient(circle, #ffd23f 0%, #ff7a18 40%, #ff2bd6 80%);
+  box-shadow: 0 0 80px 10px rgba(255, 43, 214, 0.6);
+}
+.horizon::after {
+  /* perspective grid floor */
+  content: "";
+  position: absolute;
+  bottom: 0; left: 50%;
+  width: 220vw; height: 50vh;
+  transform: translateX(-50%) perspective(400px) rotateX(60deg);
+  background:
+    linear-gradient(rgba(255, 43, 214, 0.9) 1px, transparent 1px) 0 0 / 100% 8%,
+    linear-gradient(90deg, rgba(0, 245, 255, 0.7) 1px, transparent 1px) 0 0 / 4% 100%;
+  transform-origin: 50% 100%;
+  animation: grid-pan 6s linear infinite;
+}
+@keyframes grid-pan {
+  from { background-position: 0 0, 0 0; }
+  to   { background-position: 0 80px, 0 0; }
+}
+
+/* ───── HERO ───── */
+.slide.hero { align-items: center; text-align: center; }
+.slide.hero .content {
+  position: relative; z-index: 2;
+  margin-top: -8vh;
+}
+.slide.hero h1 {
+  font-size: clamp(2.5rem, 7vw, 6rem);
+  font-weight: 900;
+  margin: 0;
+  letter-spacing: 0.03em;
+  background: linear-gradient(180deg, #fff 0%, #ffd23f 45%, #ff2bd6 60%, #b085ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 40px rgba(255, 43, 214, 0.4);
+}
+.slide.hero h2 {
+  font-size: clamp(1rem, 2.2vw, 1.6rem);
+  font-weight: 500;
+  letter-spacing: 0.6em;
+  margin: 0.5rem 0 1.5rem;
+  color: var(--cyan);
+  text-shadow: 0 0 20px var(--cyan);
+  text-transform: uppercase;
+}
+.slide.hero .badge {
+  display: inline-block;
+  font-family: "VT323", monospace;
+  font-size: 1.4rem;
+  letter-spacing: 0.3em;
+  color: var(--ink);
+  border: 2px solid var(--pink);
+  padding: 0.4rem 1.2rem;
+  background: rgba(255, 43, 214, 0.1);
+  box-shadow: 0 0 20px rgba(255, 43, 214, 0.6), inset 0 0 20px rgba(255, 43, 214, 0.2);
+}
+
+/* ───── TITLE / SECTION DIVIDER ───── */
+.slide.title {
+  background:
+    linear-gradient(180deg, #1a0033 0%, #4a0e6e 100%);
+  align-items: flex-start;
+  justify-content: center;
+}
+.slide.title::before {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    repeating-linear-gradient(180deg,
+      transparent 0px, transparent 3px,
+      rgba(255, 43, 214, 0.06) 3px, rgba(255, 43, 214, 0.06) 4px);
+  pointer-events: none;
+}
+.slide.title .num {
+  font-family: "VT323", monospace;
+  font-size: 8rem;
+  line-height: 1;
+  color: var(--cyan);
+  text-shadow: 0 0 30px var(--cyan), 0 0 60px var(--cyan);
+  margin: 0;
+  position: relative; z-index: 2;
+}
+.slide.title h2 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 900;
+  margin: 0.5rem 0 1rem;
+  color: var(--ink);
+  text-shadow: 4px 4px 0 var(--pink), 8px 8px 0 var(--purple);
+  letter-spacing: 0.04em;
+  position: relative; z-index: 2;
+}
+.slide.title .kicker {
+  font-family: "VT323", monospace;
+  font-size: 1.6rem;
+  color: var(--muted);
+  letter-spacing: 0.4em;
+  position: relative; z-index: 2;
+}
+.slide.title .stripe {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 16px;
+  background: linear-gradient(90deg, var(--pink) 0%, var(--purple) 50%, var(--cyan) 100%);
+  box-shadow: 0 0 30px var(--pink);
+}
+
+/* ───── REGULAR ───── */
+.slide.regular {
+  background:
+    linear-gradient(180deg, #1a0033 0%, #2d004d 100%);
+  justify-content: flex-start;
+  padding-top: 6rem;
+}
+.slide.regular::before {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    repeating-linear-gradient(0deg,
+      transparent 0px, transparent 3px,
+      rgba(255, 255, 255, 0.025) 3px, rgba(255, 255, 255, 0.025) 4px);
+  pointer-events: none;
+}
+.slide.regular header {
+  display: flex; align-items: baseline; gap: 1.5rem;
+  margin-bottom: 2rem;
+  position: relative; z-index: 2;
+}
+.slide.regular .tag {
+  font-family: "VT323", monospace;
+  font-size: 1.2rem;
+  letter-spacing: 0.3em;
+  color: var(--pink);
+  text-transform: uppercase;
+}
+.slide.regular h2 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 900;
+  margin: 0;
+  color: var(--ink);
+  text-shadow: 0 0 20px rgba(0, 245, 255, 0.4);
+}
+.slide.regular ul {
+  list-style: none;
+  margin: 0; padding: 0;
+  position: relative; z-index: 2;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1rem, 1.6vw, 1.3rem);
+  line-height: 1.9;
+}
+.slide.regular ul li {
+  padding-left: 2rem;
+  position: relative;
+  border-bottom: 1px dashed rgba(255, 43, 214, 0.2);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.slide.regular ul li::before {
+  content: "▸";
+  position: absolute; left: 0.5rem;
+  color: var(--cyan);
+  text-shadow: 0 0 8px var(--cyan);
+}
+.slide.regular ul li strong { color: var(--pink); text-shadow: 0 0 8px rgba(255, 43, 214, 0.6); }
+
+/* ───── PHOTO ───── */
+.slide.photo {
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+}
+.slide.photo .img {
+  position: relative;
+  background: url("../assets/cover.png") center/cover no-repeat;
+  filter: saturate(1.4) hue-rotate(-10deg);
+}
+.slide.photo .img::after {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(135deg, rgba(255, 43, 214, 0.35) 0%, transparent 50%, rgba(0, 245, 255, 0.35) 100%),
+    repeating-linear-gradient(0deg,
+      transparent 0px, transparent 2px,
+      rgba(0, 0, 0, 0.25) 2px, rgba(0, 0, 0, 0.25) 3px);
+  mix-blend-mode: screen;
+}
+.slide.photo .meta {
+  background: linear-gradient(180deg, #1a0033, #4a0e6e);
+  padding: 4rem 4vw;
+  display: flex; flex-direction: column; justify-content: center;
+  position: relative;
+}
+.slide.photo .meta::before {
+  content: "";
+  position: absolute; left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--pink), var(--cyan));
+  box-shadow: 0 0 20px var(--pink);
+}
+.slide.photo .caption {
+  font-family: "VT323", monospace;
+  font-size: 1.1rem;
+  letter-spacing: 0.3em;
+  color: var(--cyan);
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+}
+.slide.photo h2 {
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-weight: 900;
+  margin: 0 0 1.5rem;
+  color: var(--ink);
+  text-shadow: 3px 3px 0 var(--pink);
+  line-height: 1.05;
+}
+.slide.photo p {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 0;
+  max-width: 40ch;
+}
+
+/* ───── footer logo on every slide ───── */
+.logo-mark {
+  position: absolute;
+  bottom: 1.2rem; right: 1.5rem;
+  width: 70px; opacity: 0.65;
+  z-index: 5;
+  filter: drop-shadow(0 0 8px var(--pink));
+}

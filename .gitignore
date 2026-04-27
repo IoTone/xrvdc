@@ -1,0 +1,16 @@
+# Hugo build output and caches
+/public/
+/resources/
+.hugo_build.lock
+hugo_stats.json
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Office lock files (in case any pptx ever lands here)
+~$*

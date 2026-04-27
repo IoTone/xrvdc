@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>XR VisionDevCamp – Design Concepts</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    color-scheme: dark;
+    --bg: #07020d;
+    --ink: #e8e4ff;
+    --muted: #9089b8;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background:
+      radial-gradient(ellipse at 20% 10%, #2b0a4d 0%, transparent 55%),
+      radial-gradient(ellipse at 80% 90%, #0a3a4a 0%, transparent 55%),
+      var(--bg);
+    color: var(--ink);
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    min-height: 100vh;
+    padding: 4rem 2rem 6rem;
+  }
+  header { max-width: 1100px; margin: 0 auto 3rem; }
+  h1 {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 900;
+    font-size: clamp(2rem, 5vw, 3.6rem);
+    letter-spacing: 0.04em;
+    margin: 0 0 0.5rem;
+    background: linear-gradient(90deg, #ff2bd6 0%, #00f5ff 60%, #b085ff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  header p { color: var(--muted); margin: 0; max-width: 60ch; line-height: 1.6; }
+  .grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  a.card {
+    display: block;
+    text-decoration: none;
+    color: var(--ink);
+    border-radius: 16px;
+    padding: 2rem 1.75rem;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(8px);
+    transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+    position: relative;
+    overflow: hidden;
+  }
+  a.card::before {
+    content: "";
+    position: absolute; inset: 0;
+    background: var(--swatch);
+    opacity: 0.18;
+    transition: opacity 200ms ease;
+    pointer-events: none;
+  }
+  a.card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255,255,255,0.25);
+    box-shadow: 0 20px 60px -10px rgba(0,0,0,0.6);
+  }
+  a.card:hover::before { opacity: 0.35; }
+  .num {
+    font-family: "Orbitron", sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.3em;
+    color: var(--muted);
+    margin: 0 0 0.5rem;
+  }
+  .name {
+    font-family: "Orbitron", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0 0 0.4rem;
+    position: relative;
+  }
+  .tag { font-size: 0.95rem; color: var(--muted); margin: 0 0 1.25rem; line-height: 1.5; position: relative; }
+  .pages { font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); position: relative; }
+  .v1 { --swatch: linear-gradient(135deg, #ff2bd6, #6b1f9a); }
+  .v2 { --swatch: linear-gradient(135deg, #ffea00, #ff006e); }
+  .v3 { --swatch: linear-gradient(135deg, #7ad7ff, #b085ff 50%, #ff8fcf); }
+  footer { max-width: 1100px; margin: 4rem auto 0; color: var(--muted); font-size: 0.85rem; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Design Concepts</h1>
+  <p>Three theme directions for the XR VisionDevCamp Fukuoka 2026 deck. Each concept includes four page types: <strong>hero</strong>, <strong>title</strong>, <strong>regular</strong>, and <strong>photo</strong>. Click into a variant to flip through.</p>
+</header>
+
+<main class="grid">
+  <a href="variant-1-sunset-grid/" class="card v1">
+    <p class="num">01 / SYNTHWAVE</p>
+    <p class="name">Sunset Grid</p>
+    <p class="tag">Pure 1980s retrofuture. Animated horizon grid, neon halftone sun, screaming pink &amp; cyan glow.</p>
+    <p class="pages">Hero · Title · Regular · Photo</p>
+  </a>
+
+  <a href="variant-2-neo-tokyo/" class="card v2">
+    <p class="num">02 / CYBERPUNK</p>
+    <p class="name">Neo-Tokyo</p>
+    <p class="tag">Pitch-black HUD aesthetic with corner brackets, scanlines, glitch headlines, kana flourishes.</p>
+    <p class="pages">Hero · Title · Regular · Photo</p>
+  </a>
+
+  <a href="variant-3-spatial-drift/" class="card v3">
+    <p class="num">03 / SPATIAL</p>
+    <p class="name">Spatial Drift</p>
+    <p class="tag">Vision-Pro-meets-vaporwave. Iridescent gradients, glassmorphism, drifting orbs, soft typography.</p>
+    <p class="pages">Hero · Title · Regular · Photo</p>
+  </a>
+</main>
+
+<footer>
+  Tip — open each variant and use the top tabs (or scroll) to step through the four page types. All three are static HTML; no build step required.
+</footer>
+</body>
+</html>
