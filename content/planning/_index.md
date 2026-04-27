@@ -105,7 +105,7 @@ Goal: **sponsorship of ≥ 10 devices total, ideally 2 per new platform.**
 
 Ideally avoid competition with **AWE (June 15–18)** — [awexr.com/usa-2026](https://www.awexr.com/usa-2026/) — and **WWDC (June 6–12)**.
 
-Recommended option: pre-events **6/26 – 6/28** (training, volunteer organizing, tech talks, unconf Expo); main event **7/3 – 7/5**.
+Recommended option: pre-events **6/12 - 6/21 ** (training, volunteer organizing, tech talks, unconf Expo); main event **6/26 – 6/28 **.
 
 ---
 
@@ -133,7 +133,7 @@ Breakout:
 - 3 – 10 Mentors
 - 10 Volunteers
 - 30 Hackers
-- 50 Attendees for final prizes (public, press, city officials)
+- 50-100 Attendees for final prizes (public, press, city officials)
 - 1 – 2 Investors
 - 1 – 5 follow-up *"business oriented"* results with clear post-event paths
 
@@ -167,6 +167,7 @@ Breakout:
 
 ### Thank you
 
-- [visiondevcamp.org](https://visiondevcamp.org)
-- [vdctokyo.org](https://vdctokyo.org)
-- [visiondevcamp-fukoka.pages.dev](https://visiondevcamp-fukoka.pages.dev)
+Past Events
+- [visiondevcamp.org 2024](https://visiondevcamp.org)
+- [vdctokyo.org 2025 Tokyo ](https://vdctokyo.org)
+- [visiondevcamp-fukuoka.pages.dev 2025 Fukuoka](https://visiondevcamp-fukuoka.pages.dev/)
