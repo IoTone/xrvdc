@@ -29,6 +29,68 @@
   <span class="br-tr"></span><span class="br-bl"></span>
   <div class="kana tr">XR ／ ヴィジョン<br>デブキャンプ<br>福岡 2026</div>
   <div class="kana bl">SYS_BOOT&nbsp;OK<br>NODE&nbsp;//&nbsp;FUK_01</div>
+  <svg class="skyline" viewBox="0 0 1600 300" preserveAspectRatio="xMidYEnd meet" aria-hidden="true">
+    <path class="far"  d="M0,240 L120,205 L260,225 L380,195 L520,220 L660,200 L800,215 L940,195 L1080,220 L1240,200 L1400,220 L1600,210 L1600,300 L0,300 Z"/>
+    <path class="near" d="M0,260 L160,240 L320,260 L480,230 L640,255 L800,235 L960,255 L1120,240 L1280,260 L1440,245 L1600,255 L1600,300 L0,300 Z"/>
+    <g class="city">
+      <path class="dome" d="M20,265 L20,250 Q105,180 190,250 L190,265 Z"/>
+      <rect x="210" y="220" width="40" height="45"/><rect x="258" y="195" width="40" height="70"/><rect x="305" y="180" width="55" height="85"/><rect x="368" y="200" width="35" height="65"/><rect x="411" y="170" width="55" height="95"/><rect x="475" y="200" width="35" height="65"/>
+      <g class="port-tower">
+        <path d="M540,265 L605,265 L592,222 L553,222 Z"/>
+        <path d="M557,222 L588,222 L583,180 L562,180 Z"/>
+        <ellipse cx="572.5" cy="170" rx="14" ry="6"/>
+        <path d="M567,168 L578,168 L575,115 L570,115 Z"/>
+        <rect x="568" y="105" width="9" height="12"/>
+        <line class="antenna" x1="572.5" y1="105" x2="572.5" y2="80"/>
+        <!-- internal X-bracing visible only in wireframe variant -->
+        <line class="brace" x1="553" y1="222" x2="592" y2="265"/>
+        <line class="brace" x1="605" y1="265" x2="553" y2="222"/>
+        <line class="brace" x1="562" y1="180" x2="588" y2="222"/>
+        <line class="brace" x1="557" y1="222" x2="583" y2="180"/>
+        <line class="brace" x1="570" y1="115" x2="578" y2="168"/>
+        <line class="brace" x1="567" y1="168" x2="575" y2="115"/>
+      </g>
+      <rect x="620" y="195" width="40" height="70"/><rect x="668" y="170" width="58" height="95"/><rect x="734" y="200" width="35" height="65"/><rect x="777" y="185" width="55" height="80"/><rect x="838" y="210" width="32" height="55"/>
+      <g class="torii">
+        <path d="M880,265 L890,265 L887,200 L883,200 Z"/>
+        <path d="M940,265 L950,265 L947,200 L943,200 Z"/>
+        <rect x="878" y="220" width="74" height="5"/>
+        <path d="M870,200 Q915,188 960,200 L956,210 Q915,200 874,210 Z"/>
+        <rect x="912" y="207" width="6" height="14"/>
+      </g>
+      <rect x="975" y="180" width="40" height="85"/><rect x="1023" y="160" width="55" height="105"/><rect x="1086" y="200" width="35" height="65"/>
+      <g class="tower">
+        <polygon points="1140,265 1156,55 1172,265"/>
+        <ellipse cx="1156" cy="105" rx="13" ry="6"/>
+        <line class="antenna" x1="1156" y1="55" x2="1156" y2="30"/>
+      </g>
+      <rect x="1185" y="195" width="40" height="70"/><rect x="1233" y="170" width="55" height="95"/><rect x="1296" y="190" width="40" height="75"/><rect x="1344" y="205" width="55" height="60"/>
+      <g class="japanese-bldg">
+        <rect x="1420" y="220" width="65" height="45"/>
+        <path d="M1410,220 L1495,220 L1483,200 L1422,200 Z"/>
+        <rect x="1450" y="195" width="6" height="6"/>
+      </g>
+      <rect x="1510" y="225" width="32" height="40"/><rect x="1550" y="200" width="42" height="65"/>
+    </g>
+    <g class="hud-labels">
+      <line x1="105" y1="185" x2="105" y2="155"/>
+      <text x="50" y="148">YAHUOKU DOME</text>
+      <line x1="572.5" y1="80" x2="430" y2="80"/>
+      <text x="240" y="84">HAKATA PORT TOWER · 100m</text>
+      <line x1="915" y1="195" x2="915" y2="170"/>
+      <text x="848" y="162">KUSHIDA · 櫛田</text>
+      <line x1="1156" y1="30" x2="1280" y2="30"/>
+      <text x="1290" y="34">FUKUOKA TOWER · 234m · 福岡タワー</text>
+    </g>
+    <g class="reticle">
+      <circle cx="1156" cy="30" r="14"/>
+      <line x1="1141" y1="30" x2="1171" y2="30"/>
+      <line x1="1156" y1="15" x2="1156" y2="45"/>
+    </g>
+  </svg>
+  <div class="hud-strip">
+    <span>▸ LAT 33.5904°N</span><span>LON 130.4017°E</span><span>ALT 0m AMSL</span><span class="ok">▮ FUKUOKA</span>
+  </div>
   <div class="frame">
     <p class="id-line">[ NODE_ID :: FUK_01 // 06.26.26 ]</p>
     <h1 data-text="VisionDevCamp">VisionDevCamp</h1>
@@ -50,6 +112,41 @@
   <p class="num">02</p>
   <h2>Format &amp; <em>Sites</em></h2>
   <p class="desc">// Pre-event training across Engineer Café, CoWork Spaces, and the Artist Café — converging on the main hack at CIC / Fukuoka One Building.</p>
+  <svg class="skyline mini" viewBox="0 0 1600 300" preserveAspectRatio="xMidYEnd meet" aria-hidden="true">
+    <g class="city">
+      <path class="dome" d="M20,265 L20,250 Q105,180 190,250 L190,265 Z"/>
+      <rect x="210" y="220" width="40" height="45"/><rect x="258" y="195" width="40" height="70"/><rect x="305" y="180" width="55" height="85"/><rect x="368" y="200" width="35" height="65"/><rect x="411" y="170" width="55" height="95"/><rect x="475" y="200" width="35" height="65"/>
+      <g class="port-tower">
+        <path d="M540,265 L605,265 L592,222 L553,222 Z"/>
+        <path d="M557,222 L588,222 L583,180 L562,180 Z"/>
+        <ellipse cx="572.5" cy="170" rx="14" ry="6"/>
+        <path d="M567,168 L578,168 L575,115 L570,115 Z"/>
+        <rect x="568" y="105" width="9" height="12"/>
+        <line class="antenna" x1="572.5" y1="105" x2="572.5" y2="80"/>
+      </g>
+      <rect x="620" y="195" width="40" height="70"/><rect x="668" y="170" width="58" height="95"/><rect x="734" y="200" width="35" height="65"/><rect x="777" y="185" width="55" height="80"/><rect x="838" y="210" width="32" height="55"/>
+      <g class="torii">
+        <path d="M880,265 L890,265 L887,200 L883,200 Z"/>
+        <path d="M940,265 L950,265 L947,200 L943,200 Z"/>
+        <rect x="878" y="220" width="74" height="5"/>
+        <path d="M870,200 Q915,188 960,200 L956,210 Q915,200 874,210 Z"/>
+        <rect x="912" y="207" width="6" height="14"/>
+      </g>
+      <rect x="975" y="180" width="40" height="85"/><rect x="1023" y="160" width="55" height="105"/><rect x="1086" y="200" width="35" height="65"/>
+      <g class="tower">
+        <polygon points="1140,265 1156,80 1172,265"/>
+        <ellipse cx="1156" cy="115" rx="13" ry="6"/>
+        <line class="antenna" x1="1156" y1="80" x2="1156" y2="60"/>
+      </g>
+      <rect x="1185" y="195" width="40" height="70"/><rect x="1233" y="170" width="55" height="95"/><rect x="1296" y="190" width="40" height="75"/><rect x="1344" y="205" width="55" height="60"/>
+      <g class="japanese-bldg">
+        <rect x="1420" y="220" width="65" height="45"/>
+        <path d="M1410,220 L1495,220 L1483,200 L1422,200 Z"/>
+        <rect x="1450" y="195" width="6" height="6"/>
+      </g>
+      <rect x="1510" y="225" width="32" height="40"/><rect x="1550" y="200" width="42" height="65"/>
+    </g>
+  </svg>
   <img class="logo-mark" src="../assets/logo.png" alt="">
 </section>
 

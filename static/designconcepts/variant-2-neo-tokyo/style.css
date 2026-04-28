@@ -109,6 +109,82 @@ nav.tabs .ts { color: var(--green); }
 .kana.tr { top: 4.5rem; right: 4rem; text-align: right; }
 .kana.bl { bottom: 1.5rem; left: 4rem; }
 
+/* ───── Fukuoka skyline (HUD wireframe) ───── */
+.skyline {
+  position: absolute;
+  left: 0; right: 0;
+  bottom: 12vh;
+  width: 100%;
+  height: 26vh;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.85;
+}
+.skyline path,
+.skyline rect,
+.skyline polygon,
+.skyline line,
+.skyline circle,
+.skyline ellipse {
+  fill: none;
+  stroke: var(--yellow);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+.skyline .far  { stroke: var(--yellow); opacity: 0.35; }
+.skyline .near { stroke: var(--yellow); opacity: 0.5; }
+.skyline .city .tower polygon,
+.skyline .city .tower ellipse,
+.skyline .city .tower line { stroke: var(--magenta); stroke-width: 1.5; }
+.skyline .city .tower { filter: drop-shadow(0 0 3px var(--magenta)); }
+.skyline .city .dome  { stroke: var(--green); stroke-width: 1.5; }
+.skyline .city .port-tower path,
+.skyline .city .port-tower rect,
+.skyline .city .port-tower ellipse,
+.skyline .city .port-tower line { stroke: var(--cyan); stroke-width: 1.2; }
+.skyline .city .port-tower .brace { stroke: var(--cyan); stroke-width: 0.7; opacity: 0.55; }
+.skyline .city .torii path,
+.skyline .city .torii rect { stroke: var(--magenta); stroke-width: 1.2; opacity: 0.85; }
+.skyline .city .japanese-bldg path,
+.skyline .city .japanese-bldg rect { stroke: var(--green); stroke-width: 1; opacity: 0.85; }
+.skyline .antenna { stroke-width: 1.2; }
+
+.skyline .hud-labels line { stroke: var(--yellow); stroke-width: 1; opacity: 0.7; }
+.skyline .hud-labels text {
+  fill: var(--yellow);
+  stroke: none;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+}
+.skyline .reticle circle,
+.skyline .reticle line { stroke: var(--magenta); stroke-width: 1; opacity: 0.85; }
+
+.skyline.mini {
+  bottom: 0;
+  height: 18vh;
+  opacity: 0.6;
+}
+
+/* HUD coordinate strip (under hero title) */
+.hud-strip {
+  position: absolute;
+  bottom: 8vh;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex; gap: 1.5rem;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--yellow);
+  opacity: 0.7;
+  z-index: 4;
+  white-space: nowrap;
+}
+.hud-strip span { border-left: 1px solid rgba(255, 234, 0, 0.4); padding-left: 1rem; }
+.hud-strip span:first-child { border-left: none; padding-left: 0; }
+.hud-strip .ok { color: var(--green); }
+
 /* ───── HERO ───── */
 .slide.hero {
   background:

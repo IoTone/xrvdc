@@ -91,6 +91,76 @@ nav.tabs .home:hover { background: rgba(122, 215, 255, 0.22); color: var(--ink);
   z-index: 1;
 }
 
+/* ───── Fukuoka skyline (iridescent silhouette) ───── */
+.skyline {
+  position: absolute;
+  left: 0; right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 32vh;
+  z-index: 0;
+  pointer-events: none;
+}
+.skyline .far {
+  fill: rgba(122, 215, 255, 0.20);
+}
+.skyline .near {
+  fill: rgba(176, 133, 255, 0.30);
+}
+.skyline .city rect,
+.skyline .city polygon,
+.skyline .city path,
+.skyline .city ellipse {
+  fill: rgba(255, 255, 255, 0.85);
+  mix-blend-mode: overlay;
+}
+.skyline .city .tower polygon,
+.skyline .city .tower ellipse {
+  fill: url(#iri);
+  mix-blend-mode: normal;
+  opacity: 0.95;
+}
+.skyline .city .tower {
+  filter: drop-shadow(0 0 20px rgba(176, 133, 255, 0.7));
+}
+.skyline .city .dome {
+  fill: url(#iri-fade);
+  mix-blend-mode: normal;
+  opacity: 0.9;
+}
+.skyline .city .port-tower path,
+.skyline .city .port-tower rect,
+.skyline .city .port-tower ellipse {
+  fill: rgba(255, 255, 255, 0.78);
+  mix-blend-mode: overlay;
+}
+.skyline .city .torii path,
+.skyline .city .torii rect {
+  fill: url(#iri);
+  mix-blend-mode: normal;
+  opacity: 0.7;
+}
+.skyline .antenna {
+  stroke: rgba(255, 255, 255, 0.7);
+  stroke-width: 1.5;
+}
+.skyline .city .tower .antenna {
+  stroke: url(#iri);
+  stroke-width: 2;
+  filter: drop-shadow(0 0 6px rgba(255, 143, 207, 0.6));
+}
+.skyline .horizon-line {
+  stroke: url(#iri);
+  stroke-width: 1;
+  opacity: 0.7;
+  filter: drop-shadow(0 0 8px rgba(176, 133, 255, 0.6));
+}
+.skyline.mini {
+  height: 16vh;
+  opacity: 0.7;
+}
+.skyline.mini .city .tower { filter: drop-shadow(0 0 12px rgba(255, 143, 207, 0.6)); }
+
 /* ───── HERO ───── */
 .slide.hero {
   align-items: center;

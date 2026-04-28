@@ -105,6 +105,66 @@ nav.tabs .home:hover { text-shadow: 0 0 12px var(--pink); }
   to   { background-position: 0 80px, 0 0; }
 }
 
+/* ───── Fukuoka skyline silhouette (Tower + Dome + Hakata Port) ───── */
+.skyline {
+  position: absolute;
+  left: 0; right: 0;
+  bottom: 30vh;
+  width: 100%;
+  height: 24vh;
+  z-index: 1;
+  pointer-events: none;
+  overflow: visible;
+}
+.skyline .far {
+  fill: #2a0a4a;
+  opacity: 0.85;
+}
+.skyline .near {
+  fill: #15002b;
+}
+.skyline .city rect,
+.skyline .city polygon,
+.skyline .city path,
+.skyline .city ellipse {
+  fill: #08000f;
+}
+.skyline .city .tower polygon { fill: #08000f; }
+.skyline .city .tower ellipse { fill: #08000f; }
+.skyline .city .tower {
+  filter: drop-shadow(0 0 6px var(--pink));
+}
+.skyline .antenna {
+  stroke: #08000f;
+  stroke-width: 2;
+}
+.skyline .city .tower .antenna {
+  stroke: var(--pink);
+  filter: drop-shadow(0 0 4px var(--pink));
+}
+/* compact skyline strip on title slide */
+.skyline.mini {
+  bottom: 0;
+  height: 16vh;
+  opacity: 0.85;
+}
+.skyline.mini .far { fill: #1a0033; opacity: 0.6; }
+.skyline.mini .city rect,
+.skyline.mini .city polygon,
+.skyline.mini .city path,
+.skyline.mini .city ellipse {
+  fill: #0a0018;
+}
+.skyline.mini .city .tower polygon,
+.skyline.mini .city .tower ellipse {
+  fill: var(--pink);
+}
+.skyline.mini .city .tower {
+  filter: drop-shadow(0 0 10px var(--pink));
+  opacity: 0.95;
+}
+.skyline.mini .city .tower .antenna { stroke: var(--pink); }
+
 /* ───── HERO ───── */
 .slide.hero { align-items: center; text-align: center; }
 .slide.hero .content {
