@@ -149,6 +149,54 @@ nav.tabs .home:hover { background: rgba(122, 215, 255, 0.22); color: var(--ink);
   stroke-width: 2;
   filter: drop-shadow(0 0 6px rgba(255, 143, 207, 0.6));
 }
+.skyline .city .engineer-cafe path,
+.skyline .city .engineer-cafe rect {
+  fill: rgba(255, 217, 168, 0.85); /* warm sand tint to evoke brick */
+  mix-blend-mode: overlay;
+}
+.skyline .city .engineer-cafe .cafe-finial {
+  stroke: url(#iri);
+  stroke-width: 1.5;
+}
+.skyline .city .cic-bldg .cic-main,
+.skyline .city .cic-bldg .cic-crown {
+  fill: rgba(122, 215, 255, 0.85); /* cool aqua tint = modern glass */
+  mix-blend-mode: overlay;
+}
+.skyline .city .cic-bldg .cic-banner {
+  fill: url(#iri);
+  mix-blend-mode: normal;
+  opacity: 0.95;
+}
+.skyline .city .cic-bldg .cic-antenna {
+  stroke: url(#iri);
+  stroke-width: 2;
+  filter: drop-shadow(0 0 6px rgba(122, 215, 255, 0.6));
+}
+
+/* ───── Landmark labels (glass pills + iridescent leaders) ───── */
+.skyline .landmark-labels .label .pill {
+  fill: rgba(255, 255, 255, 0.10);
+  stroke: rgba(255, 255, 255, 0.35);
+  stroke-width: 0.8;
+}
+.skyline .landmark-labels .label text {
+  fill: #ffffff;
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  paint-order: stroke fill;
+}
+.skyline .landmark-labels .label .leader {
+  stroke: url(#iri);
+  stroke-width: 0.8;
+  opacity: 0.85;
+}
+.skyline .landmark-labels .label .dot {
+  fill: url(#iri);
+  filter: drop-shadow(0 0 4px rgba(176, 133, 255, 0.8));
+}
 .skyline .horizon-line {
   stroke: url(#iri);
   stroke-width: 1;

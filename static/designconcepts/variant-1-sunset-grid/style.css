@@ -142,6 +142,16 @@ nav.tabs .home:hover { text-shadow: 0 0 12px var(--pink); }
   stroke: var(--pink);
   filter: drop-shadow(0 0 4px var(--pink));
 }
+.skyline .cafe-finial {
+  stroke: #08000f;
+  stroke-width: 1.5;
+}
+.skyline .cic-antenna {
+  stroke: var(--cyan);
+  stroke-width: 1.5;
+  filter: drop-shadow(0 0 4px var(--cyan));
+}
+.skyline.mini .cic-antenna { stroke: var(--cyan); }
 /* compact skyline strip on title slide */
 .skyline.mini {
   bottom: 0;
@@ -164,6 +174,26 @@ nav.tabs .home:hover { text-shadow: 0 0 12px var(--pink); }
   opacity: 0.95;
 }
 .skyline.mini .city .tower .antenna { stroke: var(--pink); }
+
+/* ───── Landmark labels (neon retro-terminal callouts) ───── */
+.skyline .landmark-labels .label .leader {
+  stroke: var(--pink);
+  stroke-width: 1;
+  stroke-dasharray: 2 2;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 2px var(--pink));
+}
+.skyline .landmark-labels .label .dot {
+  fill: var(--pink);
+  filter: drop-shadow(0 0 4px var(--pink));
+}
+.skyline .landmark-labels .label text {
+  fill: var(--cyan);
+  font-family: "VT323", monospace;
+  font-size: 16px;
+  letter-spacing: 0.12em;
+  filter: drop-shadow(0 0 3px var(--cyan)) drop-shadow(0 0 8px rgba(0, 245, 255, 0.6));
+}
 
 /* ───── HERO ───── */
 .slide.hero { align-items: center; text-align: center; }
