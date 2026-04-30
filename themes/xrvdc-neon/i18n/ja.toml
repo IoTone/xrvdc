@@ -7,6 +7,9 @@ other = "イベント"
 [schedule]
 other = "スケジュール"
 
+[hackathon]
+other = "ハッカソン"
+
 [organizers]
 other = "主催者"
 

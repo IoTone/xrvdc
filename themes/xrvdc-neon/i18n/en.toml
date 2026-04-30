@@ -7,6 +7,9 @@ other = "Event"
 [schedule]
 other = "Schedule"
 
+[hackathon]
+other = "Hackathon"
+
 [organizers]
 other = "Organizers"
 

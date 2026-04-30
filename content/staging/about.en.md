@@ -10,7 +10,7 @@ Starting with **iPhoneDevCamp** (2007–2009), it expanded to **iPadDevCamp** (2
 
 ### Event Format
 
-Detailed format: [visiondevcamp.org/hackathon/](https://visiondevcamp.org/hackathon/)
+Detailed format: [Hackathon page](/staging/hackathon/)
 
 What makes this hackathon distinct from larger events like MIT Reality Hack:
 

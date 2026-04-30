@@ -19,7 +19,7 @@ buildFuture = true
   description = "XR VisionDevCamp returns to Fukuoka in Summer 2026."
 
 [params.staging]
-  version = "0.1"
+  version = "0.3"
   eventDates = "26 – 28 June 2026"
   eventDateShort = "06.26.26"
 
@@ -49,6 +49,11 @@ buildFuture = true
       name = "Schedule"
       pageRef = "/staging/schedule/2026/"
       weight = 20
+    [[languages.en.menus.main]]
+      identifier = "hackathon"
+      name = "Hackathon"
+      pageRef = "/staging/hackathon/"
+      weight = 22
     [[languages.en.menus.main]]
       identifier = "gallery"
       name = "Gallery"
@@ -91,6 +96,11 @@ buildFuture = true
       name = "スケジュール"
       pageRef = "/staging/schedule/2026/"
       weight = 20
+    [[languages.ja.menus.main]]
+      identifier = "hackathon"
+      name = "ハッカソン"
+      pageRef = "/staging/hackathon/"
+      weight = 22
     [[languages.ja.menus.main]]
       identifier = "gallery"
       name = "ギャラリー"

@@ -10,7 +10,7 @@ date: 2026-04-30T10:00:00+09:00
 
 ### イベント形式
 
-詳細: [visiondevcamp.org/hackathon/](https://visiondevcamp.org/hackathon/)
+詳細: [ハッカソンページ](/staging/hackathon/)
 
 MIT Reality Hack のような他の大規模イベントと、このハッカソンの違い:
 
