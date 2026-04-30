@@ -1,0 +1,20 @@
+{{ define "main" }}
+<section class="hero brackets">
+  <span class="br-tr"></span><span class="br-bl"></span>
+  <p class="hero__id">[ NODE_ID :: FUK_01 // {{ .Site.Params.staging.eventDateShort }} ]</p>
+  <h1>{{ .Site.Title }}</h1>
+  <p class="hero__sub">// XR · Fukuoka · 2026 //</p>
+  <p class="hero__when"><strong>{{ .Site.Params.staging.eventDates }}</strong> · Engineer Café</p>
+  <p class="hero__build">BUILD: <span>v{{ .Site.Params.staging.version }}</span> ░ STATUS: <span>STAGING</span></p>
+  <div class="hero__cta">
+    <a class="btn" href="{{ "/staging/about/" | relLangURL }}">{{ i18n "about" }} ▸</a>
+    <a class="btn btn--magenta" href="{{ "/staging/event/2026/" | relLangURL }}">{{ i18n "event" }} ▸</a>
+  </div>
+</section>
+
+<div class="container">
+  {{ with .Content }}
+    <div class="prose">{{ . }}</div>
+  {{ end }}
+</div>
+{{ end }}

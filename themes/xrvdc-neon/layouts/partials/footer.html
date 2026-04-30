@@ -1,0 +1,11 @@
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <span>© {{ now.Year }} XR VisionDevCamp · Fukuoka</span>
+    {{ with .Site.Params.staging }}
+      <span class="site-footer__version">
+        STAGING · v{{ .version }}<span class="ts">// BUILD {{ now.Format "2006-01-02" }}</span>
+      </span>
+    {{ end }}
+    <a href="{{ "/staging/contact/" | relLangURL }}">{{ i18n "contact" | default "Contact" }} →</a>
+  </div>
+</footer>

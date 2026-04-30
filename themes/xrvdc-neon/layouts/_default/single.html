@@ -1,0 +1,13 @@
+{{ define "main" }}
+<article class="container brackets">
+  <span class="br-tr"></span><span class="br-bl"></span>
+  <header class="page-header">
+    <span class="page-header__id">// {{ replaceRE "[^A-Za-z0-9]" "-" (lower .Section) }}</span>
+    <h1>{{ .Title }}</h1>
+    <span class="page-header__ts">{{ .Date.Format "2006.01.02" }}</span>
+  </header>
+  <div class="prose">
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}

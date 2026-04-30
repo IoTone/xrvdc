@@ -1,24 +1,97 @@
 baseURL = "/"
-languageCode = "en-us"
-title = "XR VisionDevCamp Fukuoka 2026 – Proposal"
-theme = "reveal-hugo"
+title = "XR VisionDevCamp Fukuoka 2026"
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+theme = ["xrvdc-neon", "reveal-hugo"]
 disableKinds = ["sitemap", "RSS", "taxonomy", "term"]
 
 [markup.goldmark.renderer]
-unsafe = true
+  unsafe = true
 
 [outputFormats.Reveal]
-baseName = "index"
-mediaType = "text/html"
-isHTML = true
+  baseName = "index"
+  mediaType = "text/html"
+  isHTML = true
 
 [params]
-author = "VisionDevCamp"
+  author = "XR VisionDevCamp"
+  description = "XR VisionDevCamp returns to Fukuoka in Summer 2026."
+
+[params.staging]
+  version = "0.1"
+  eventDates = "26 – 28 June 2026"
+  eventDateShort = "06.26.26"
 
 [params.reveal_hugo]
-theme = "black"
-history = true
-slide_number = true
-transition = "slide"
-transition_speed = "default"
-margin = 0.1
+  theme = "black"
+  history = true
+  slide_number = true
+  transition = "slide"
+  transition_speed = "default"
+  margin = 0.1
+
+# ───── Languages ─────
+[languages]
+  [languages.en]
+    languageName = "English"
+    languageCode = "en-us"
+    weight = 1
+    [languages.en.params]
+      description = "XR VisionDevCamp returns to Fukuoka in Summer 2026."
+    [[languages.en.menus.main]]
+      identifier = "about"
+      name = "About"
+      pageRef = "/staging/about/"
+      weight = 10
+    [[languages.en.menus.main]]
+      identifier = "event"
+      name = "Event"
+      pageRef = "/staging/event/2026/"
+      weight = 20
+    [[languages.en.menus.main]]
+      identifier = "organizers"
+      name = "Organizers"
+      pageRef = "/staging/organizers/"
+      weight = 30
+    [[languages.en.menus.main]]
+      identifier = "sponsors"
+      name = "Sponsors"
+      pageRef = "/staging/sponsors/"
+      weight = 40
+    [[languages.en.menus.main]]
+      identifier = "contact"
+      name = "Contact"
+      pageRef = "/staging/contact/"
+      weight = 50
+
+  [languages.ja]
+    languageName = "日本語"
+    languageCode = "ja-jp"
+    weight = 2
+    [languages.ja.params]
+      description = "XR VisionDevCamp は 2026 年夏、福岡に帰ってきます。"
+    [[languages.ja.menus.main]]
+      identifier = "about"
+      name = "概要"
+      pageRef = "/staging/about/"
+      weight = 10
+    [[languages.ja.menus.main]]
+      identifier = "event"
+      name = "イベント"
+      pageRef = "/staging/event/2026/"
+      weight = 20
+    [[languages.ja.menus.main]]
+      identifier = "organizers"
+      name = "主催者"
+      pageRef = "/staging/organizers/"
+      weight = 30
+    [[languages.ja.menus.main]]
+      identifier = "sponsors"
+      name = "スポンサー"
+      pageRef = "/staging/sponsors/"
+      weight = 40
+    [[languages.ja.menus.main]]
+      identifier = "contact"
+      name = "お問い合わせ"
+      pageRef = "/staging/contact/"
+      weight = 50

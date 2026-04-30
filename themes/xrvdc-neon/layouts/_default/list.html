@@ -1,0 +1,48 @@
+{{ define "main" }}
+<div class="container brackets">
+  <span class="br-tr"></span><span class="br-bl"></span>
+  <header class="page-header">
+    <span class="page-header__id">// {{ printf "%02d" (add 1 (len (where .Site.Sections "Section" "ne" ""))) }}</span>
+    <h1>{{ .Title }}</h1>
+    <span class="page-header__ts">{{ .Date.Format "2006.01.02" }}</span>
+  </header>
+
+  {{ with .Content }}
+    <div class="prose">{{ . }}</div>
+  {{ end }}
+
+  {{ if .Pages }}
+    <ul class="card-grid">
+      {{ range .Pages.ByWeight }}
+        <li>
+          <article class="card">
+            {{ with .Params.avatarResource }}
+              <img class="avatar" src="{{ . | relURL }}" alt="">
+            {{ end }}
+            {{ with .Params.logo }}
+              <img class="logo" src="{{ . | relURL }}" alt="{{ $.Title }}">
+            {{ end }}
+            <h3>{{ .Title }}</h3>
+            {{ with .Params.position }}<p class="role">{{ . }}</p>{{ end }}
+            {{ with .Params.expertise }}<p class="expertise">▸ {{ . }}</p>{{ end }}
+            {{ with .Params.description }}<p class="desc">{{ . }}</p>{{ end }}
+            {{ with .Content }}<div class="desc">{{ . }}</div>{{ end }}
+            {{ $links := slice }}
+            {{ with .Params.companyUrl }}{{ $links = $links | append (dict "label" "site" "url" .) }}{{ end }}
+            {{ with .Params.xUrl }}{{ $links = $links | append (dict "label" "x" "url" .) }}{{ end }}
+            {{ with .Params.linkedinUrl }}{{ $links = $links | append (dict "label" "in" "url" .) }}{{ end }}
+            {{ with .Params.githubUrl }}{{ $links = $links | append (dict "label" "gh" "url" .) }}{{ end }}
+            {{ if $links }}
+              <ul class="links">
+                {{ range $links }}
+                  <li><a href="{{ .url }}" target="_blank" rel="noopener">{{ .label }}</a></li>
+                {{ end }}
+              </ul>
+            {{ end }}
+          </article>
+        </li>
+      {{ end }}
+    </ul>
+  {{ end }}
+</div>
+{{ end }}

@@ -1,0 +1,23 @@
+[about]
+other = "概要"
+
+[event]
+other = "イベント"
+
+[organizers]
+other = "主催者"
+
+[sponsors]
+other = "スポンサー"
+
+[contact]
+other = "お問い合わせ"
+
+[staging]
+other = "ステージング"
+
+[register]
+other = "申込"
+
+[tba]
+other = "未定"

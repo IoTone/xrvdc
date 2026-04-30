@@ -1,0 +1,23 @@
+[about]
+other = "About"
+
+[event]
+other = "Event"
+
+[organizers]
+other = "Organizers"
+
+[sponsors]
+other = "Sponsors"
+
+[contact]
+other = "Contact"
+
+[staging]
+other = "Staging"
+
+[register]
+other = "Register"
+
+[tba]
+other = "TBA"

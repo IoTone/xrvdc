@@ -1,0 +1,10 @@
+name = "xrvdc-neon"
+license = "MIT"
+description = "Cyberpunk / Neo-Tokyo theme for XR VisionDevCamp Fukuoka."
+homepage = "https://github.com/iotone/xrvisiondevcamp"
+tags = ["cyberpunk", "synthwave", "event", "bilingual"]
+features = ["responsive", "i18n", "dark"]
+min_version = "0.110.0"
+
+[author]
+  name = "XR VisionDevCamp"

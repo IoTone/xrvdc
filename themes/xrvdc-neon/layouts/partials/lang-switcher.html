@@ -1,0 +1,19 @@
+{{ if gt (len .Site.Languages) 1 }}
+<div class="site-nav__lang">
+  {{ range .Site.Languages }}
+    {{ $lang := . }}
+    {{ $isCurrent := eq $.Site.Language.Lang $lang.Lang }}
+    {{ $href := "" }}
+    {{ with $.Page.AllTranslations }}
+      {{ range . }}
+        {{ if eq .Language.Lang $lang.Lang }}
+          {{ $href = .RelPermalink }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+    {{ if and (eq $href "") $isCurrent }}{{ $href = $.RelPermalink }}{{ end }}
+    {{ if eq $href "" }}{{ $href = printf "/%s/" $lang.Lang }}{{ end }}
+    <a href="{{ $href }}"{{ if $isCurrent }} class="active"{{ end }} title="{{ $lang.LanguageName }}">{{ upper $lang.Lang }}</a>
+  {{ end }}
+</div>
+{{ end }}
