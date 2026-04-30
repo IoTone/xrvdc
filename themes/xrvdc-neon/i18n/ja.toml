@@ -4,6 +4,9 @@ other = "概要"
 [event]
 other = "イベント"
 
+[schedule]
+other = "スケジュール"
+
 [organizers]
 other = "主催者"
 
@@ -21,3 +24,31 @@ other = "申込"
 
 [tba]
 other = "未定"
+
+[badge]
+other = "バッジ作成"
+
+[badge_intro]
+other = "参加表明をしましょう — シェア用バッジを作成して SNS に投稿してください。"
+
+[badge_label_photo]
+other = "写真"
+
+[badge_label_name]
+other = "名前"
+
+[badge_label_comment]
+other = "一言"
+
+[badge_button_generate]
+other = "生成"
+
+[badge_button_download]
+other = "ダウンロード"
+
+[badge_button_share]
+other = "シェア"
+
+[badge_share_text]
+other = "XR VisionDevCamp 福岡に参加します！2026 年 6 月 26-28 日 #XRVisionDevCamp #VDC2026 #FukuokaXR"
+

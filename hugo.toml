@@ -4,6 +4,7 @@ defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
 theme = ["xrvdc-neon", "reveal-hugo"]
 disableKinds = ["sitemap", "RSS", "taxonomy", "term"]
+buildFuture = true
 
 [markup.goldmark.renderer]
   unsafe = true
@@ -44,10 +45,20 @@ disableKinds = ["sitemap", "RSS", "taxonomy", "term"]
       pageRef = "/staging/about/"
       weight = 10
     [[languages.en.menus.main]]
-      identifier = "event"
-      name = "Event"
-      pageRef = "/staging/event/2026/"
+      identifier = "schedule"
+      name = "Schedule"
+      pageRef = "/staging/schedule/2026/"
       weight = 20
+    [[languages.en.menus.main]]
+      identifier = "gallery"
+      name = "Gallery"
+      pageRef = "/staging/gallery/"
+      weight = 25
+    [[languages.en.menus.main]]
+      identifier = "badge"
+      name = "Badge"
+      pageRef = "/staging/badge/"
+      weight = 27
     [[languages.en.menus.main]]
       identifier = "organizers"
       name = "Organizers"
@@ -76,10 +87,20 @@ disableKinds = ["sitemap", "RSS", "taxonomy", "term"]
       pageRef = "/staging/about/"
       weight = 10
     [[languages.ja.menus.main]]
-      identifier = "event"
-      name = "イベント"
-      pageRef = "/staging/event/2026/"
+      identifier = "schedule"
+      name = "スケジュール"
+      pageRef = "/staging/schedule/2026/"
       weight = 20
+    [[languages.ja.menus.main]]
+      identifier = "gallery"
+      name = "ギャラリー"
+      pageRef = "/staging/gallery/"
+      weight = 25
+    [[languages.ja.menus.main]]
+      identifier = "badge"
+      name = "バッジ作成"
+      pageRef = "/staging/badge/"
+      weight = 27
     [[languages.ja.menus.main]]
       identifier = "organizers"
       name = "主催者"

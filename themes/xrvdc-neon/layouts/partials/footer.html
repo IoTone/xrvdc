@@ -6,6 +6,9 @@
         STAGING · v{{ .version }}<span class="ts">// BUILD {{ now.Format "2006-01-02" }}</span>
       </span>
     {{ end }}
-    <a href="{{ "/staging/contact/" | relLangURL }}">{{ i18n "contact" | default "Contact" }} →</a>
+    {{ $contactURL := "/staging/contact/" | relLangURL }}
+    {{ if ne .RelPermalink $contactURL }}
+      <a href="{{ $contactURL }}">{{ i18n "contact" | default "Contact" }} →</a>
+    {{ end }}
   </div>
 </footer>

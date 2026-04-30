@@ -1,0 +1,97 @@
+{{ define "main" }}
+<div class="container container--wide brackets gallery-page">
+  <span class="br-tr"></span><span class="br-bl"></span>
+
+  <header class="page-header gallery-header">
+    <span class="page-header__id">// FOOTAGE_ARCHIVE</span>
+    <h1>{{ .Title }}</h1>
+    <span class="page-header__ts blink-rec">● REC</span>
+  </header>
+
+  <p class="gallery-meta">
+    {{ with .Content }}{{ . }}{{ end }}
+  </p>
+
+  {{ $eventDir := "static/media/event/vdcfukuoka2025" }}
+  {{ $eventPhotos := slice }}
+  {{ range (os.ReadDir $eventDir) }}
+    {{ if and (not .IsDir) (or (hasSuffix (lower .Name) ".jpg") (hasSuffix (lower .Name) ".jpeg") (hasSuffix (lower .Name) ".png")) }}
+      {{ $eventPhotos = $eventPhotos | append .Name }}
+    {{ end }}
+  {{ end }}
+
+  {{ $xrDir := "static/media/xr" }}
+  {{ $xrAssets := slice }}
+  {{ range (os.ReadDir $xrDir) }}
+    {{ if and (not .IsDir) (hasSuffix (lower .Name) ".gif") }}
+      {{ $xrAssets = $xrAssets | append .Name }}
+    {{ end }}
+  {{ end }}
+
+  {{ if $eventPhotos }}
+  <section class="gallery-section">
+    <header class="gallery-section__head">
+      <span class="ch">// CAM_03 / EVENT 2025 / VDCFUKUOKA</span>
+      <span class="bar"></span>
+      <span class="ch">{{ len $eventPhotos }} FRAMES</span>
+    </header>
+    <div class="gallery-grid">
+      {{ range $i, $name := $eventPhotos }}
+        {{ $url := printf "/media/event/vdcfukuoka2025/%s" $name }}
+        <button type="button" class="gallery-item" data-set="event" data-src="{{ $url }}" data-name="{{ $name }}" data-index="{{ $i }}" aria-label="Open {{ $name }}">
+          <img loading="lazy" src="{{ $url }}" alt="">
+          <span class="gallery-item__hud">
+            <span class="frame">FR-{{ printf "%03d" (add $i 1) }}</span>
+            <span class="dot"></span>
+          </span>
+        </button>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  {{ if $xrAssets }}
+  <section class="gallery-section">
+    <header class="gallery-section__head">
+      <span class="ch">// CAM_07 / XR ASSETS / DEMOS</span>
+      <span class="bar"></span>
+      <span class="ch">{{ len $xrAssets }} CLIPS</span>
+    </header>
+    <div class="gallery-grid">
+      {{ range $i, $name := $xrAssets }}
+        {{ $url := printf "/media/xr/%s" $name }}
+        <button type="button" class="gallery-item gallery-item--gif" data-set="xr" data-src="{{ $url }}" data-name="{{ $name }}" data-index="{{ $i }}" aria-label="Open {{ $name }}">
+          <img loading="lazy" src="{{ $url }}" alt="">
+          <span class="gallery-item__hud">
+            <span class="frame">CLP-{{ printf "%03d" (add $i 1) }}</span>
+            <span class="dot"></span>
+          </span>
+        </button>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+</div>
+
+<!-- Lightbox overlay -->
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Gallery viewer">
+  <div class="lightbox__chrome">
+    <span class="lightbox__id">▸ <span data-lightbox-id></span></span>
+    <span class="lightbox__rec blink-rec">● REC</span>
+    <button class="lightbox__close" type="button" aria-label="Close">[ ESC ]</button>
+  </div>
+  <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Previous">◂</button>
+  <figure class="lightbox__stage">
+    <img alt="" data-lightbox-img>
+    <figcaption class="lightbox__cap">
+      <span data-lightbox-name></span>
+      <span class="sep">·</span>
+      <span data-lightbox-count></span>
+    </figcaption>
+  </figure>
+  <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Next">▸</button>
+</div>
+
+{{ $js := resources.Get "js/gallery.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+{{ end }}

@@ -4,6 +4,9 @@ other = "About"
 [event]
 other = "Event"
 
+[schedule]
+other = "Schedule"
+
 [organizers]
 other = "Organizers"
 
@@ -21,3 +24,31 @@ other = "Register"
 
 [tba]
 other = "TBA"
+
+[badge]
+other = "Badge"
+
+[badge_intro]
+other = "Declare you're attending — generate a personalized share card and post it to social media."
+
+[badge_label_photo]
+other = "Photo"
+
+[badge_label_name]
+other = "Name"
+
+[badge_label_comment]
+other = "Comment"
+
+[badge_button_generate]
+other = "Generate"
+
+[badge_button_download]
+other = "Download"
+
+[badge_button_share]
+other = "Share"
+
+[badge_share_text]
+other = "I'm attending XR VisionDevCamp Fukuoka — 26-28 June 2026. #XRVisionDevCamp #VDC2026 #FukuokaXR"
+

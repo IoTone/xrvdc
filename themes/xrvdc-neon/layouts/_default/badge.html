@@ -1,0 +1,66 @@
+{{ define "main" }}
+<div class="container brackets badge-page">
+  <span class="br-tr"></span><span class="br-bl"></span>
+
+  <header class="page-header">
+    <span class="page-header__id">// SHARE_CARD_GEN</span>
+    <h1>{{ .Title }}</h1>
+    <span class="page-header__ts blink-rec">● REC</span>
+  </header>
+
+  <p class="badge-intro">{{ i18n "badge_intro" }}</p>
+
+  <form class="badge-form" id="badgeForm" autocomplete="off" onsubmit="return false;">
+    <div class="field">
+      <label for="badgePhoto"><span class="ch">// 01</span> {{ i18n "badge_label_photo" }}</label>
+      <input type="file" id="badgePhoto" accept="image/*">
+    </div>
+    <div class="field">
+      <label for="badgeName"><span class="ch">// 02</span> {{ i18n "badge_label_name" }}</label>
+      <input type="text" id="badgeName" placeholder="Taro Yamada">
+    </div>
+    <div class="field">
+      <label for="badgeComment"><span class="ch">// 03</span> {{ i18n "badge_label_comment" }}</label>
+      <input type="text" id="badgeComment" placeholder="@ Engineer Café">
+    </div>
+
+    <div class="badge-actions">
+      <button class="btn" id="badgeGenerate" type="button">▸ {{ i18n "badge_button_generate" }}</button>
+      <button class="btn btn--magenta" id="badgeDownload" type="button" disabled>▾ {{ i18n "badge_button_download" }}</button>
+      <button class="btn" id="badgeShare" type="button" disabled>↗ {{ i18n "badge_button_share" }}</button>
+    </div>
+  </form>
+
+  <div class="badge-preview">
+    <div class="badge-preview__chrome">
+      <span>▸ PREVIEW · 1200 × 628</span>
+      <span class="blink-rec">● REC</span>
+    </div>
+    <canvas id="badgeCanvas" width="1200" height="628" aria-label="Share badge preview"></canvas>
+  </div>
+
+  <div class="badge-social">
+    <span class="ch">// SHARE TO</span>
+    <button class="btn btn--social" data-social="x" type="button">X</button>
+    <button class="btn btn--social" data-social="facebook" type="button">Facebook</button>
+    <button class="btn btn--social" data-social="linkedin" type="button">LinkedIn</button>
+  </div>
+</div>
+
+<script>
+  window.__badgeStrings = {
+    shareText: {{ i18n "badge_share_text" | jsonify | safeJS }},
+    shareUrl: {{ "/staging/" | absLangURL | jsonify | safeJS }},
+    title: {{ "I'M ATTENDING" | jsonify | safeJS }},
+    eventLine1: {{ "XR VisionDevCamp" | jsonify | safeJS }},
+    eventLine2: {{ "Fukuoka · 2026" | jsonify | safeJS }},
+    dateLine: {{ .Site.Params.staging.eventDates | upper | jsonify | safeJS }},
+    venueLine: {{ "@ Engineer Café · CIC Fukuoka" | jsonify | safeJS }},
+    urlLine: {{ "// xr.visiondevcamp.org" | jsonify | safeJS }},
+    nodeId: {{ printf "[ NODE_ID :: FUK_01 // %s ]" .Site.Params.staging.eventDateShort | jsonify | safeJS }},
+    rec: {{ "● REC" | jsonify | safeJS }}
+  };
+</script>
+{{ $js := resources.Get "js/badge.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+{{ end }}
