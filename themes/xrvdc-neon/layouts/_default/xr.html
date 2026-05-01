@@ -1,0 +1,65 @@
+{{ define "main" }}
+<div class="xr-shell" id="xrShell">
+  <div class="xr-hud">
+    <div class="xr-hud__id">[ NODE_ID :: FUK_01 // {{ .Site.Params.staging.eventDateShort }} ]</div>
+    <div class="xr-hud__rec blink-rec">● XR // STANDBY</div>
+  </div>
+
+  <canvas id="xrCanvas" class="xr-canvas"></canvas>
+
+  <div class="xr-cta" id="xrCta">
+    <h1 class="xr-cta__title">XR VISIONDEVCAMP</h1>
+    <p class="xr-cta__sub">// SPATIAL MENU · 8-FACE OCTAGON</p>
+
+    <div class="xr-cta__actions">
+      <button class="btn btn--xr" id="startARBtn" type="button" disabled>▸ START AR</button>
+      <button class="btn btn--xr btn--magenta" id="startVRBtn" type="button" disabled>▸ START VR</button>
+      <button class="btn btn--xr btn--ghost" id="preview2DBtn" type="button">▸ PREVIEW (2D)</button>
+    </div>
+
+    <p class="xr-cta__hint" id="xrHint">// Detecting XR capability …</p>
+
+    <details class="xr-cta__menu">
+      <summary>// MENU (2D fallback)</summary>
+      <ul>
+        <li><a href="{{ "/staging/about/" | relLangURL }}">▸ About</a></li>
+        <li><a href="{{ "/staging/schedule/2026/" | relLangURL }}">▸ Schedule</a></li>
+        <li><a href="{{ "/staging/hackathon/" | relLangURL }}">▸ Hackathon</a></li>
+        <li><a href="{{ "/staging/gallery/" | relLangURL }}">▸ Gallery</a></li>
+        <li><a href="{{ "/staging/badge/" | relLangURL }}">▸ Badge</a></li>
+        <li><a href="{{ "/staging/organizers/" | relLangURL }}">▸ Organizers</a></li>
+        <li><a href="{{ "/staging/sponsors/" | relLangURL }}">▸ Sponsors</a></li>
+        <li><a href="{{ "/staging/contact/" | relLangURL }}">▸ Contact</a></li>
+      </ul>
+    </details>
+  </div>
+
+  <noscript>
+    <div class="xr-cta">
+      <h1 class="xr-cta__title">XR VISIONDEVCAMP</h1>
+      <p>JavaScript is required for the spatial view. Use the regular menu below:</p>
+      <ul>
+        <li><a href="{{ "/staging/about/" | relLangURL }}">About</a></li>
+        <li><a href="{{ "/staging/schedule/2026/" | relLangURL }}">Schedule</a></li>
+        <li><a href="{{ "/staging/hackathon/" | relLangURL }}">Hackathon</a></li>
+        <li><a href="{{ "/staging/gallery/" | relLangURL }}">Gallery</a></li>
+        <li><a href="{{ "/staging/badge/" | relLangURL }}">Badge</a></li>
+        <li><a href="{{ "/staging/organizers/" | relLangURL }}">Organizers</a></li>
+        <li><a href="{{ "/staging/sponsors/" | relLangURL }}">Sponsors</a></li>
+        <li><a href="{{ "/staging/contact/" | relLangURL }}">Contact</a></li>
+      </ul>
+    </div>
+  </noscript>
+</div>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/",
+    "three-mesh-ui": "https://cdn.jsdelivr.net/npm/three-mesh-ui@6.5.4/build/three-mesh-ui.module.js"
+  }
+}
+</script>
+<script type="module" src="/xr/js/app.js"></script>
+{{ end }}
