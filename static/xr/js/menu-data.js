@@ -6,7 +6,7 @@ export const MENU = [
     id: "about",
     index: "01",
     title: "ABOUT",
-    href: "/staging/about/",
+    href: "/about/",
     summary:
       "VisionDevCamp carries 18+ years of hackathon heritage, from iPhoneDevCamp through iOSDevCamp and now the spatial-computing era. Collaboration over competition, no qualification gate, flexible judging, mixed-skill teams, public recognition, loaner hardware.",
   },
@@ -14,7 +14,7 @@ export const MENU = [
     id: "schedule",
     index: "02",
     title: "SCHEDULE",
-    href: "/staging/schedule/2026/",
+    href: "/schedule/2026/",
     summary:
       "Friday 26 to Sunday 28 June 2026 in Fukuoka. Fri 17:00 doors, keynote, mixer, late-night hacking. Sat full hacking day. Sun 12:00 submission cutoff, 13-15:00 judging, 16:00 awards. Closing party with taco truck outdoors. Multiple venues converging on CIC Fukuoka.",
   },
@@ -22,7 +22,7 @@ export const MENU = [
     id: "hackathon",
     index: "03",
     title: "HACKATHON",
-    href: "/staging/hackathon/",
+    href: "/hackathon/",
     summary:
       "Core values: contribution, sharing, openness, can-do attitude. Teams of 1-6, formed on-site or in advance. Entry deadline 12:00 JST Sunday. 3-minute demos. Source code released that evening. AI tools allowed with required disclosure of tools, paid services, and runtime needs.",
   },
@@ -30,7 +30,7 @@ export const MENU = [
     id: "gallery",
     index: "04",
     title: "GALLERY",
-    href: "/staging/gallery/",
+    href: "/gallery/",
     summary:
       "Field recordings from the 2025 Fukuoka edition - 40 photos from Engineer Cafe, plus a small set of XR demo clips. Click any frame in the 2D view to open a fullscreen lightbox with HUD chrome and prev/next navigation.",
   },
@@ -38,7 +38,7 @@ export const MENU = [
     id: "badge",
     index: "05",
     title: "BADGE",
-    href: "/staging/badge/",
+    href: "/badge/",
     summary:
       "Generate a personalized share card declaring your attendance. Upload a selfie, type a name and comment, and the canvas composites a 1200x628 image with cyberpunk HUD frame and an AVP goggles overlay. Download or share to X, Facebook, or LinkedIn.",
   },
@@ -46,7 +46,7 @@ export const MENU = [
     id: "organizers",
     index: "06",
     title: "ORGANIZERS",
-    href: "/staging/organizers/",
+    href: "/organizers/",
     summary:
       "The local team running XR VisionDevCamp Fukuoka 2026. David Kordsmeier (founder, IoTone Japan) and Laurie Griffiths (Engineer Cafe community manager) lead organization on the ground in Fukuoka.",
   },
@@ -54,7 +54,7 @@ export const MENU = [
     id: "sponsors",
     index: "07",
     title: "SPONSORS",
-    href: "/staging/sponsors/",
+    href: "/sponsors/",
     summary:
       "Sponsorship for 2026 is open - XR device sponsors, prize sponsors, venue partners, and meal sponsors are all welcome. The 2025 edition was supported by Engineer Cafe, IoTone Japan, STYLY, Tagstand, and Unity Technologies Japan.",
   },
@@ -62,7 +62,7 @@ export const MENU = [
     id: "contact",
     index: "08",
     title: "CONTACT",
-    href: "/staging/contact/",
+    href: "/contact/",
     summary:
       "For sponsorship enquiries, partnership proposals, press requests, or general questions: email xrvdc@duck.com or use the contact form linked on the 2D site. We aim to reply within a few business days.",
   },

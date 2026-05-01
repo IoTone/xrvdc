@@ -1,12 +1,13 @@
 <footer class="site-footer">
   <div class="site-footer__inner">
     <span>© {{ now.Year }} XR VisionDevCamp · Fukuoka</span>
+    {{ $isStaging := hasPrefix .RelPermalink ("/staging/" | relLangURL) }}
     {{ with .Site.Params.staging }}
       <span class="site-footer__version">
-        STAGING · v{{ .version }}<span class="ts">// BUILD {{ now.Format "2006-01-02" }}</span>
+        {{ if $isStaging }}STAGING · {{ end }}v{{ .version }}<span class="ts">// BUILD {{ now.Format "2006-01-02" }}</span>
       </span>
     {{ end }}
-    {{ $contactURL := "/staging/contact/" | relLangURL }}
+    {{ $contactURL := cond $isStaging ("/staging/contact/" | relLangURL) ("/contact/" | relLangURL) }}
     {{ if ne .RelPermalink $contactURL }}
       <a href="{{ $contactURL }}">{{ i18n "contact" | default "Contact" }} →</a>
     {{ end }}

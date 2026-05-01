@@ -19,7 +19,7 @@ buildFuture = true
   description = "XR VisionDevCamp returns to Fukuoka in Summer 2026."
 
 [params.staging]
-  version = "0.5"
+  version = "0.6"
   eventDates = "26 – 28 June 2026"
   eventDateShort = "06.26.26"
 
@@ -42,47 +42,47 @@ buildFuture = true
     [[languages.en.menus.main]]
       identifier = "about"
       name = "About"
-      pageRef = "/staging/about/"
+      pageRef = "/about/"
       weight = 10
     [[languages.en.menus.main]]
       identifier = "schedule"
       name = "Schedule"
-      pageRef = "/staging/schedule/2026/"
+      pageRef = "/schedule/2026/"
       weight = 20
     [[languages.en.menus.main]]
       identifier = "hackathon"
       name = "Hackathon"
-      pageRef = "/staging/hackathon/"
+      pageRef = "/hackathon/"
       weight = 22
     [[languages.en.menus.main]]
       identifier = "gallery"
       name = "Gallery"
-      pageRef = "/staging/gallery/"
+      pageRef = "/gallery/"
       weight = 25
     [[languages.en.menus.main]]
       identifier = "badge"
       name = "Badge"
-      pageRef = "/staging/badge/"
+      pageRef = "/badge/"
       weight = 27
     [[languages.en.menus.main]]
       identifier = "organizers"
       name = "Organizers"
-      pageRef = "/staging/organizers/"
+      pageRef = "/organizers/"
       weight = 30
     [[languages.en.menus.main]]
       identifier = "sponsors"
       name = "Sponsors"
-      pageRef = "/staging/sponsors/"
+      pageRef = "/sponsors/"
       weight = 40
     [[languages.en.menus.main]]
       identifier = "contact"
       name = "Contact"
-      pageRef = "/staging/contact/"
+      pageRef = "/contact/"
       weight = 50
     [[languages.en.menus.main]]
       identifier = "xr"
       name = "XR ↗"
-      pageRef = "/staging/xr/"
+      pageRef = "/xr/"
       weight = 60
 
   [languages.ja]
@@ -94,45 +94,45 @@ buildFuture = true
     [[languages.ja.menus.main]]
       identifier = "about"
       name = "概要"
-      pageRef = "/staging/about/"
+      pageRef = "/about/"
       weight = 10
     [[languages.ja.menus.main]]
       identifier = "schedule"
       name = "スケジュール"
-      pageRef = "/staging/schedule/2026/"
+      pageRef = "/schedule/2026/"
       weight = 20
     [[languages.ja.menus.main]]
       identifier = "hackathon"
       name = "ハッカソン"
-      pageRef = "/staging/hackathon/"
+      pageRef = "/hackathon/"
       weight = 22
     [[languages.ja.menus.main]]
       identifier = "gallery"
       name = "ギャラリー"
-      pageRef = "/staging/gallery/"
+      pageRef = "/gallery/"
       weight = 25
     [[languages.ja.menus.main]]
       identifier = "badge"
       name = "バッジ作成"
-      pageRef = "/staging/badge/"
+      pageRef = "/badge/"
       weight = 27
     [[languages.ja.menus.main]]
       identifier = "organizers"
       name = "主催者"
-      pageRef = "/staging/organizers/"
+      pageRef = "/organizers/"
       weight = 30
     [[languages.ja.menus.main]]
       identifier = "sponsors"
       name = "スポンサー"
-      pageRef = "/staging/sponsors/"
+      pageRef = "/sponsors/"
       weight = 40
     [[languages.ja.menus.main]]
       identifier = "contact"
       name = "お問い合わせ"
-      pageRef = "/staging/contact/"
+      pageRef = "/contact/"
       weight = 50
     [[languages.ja.menus.main]]
       identifier = "xr"
       name = "XR ↗"
-      pageRef = "/staging/xr/"
+      pageRef = "/xr/"
       weight = 60
