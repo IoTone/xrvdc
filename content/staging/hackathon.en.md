@@ -43,7 +43,7 @@ Teams wishing to demo and compete must submit an entry form **no later than 12:0
 
 ### Hackathon Demos
 
-Demos take place on Sunday afternoon at the **CIC Fukuoka / Fukuoka One Building** main venue. Each demo is approximately **3 minutes**. Multiple displays enable rapid transitions between presentations. Where possible, please use the device's standard screen-mirroring feature (e.g. Apple Vision Pro mirroring) to demonstrate spatial features — venue display systems are limited.
+Demos take place on Sunday afternoon at the **CIC Fukuoka / Fukuoka One Building** main venue. Each demo is approximately **3 minutes**. Multiple displays enable rapid transitions between presentations. Where possible, please use the device's standard screen-mirroring feature (e.g. Apple Vision Pro mirroring) to demonstrate spatial features.
 
 ### Judging
 

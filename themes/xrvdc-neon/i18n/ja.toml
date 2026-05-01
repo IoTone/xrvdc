@@ -26,7 +26,7 @@ other = "ステージング"
 other = "申込"
 
 [tba]
-other = "未定"
+other = "追って通知"
 
 [badge]
 other = "バッジ作成"
@@ -41,7 +41,7 @@ other = "写真"
 other = "名前"
 
 [badge_label_comment]
-other = "一言"
+other = "コメント　"
 
 [badge_button_generate]
 other = "生成"

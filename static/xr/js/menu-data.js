@@ -68,8 +68,46 @@ export const MENU = [
   },
 ];
 
-// Font asset (MSDF) — using three-mesh-ui's bundled Roboto Bold via CDN for v1.
-// Swap to Orbitron MSDF in a follow-up by replacing these two URLs.
+// ─────────────────────────────────────────────────────────────────────────────
+// FONT ASSET (MSDF) — three-mesh-ui's bundled Roboto Bold via CDN, v1 only.
+//
+// ⚠️  GLYPH-SET CONSTRAINT — READ BEFORE EDITING ANY ThreeMeshUI.Text content.
+//
+// MSDF atlases only render characters that were rasterised into them.
+// Hitting an unsupported character throws an UNCAUGHT TypeError inside
+// MSDFGlyph.mapUVs and stops the entire render loop.  There's no graceful
+// fallback in three-mesh-ui v6.5.x.
+//
+// This Roboto-msdf set covers:
+//     A-Z  a-z  0-9
+//     space  !  "  #  $  %  &  '  (  )  *  +  ,  -  .  /
+//     :  ;  =  ?  @  [  \  ]  _  {  |  }  ~
+//     plus extended-Latin (à á â ä ñ ö ø ü æ ß etc.) and Greek
+//
+// NOT included (will crash):
+//     <  >  ^  `   (basic ASCII gaps!)
+//     ▸  ▾  ▮  ●  ▸  ◂  ←  →  ↑  ↓   (geometric shapes / arrows)
+//     —  ·  …  ©  ®  ™  •                (typography & symbols)
+//     CJK, Cyrillic, Hebrew, Arabic, etc.
+//
+// Safe cyberpunk substitutes:
+//     >>     →  use  //
+//     ▸      →  use  //  or  >>  (NO — > not in atlas!) or  ::
+//     ▾ X    →  use  [ X ]
+//     —      →  use  --  or  -
+//     ·      →  use  ::  or  //
+//     …      →  use  ...
+//     →      →  use  ->  (NO — > not in atlas!) — use  =>  or  to
+//     ●      →  use  *  or  o
+//
+// Verification script (run before any new content lands):
+//     /usr/bin/python3 static/xr/scripts/check-glyphs.py
+//
+// V2 PLAN — swap to a custom Orbitron Bold MSDF atlas generated with an
+// explicit glyph list including `< > ^ ▸ ▾ ▮ ●` and box-drawing chars.
+// Use msdf-bmfont-xml or msdf-atlas-gen with --charset orbitron-glyphs.txt.
+// Then this whole constraint goes away and we get our wipeout-XL typography.
+// ─────────────────────────────────────────────────────────────────────────────
 export const FONT = {
   json: "https://cdn.jsdelivr.net/gh/felixmariotto/three-mesh-ui@master/examples/assets/Roboto-msdf.json",
   png: "https://cdn.jsdelivr.net/gh/felixmariotto/three-mesh-ui@master/examples/assets/Roboto-msdf.png",
