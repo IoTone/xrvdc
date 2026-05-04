@@ -4,7 +4,7 @@
   <p class="hero__id">[ NODE_ID :: FUK_01 // {{ .Site.Params.staging.eventDateShort }} ]</p>
   <h1>{{ .Site.Title }}</h1>
   <p class="hero__sub">// XR · Fukuoka · 2026 //</p>
-  <p class="hero__when"><strong>{{ .Site.Params.staging.eventDates }}</strong> · Engineer Café</p>
+  <p class="hero__when"><strong>{{ .Site.Params.staging.eventDates }}</strong> · {{ .Site.Params.venue }}</p>
   {{ $isStaging := hasPrefix .RelPermalink ("/staging/" | relLangURL) }}
   {{ $status := cond $isStaging .Site.Params.statusLabels.staging .Site.Params.statusLabels.production }}
   <p class="hero__build">{{ i18n "hero_build_label" }}: <span>v{{ .Site.Params.staging.version }}</span> ░ {{ i18n "hero_status_label" }}: <span>{{ $status }}</span></p>
