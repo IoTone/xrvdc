@@ -19,7 +19,7 @@ buildFuture = true
   description = "XR VisionDevCamp returns to Fukuoka in Summer 2026."
 
 [params.staging]
-  version = "1.4"
+  version = "1.5"
   eventDates = "26 – 28 June 2026"
   eventDateShort = "06.26.26"
 

@@ -5,8 +5,14 @@ date: 2026-04-30T10:00:00+09:00
 
 ### シリコンバレー発祥の歴史あるハッカソン
 
-2007 年の iPhone 発売を起源とし、VisionDevCamp は 18 年以上のハッカソンの歴史を継承しています。
-**iPhoneDevCamp** (2007–2009) から始まり、**iPadDevCamp** (2010)、**iOSDevCamp** (2010–2013) と発展し、現在は空間コンピューティング時代の **VisionDevCamp** として開催しています。
+2007 年の iPhone 発売を起源とし、この DevCamp シリーズは約 20 年にわたるハッカソンの歴史を継承しています:
+
+- **iPhoneDevCamp** (2007 – 2009)
+- **iPadDevCamp** (2010)
+- **iOSDevCamp** (2010 – 2013)
+- **VisionDevCamp** (2024 – 2025) — Apple Vision Pro / visionOS に特化
+
+2026 年からは **XR VisionDevCamp** として、空間コンピューティング時代の **全 XR / AR / VR 対応プラットフォーム** に対象を拡大します — Apple Vision Pro、Android XR、Meta Quest、Snap Spectacles、Xreal、HTC、その他多数。
 
 ### イベント形式
 
