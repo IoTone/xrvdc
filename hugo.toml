@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://xrvdc.pages.dev/"
 title = "XR VisionDevCamp Fukuoka 2026"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
@@ -19,9 +19,12 @@ buildFuture = true
   description = "XR VisionDevCamp returns to Fukuoka in Summer 2026."
 
 [params.staging]
-  version = "0.6"
+  version = "1.1"
   eventDates = "26 – 28 June 2026"
   eventDateShort = "06.26.26"
+
+# Status labels are defined per-language under [languages.<lang>.params.statusLabels].
+# `staging` renders on /staging/* URLs, `production` renders everywhere else.
 
 [params.reveal_hugo]
   theme = "black"
@@ -39,6 +42,9 @@ buildFuture = true
     weight = 1
     [languages.en.params]
       description = "XR VisionDevCamp returns to Fukuoka in Summer 2026."
+    [languages.en.params.statusLabels]
+      staging = "STAGING"
+      production = "REGISTRATION OPEN"
     [[languages.en.menus.main]]
       identifier = "about"
       name = "About"
@@ -91,6 +97,9 @@ buildFuture = true
     weight = 2
     [languages.ja.params]
       description = "XR VisionDevCamp は 2026 年夏、福岡に帰ってきます。"
+    [languages.ja.params.statusLabels]
+      staging = "ステージング"
+      production = "申込受付中"
     [[languages.ja.menus.main]]
       identifier = "about"
       name = "概要"

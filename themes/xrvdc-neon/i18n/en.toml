@@ -10,6 +10,12 @@ other = "Schedule"
 [hackathon]
 other = "Hackathon"
 
+[hero_build_label]
+other = "BUILD"
+
+[hero_status_label]
+other = "STATUS"
+
 [organizers]
 other = "Organizers"
 

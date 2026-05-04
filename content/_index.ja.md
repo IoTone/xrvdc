@@ -3,6 +3,7 @@ title: "XR VisionDevCamp 2026"
 date: 2026-04-30T10:00:00+09:00
 description: "XR VisionDevCamp は 2026 年夏、福岡で開催されます — 6/26 – 6/28、エンジニアカフェにて。"
 layout: landing
+registrationUrl: "https://luma.com/i5gerreb"
 ---
 
 VisionDevCamp の次回開催が **福岡** にて決定しました。

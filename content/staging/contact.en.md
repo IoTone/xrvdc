@@ -1,6 +1,6 @@
 ---
 title: "Contact"
-date: 2026-04-30T10:00:00+09:00
+date: 2026-06-26T17:00:00+09:00
 ---
 
 For sponsorship enquiries, partnership proposals, press requests, or general questions:

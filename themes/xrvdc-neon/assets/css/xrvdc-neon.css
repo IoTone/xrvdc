@@ -279,6 +279,35 @@ img {
 }
 .btn--magenta:hover { background: var(--magenta); color: var(--bg); }
 
+/* Primary registration CTA — bigger, brighter, glowing */
+.hero__cta--register {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.btn--register {
+  background: var(--magenta);
+  border-color: var(--magenta);
+  color: #ffffff !important;
+  font-size: 1rem;
+  letter-spacing: 0.3em;
+  padding: 0.95rem 2rem;
+  font-weight: 700;
+  box-shadow:
+    0 0 24px rgba(255, 0, 110, 0.55),
+    inset 0 0 18px rgba(255, 255, 255, 0.05);
+  animation: register-pulse 2.4s ease-in-out infinite;
+}
+.btn--register:hover {
+  background: var(--yellow);
+  border-color: var(--yellow);
+  color: var(--bg) !important;
+  box-shadow: 0 0 32px rgba(255, 234, 0, 0.7);
+}
+@keyframes register-pulse {
+  0%, 100% { box-shadow: 0 0 24px rgba(255, 0, 110, 0.55), inset 0 0 18px rgba(255,255,255,0.05); }
+  50%      { box-shadow: 0 0 36px rgba(255, 0, 110, 0.85), inset 0 0 22px rgba(255,255,255,0.10); }
+}
+
 /* ───── content container ───── */
 .container {
   max-width: 980px;

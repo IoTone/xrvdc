@@ -5,7 +5,14 @@
   <h1>{{ .Site.Title }}</h1>
   <p class="hero__sub">// XR · Fukuoka · 2026 //</p>
   <p class="hero__when"><strong>{{ .Site.Params.staging.eventDates }}</strong> · Engineer Café</p>
-  <p class="hero__build">BUILD: <span>v{{ .Site.Params.staging.version }}</span> ░ STATUS: <span>STAGING</span></p>
+  {{ $isStaging := hasPrefix .RelPermalink ("/staging/" | relLangURL) }}
+  {{ $status := cond $isStaging .Site.Params.statusLabels.staging .Site.Params.statusLabels.production }}
+  <p class="hero__build">{{ i18n "hero_build_label" }}: <span>v{{ .Site.Params.staging.version }}</span> ░ {{ i18n "hero_status_label" }}: <span>{{ $status }}</span></p>
+  {{ with .Params.registrationUrl }}
+  <div class="hero__cta hero__cta--register">
+    <a class="btn btn--register" href="{{ . }}" target="_blank" rel="noopener">▸ {{ i18n "register" }} ↗</a>
+  </div>
+  {{ end }}
   <div class="hero__cta">
     <a class="btn" href="{{ "/about/" | relLangURL }}">{{ i18n "about" }} ▸</a>
     <a class="btn btn--magenta" href="{{ "/schedule/2026/" | relLangURL }}">{{ i18n "schedule" }} ▸</a>

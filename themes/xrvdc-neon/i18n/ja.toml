@@ -10,6 +10,12 @@ other = "スケジュール"
 [hackathon]
 other = "ハッカソン"
 
+[hero_build_label]
+other = "ビルド"
+
+[hero_status_label]
+other = "ステータス"
+
 [organizers]
 other = "主催者"
 
