@@ -303,17 +303,36 @@
     showStatus(S.shareFallback || "Image downloaded · link copied to clipboard");
   });
 
-  // Social share buttons
+  // Social share buttons — none of these endpoints accept attached images,
+  // so we pre-stage the badge: download the PNG, copy the caption, then open
+  // the platform's compose URL. The user pastes/attaches in the new tab.
   document.querySelectorAll("[data-social]").forEach(function (btn) {
-    btn.addEventListener("click", function () {
+    btn.addEventListener("click", async function () {
       const where = btn.dataset.social;
-      const text = encodeURIComponent(S.shareText || "");
-      const url = encodeURIComponent(S.shareUrl || window.location.href);
+      const shareUrl = S.shareUrl || window.location.href;
+      const shareText = S.shareText || "";
+      const text = encodeURIComponent(shareText);
+      const url = encodeURIComponent(shareUrl);
+
       let target = "";
       if (where === "x") target = "https://twitter.com/intent/tweet?text=" + text + "&url=" + url;
       else if (where === "facebook") target = "https://www.facebook.com/sharer/sharer.php?u=" + url;
-      else if (where === "linkedin") target = "https://www.linkedin.com/shareArticle?mini=true&url=" + url + "&summary=" + text;
-      if (target) window.open(target, "_blank", "noopener");
+      else if (where === "linkedin") target = "https://www.linkedin.com/sharing/share-offsite/?url=" + url;
+      if (!target) return;
+
+      // Open the compose tab synchronously (popup blockers reject delayed window.open).
+      const popup = window.open(target, "_blank", "noopener");
+
+      // Pre-stage the badge so the user can attach it in the new tab.
+      if (blob) downloadBlob();
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(shareText + " " + shareUrl);
+        }
+      } catch (err) { console.warn("Clipboard write failed:", err); }
+
+      showStatus(S.socialShareHint || "Badge downloaded · caption copied — attach the image in the new tab.");
+      if (!popup) console.warn("Popup blocked for", target);
     });
   });
 

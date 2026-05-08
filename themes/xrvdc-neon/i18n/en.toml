@@ -64,3 +64,6 @@ other = "I'm attending XR VisionDevCamp Fukuoka — 26-28 June 2026. #XRVisionDe
 [badge_share_fallback]
 other = "// Image downloaded · link copied to clipboard — paste anywhere."
 
+[badge_social_hint]
+other = "// Badge downloaded · caption copied — attach the image in the new tab."
+

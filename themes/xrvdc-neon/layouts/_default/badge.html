@@ -60,7 +60,8 @@
     urlLine: {{ "// xrvdc.pages.dev" | jsonify | safeJS }},
     nodeId: {{ printf "[ NODE_ID :: FUK_01 // %s ]" .Site.Params.staging.eventDateShort | jsonify | safeJS }},
     rec: {{ "● REC" | jsonify | safeJS }},
-    shareFallback: {{ i18n "badge_share_fallback" | jsonify | safeJS }}
+    shareFallback: {{ i18n "badge_share_fallback" | jsonify | safeJS }},
+    socialShareHint: {{ i18n "badge_social_hint" | jsonify | safeJS }}
   };
 </script>
 {{ $js := resources.Get "js/badge.js" | minify | fingerprint }}
