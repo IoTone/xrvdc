@@ -50,13 +50,13 @@
 <script>
   window.__badgeStrings = {
     shareText: {{ i18n "badge_share_text" | jsonify | safeJS }},
-    shareUrl: {{ "/staging/" | absLangURL | jsonify | safeJS }},
+    shareUrl: {{ (cond (hasPrefix .RelPermalink ("/staging/" | relLangURL)) "/staging/" "/") | absLangURL | jsonify | safeJS }},
     title: {{ "I'M ATTENDING" | jsonify | safeJS }},
     eventLine1: {{ "XR VisionDevCamp" | jsonify | safeJS }},
     eventLine2: {{ "Fukuoka · 2026" | jsonify | safeJS }},
     dateLine: {{ .Site.Params.staging.eventDates | upper | jsonify | safeJS }},
     venueLine: {{ "@ Engineer Café · CIC Fukuoka" | jsonify | safeJS }},
-    urlLine: {{ "// xr.visiondevcamp.org" | jsonify | safeJS }},
+    urlLine: {{ "// xrvdc.pages.dev" | jsonify | safeJS }},
     nodeId: {{ printf "[ NODE_ID :: FUK_01 // %s ]" .Site.Params.staging.eventDateShort | jsonify | safeJS }},
     rec: {{ "● REC" | jsonify | safeJS }}
   };
