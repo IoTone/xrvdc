@@ -61,3 +61,6 @@ other = "シェア"
 [badge_share_text]
 other = "XR VisionDevCamp 福岡に参加します！2026 年 6 月 26-28 日 #XRVisionDevCamp #VDC2026 #FukuokaXR"
 
+[badge_share_fallback]
+other = "// 画像を保存しました · リンクをクリップボードにコピー — 任意の場所に貼り付けてください。"
+

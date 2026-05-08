@@ -257,19 +257,50 @@
     a.click();
   });
 
+  const statusEl = document.getElementById("badgeStatus");
+  let statusTimer = null;
+  function showStatus(msg) {
+    if (!statusEl) return;
+    statusEl.textContent = msg;
+    if (statusTimer) clearTimeout(statusTimer);
+    statusTimer = setTimeout(function () { statusEl.textContent = ""; }, 6000);
+  }
+
+  function downloadBlob() {
+    const a = document.createElement("a");
+    a.href = canvas.toDataURL("image/png");
+    a.download = "xrvdc-fukuoka-2026.png";
+    a.click();
+  }
+
   shareBtn.addEventListener("click", async function () {
     if (!blob) return;
-    if (!navigator.canShare) {
-      alert("Web Share API not supported in this browser.");
-      return;
-    }
     const file = new File([blob], "xrvdc-fukuoka-2026.png", { type: "image/png" });
-    if (!navigator.canShare({ files: [file] })) {
-      alert("Image-file sharing is not supported here.");
-      return;
+    const shareUrl = S.shareUrl || window.location.href;
+    const shareText = S.shareText || "";
+
+    // Native Web Share with file (mobile + recent desktop Safari/Chrome)
+    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+      try {
+        await navigator.share({ text: shareText, url: shareUrl, files: [file] });
+        return;
+      } catch (err) {
+        if (err && err.name === "AbortError") return; // user cancelled
+        console.warn("Web Share failed, falling back:", err);
+      }
     }
-    try { await navigator.share({ text: S.shareText, files: [file] }); }
-    catch (err) { console.error("Share failed:", err); }
+
+    // Fallback: download image + copy text+url to clipboard
+    downloadBlob();
+    const clipText = shareText + " " + shareUrl;
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(clipText);
+      }
+    } catch (err) {
+      console.warn("Clipboard write failed:", err);
+    }
+    showStatus(S.shareFallback || "Image downloaded · link copied to clipboard");
   });
 
   // Social share buttons

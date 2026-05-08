@@ -61,3 +61,6 @@ other = "Share"
 [badge_share_text]
 other = "I'm attending XR VisionDevCamp Fukuoka — 26-28 June 2026. #XRVisionDevCamp #VDC2026 #FukuokaXR"
 
+[badge_share_fallback]
+other = "// Image downloaded · link copied to clipboard — paste anywhere."
+

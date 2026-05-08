@@ -29,6 +29,7 @@
       <button class="btn btn--magenta" id="badgeDownload" type="button" disabled>▾ {{ i18n "badge_button_download" }}</button>
       <button class="btn" id="badgeShare" type="button" disabled>↗ {{ i18n "badge_button_share" }}</button>
     </div>
+    <p class="badge-status" id="badgeStatus" role="status" aria-live="polite"></p>
   </form>
 
   <div class="badge-preview">
@@ -58,7 +59,8 @@
     venueLine: {{ "@ Engineer Café · CIC Fukuoka" | jsonify | safeJS }},
     urlLine: {{ "// xrvdc.pages.dev" | jsonify | safeJS }},
     nodeId: {{ printf "[ NODE_ID :: FUK_01 // %s ]" .Site.Params.staging.eventDateShort | jsonify | safeJS }},
-    rec: {{ "● REC" | jsonify | safeJS }}
+    rec: {{ "● REC" | jsonify | safeJS }},
+    shareFallback: {{ i18n "badge_share_fallback" | jsonify | safeJS }}
   };
 </script>
 {{ $js := resources.Get "js/badge.js" | minify | fingerprint }}
