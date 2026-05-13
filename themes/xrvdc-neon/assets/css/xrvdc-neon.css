@@ -916,3 +916,90 @@ button[data-xr-overlay], #VRButton, #ARButton {
   .hero { padding: 4rem 1rem 3rem; }
   .kana { display: none; }
 }
+
+/* ───── news (blog summary list) ───── */
+.news-list {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.news-list .news-item {
+  margin: 0;
+  padding: 0;
+}
+.news-list .news-item::before { display: none; }
+.news-item article {
+  border: 1px solid var(--line-soft);
+  border-left: 2px solid var(--magenta);
+  padding: 1.1rem 1.2rem 1.2rem;
+  background: rgba(255, 234, 0, 0.015);
+}
+.news-item article:hover {
+  border-left-color: var(--yellow);
+  background: rgba(255, 234, 0, 0.04);
+}
+.news-item__meta {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  color: var(--green);
+  margin-bottom: 0.4rem;
+}
+.news-item__tag {
+  color: var(--magenta);
+  border: 1px solid var(--magenta);
+  padding: 0.05rem 0.45rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+}
+.news-item__title {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.2rem, 2.4vw, 1.55rem);
+  line-height: 1.25;
+}
+.news-item__title a {
+  color: var(--yellow);
+  border: none;
+  text-decoration: none;
+}
+.news-item__title a:hover {
+  color: var(--ink);
+  text-shadow: 0 0 8px var(--magenta);
+}
+.news-item__summary {
+  margin: 0.3rem 0 0.7rem;
+  color: var(--ink);
+  line-height: 1.55;
+}
+.news-item__more {
+  display: inline-block;
+  color: var(--cyan);
+  border: none;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+}
+.news-item__more:hover { color: var(--yellow); }
+
+/* news single post */
+.news-single__body { margin-top: 1.5rem; }
+.news-back {
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--line);
+  font-family: "Share Tech Mono", monospace;
+  letter-spacing: 0.1em;
+}
+.news-back a {
+  color: var(--magenta);
+  border: none;
+  text-decoration: none;
+}
+.news-back a:hover { color: var(--yellow); }

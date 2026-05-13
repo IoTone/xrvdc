@@ -1,0 +1,18 @@
+{{ define "main" }}
+{{ $isStaging := hasPrefix .RelPermalink ("/staging/" | relLangURL) }}
+{{ $newsIndex := cond $isStaging ("/staging/news/" | relLangURL) ("/news/" | relLangURL) }}
+<article class="container brackets news-single">
+  <span class="br-tr"></span><span class="br-bl"></span>
+  <header class="page-header">
+    <span class="page-header__id">// {{ .Date.Format "2006.01.02" }}</span>
+    <h1>{{ .Title }}</h1>
+    <span class="page-header__ts">{{ .Date.Format "15:04" }} JST</span>
+  </header>
+  <div class="prose news-single__body">
+    {{ .Content }}
+  </div>
+  <p class="news-back">
+    <a href="{{ $newsIndex }}">// {{ i18n "news_back" }}</a>
+  </p>
+</article>
+{{ end }}

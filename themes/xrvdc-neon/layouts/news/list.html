@@ -1,0 +1,34 @@
+{{ define "main" }}
+<div class="container brackets">
+  <span class="br-tr"></span><span class="br-bl"></span>
+  <header class="page-header">
+    <span class="page-header__id">// FEED</span>
+    <h1>{{ .Title }}</h1>
+    <span class="page-header__ts">{{ .Date.Format "2006.01.02" }}</span>
+  </header>
+
+  {{ with .Content }}
+    <div class="prose">{{ . }}</div>
+  {{ end }}
+
+  {{ if .Pages }}
+    <ul class="news-list">
+      {{ range .Pages.ByDate.Reverse }}
+        <li class="news-item">
+          <article>
+            <div class="news-item__meta">
+              <span class="news-item__date">// {{ .Date.Format "2006.01.02" }}</span>
+              {{ with .Params.tag }}<span class="news-item__tag">{{ . }}</span>{{ end }}
+            </div>
+            <h2 class="news-item__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            {{ $summary := .Params.summary }}
+            {{ if not $summary }}{{ $summary = .Summary | plainify | truncate 280 }}{{ end }}
+            <p class="news-item__summary">{{ $summary }}</p>
+            <a class="news-item__more" href="{{ .RelPermalink }}">{{ i18n "news_read_more" }}</a>
+          </article>
+        </li>
+      {{ end }}
+    </ul>
+  {{ end }}
+</div>
+{{ end }}

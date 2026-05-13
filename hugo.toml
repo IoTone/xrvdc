@@ -57,6 +57,11 @@ buildFuture = true
       pageRef = "/schedule/2026/"
       weight = 20
     [[languages.en.menus.main]]
+      identifier = "news"
+      name = "News"
+      pageRef = "/news/"
+      weight = 21
+    [[languages.en.menus.main]]
       identifier = "hackathon"
       name = "Hackathon"
       pageRef = "/hackathon/"
@@ -112,6 +117,11 @@ buildFuture = true
       name = "スケジュール"
       pageRef = "/schedule/2026/"
       weight = 20
+    [[languages.ja.menus.main]]
+      identifier = "news"
+      name = "ニュース"
+      pageRef = "/news/"
+      weight = 21
     [[languages.ja.menus.main]]
       identifier = "hackathon"
       name = "ハッカソン"

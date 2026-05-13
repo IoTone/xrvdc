@@ -34,8 +34,56 @@ if (preview2DBtn) {
   });
 }
 
-// ───── renderer / scene / camera ─────
-const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, preserveDrawingBuffer: true });
+// ───── WebGL probe + renderer ─────
+// Some environments (hardware acceleration disabled, WebGL blocked, context
+// limit exhausted across tabs) make canvas.getContext('webgl2') return null
+// and THREE.WebGLRenderer throws "Cannot get WebGL context". Detect this up
+// front, expose a clear message + open the 2D fallback menu instead of
+// leaving the page blank.
+function probeWebGL() {
+  if (!window.WebGL2RenderingContext && !window.WebGLRenderingContext) {
+    return { ok: false, reason: "this browser does not support WebGL" };
+  }
+  try {
+    const probe = document.createElement("canvas");
+    const ctx = probe.getContext("webgl2") || probe.getContext("webgl");
+    if (!ctx) {
+      return { ok: false, reason: "WebGL is blocked or hardware acceleration is disabled" };
+    }
+    // Force-release the probe so we don't burn a context slot.
+    const lose = ctx.getExtension && ctx.getExtension("WEBGL_lose_context");
+    if (lose) lose.loseContext();
+    return { ok: true };
+  } catch (e) {
+    return { ok: false, reason: (e && e.message) || String(e) };
+  }
+}
+
+function showFallbackMenu() {
+  // Open the <details> fallback menu in the CTA so users see real links.
+  const menu = document.querySelector(".xr-cta__menu");
+  if (menu) menu.open = true;
+  if (preview2DBtn) preview2DBtn.disabled = true;
+  if (startARBtn) startARBtn.disabled = true;
+  if (startVRBtn) startVRBtn.disabled = true;
+  if (canvas) canvas.style.display = "none";
+}
+
+const probe = probeWebGL();
+if (!probe.ok) {
+  showErr("WebGL unavailable (" + probe.reason + "). Try a hard reload (Cmd+Shift+R) or restart your browser. The 2D menu below still works.");
+  showFallbackMenu();
+  throw new Error("WebGL probe failed: " + probe.reason);
+}
+
+let renderer;
+try {
+  renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, preserveDrawingBuffer: true });
+} catch (err) {
+  showErr("WebGL renderer could not start (" + (err.message || err) + "). Try Cmd+Shift+R or restart the browser. The 2D menu below still works.");
+  showFallbackMenu();
+  throw err;
+}
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.outputColorSpace = THREE.SRGBColorSpace;
@@ -211,8 +259,9 @@ renderer.setAnimationLoop((t) => {
   // Anchor octagon in front of XR user once camera matrix is valid
   maybeAnchorRoot();
 
-  // Idle auto-rotation when no panel open
-  if (!isPanelOpen) {
+  // Idle auto-rotation when no panel open and no press in progress
+  // (pausing during press prevents the face slipping out from under the click).
+  if (!isPanelOpen && !inputs.isAnyLocked()) {
     oct.group.rotation.y += 0.0025;
   }
   // Logo slow spin

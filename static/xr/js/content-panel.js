@@ -85,7 +85,9 @@ export function buildContentPanel() {
     margin: 0.005,
   });
   const bodyText = new ThreeMeshUI.Text({ content: "...", fontColor: hex(PAL.amber), fontSize: 0.026 });
+  const routeText = new ThreeMeshUI.Text({ content: "", fontColor: hex(PAL.warmEdge), fontSize: 0.020 });
   body.add(bodyText);
+  body.add(routeText);
   container.add(body);
 
   // Footer hint — link instruction
@@ -126,7 +128,9 @@ export function buildContentPanel() {
     closeBtn,
     setContent(item) {
       headerText.set({ content: "// " + item.index + " :: " + item.title });
-      bodyText.set({ content: item.summary });
+      // Trailing newline pushes the route onto its own line in the inline run.
+      bodyText.set({ content: item.summary + "\n\n" });
+      routeText.set({ content: "// ROUTE :: " + (item.href || "/") });
       ThreeMeshUI.update();
     },
   };

@@ -58,8 +58,31 @@ export class HandInputs {
     this.hands.push(hand);
 
     canvas.addEventListener("pointermove", (e) => this._onMouseMove(e, hand));
-    canvas.addEventListener("pointerdown", () => this._onSelectStart(hand));
-    canvas.addEventListener("pointerup",   () => this._onSelectEnd(hand));
+    // Refresh NDC + hover synchronously around press/release so first-tap
+    // (no prior pointermove) and touch devices register clicks reliably.
+    canvas.addEventListener("pointerdown", (e) => {
+      this._onMouseMove(e, hand);
+      this._tickHand(hand);
+      this._onSelectStart(hand);
+    });
+    canvas.addEventListener("pointerup", (e) => {
+      this._onMouseMove(e, hand);
+      this._tickHand(hand);
+      this._onSelectEnd(hand);
+    });
+  }
+
+  // Returns true if any hand is currently locked on a target (for pausing
+  // background animations during a press).
+  isAnyLocked() {
+    for (const h of this.hands) if (h.locked) return true;
+    return false;
+  }
+
+  // Returns true if any hand is hovering a target.
+  isAnyHovering() {
+    for (const h of this.hands) if (h.currentHover) return true;
+    return false;
   }
 
   _onMouseMove(e, hand) {
@@ -97,38 +120,41 @@ export class HandInputs {
     hand.lockedTarget = null;
   }
 
-  update() {
+  _tickHand(hand) {
     const now = performance.now();
-    for (const hand of this.hands) {
-      if (!this._setRayFromController(hand)) continue;
-      const intersects = this.raycaster.intersectObjects(this.targets, false);
-      const hit = intersects.length > 0 ? intersects[0] : null;
-      const target = hit ? hit.object : null;
+    if (!this._setRayFromController(hand)) return null;
+    const intersects = this.raycaster.intersectObjects(this.targets, false);
+    const hit = intersects.length > 0 ? intersects[0] : null;
+    const target = hit ? hit.object : null;
 
-      if (target !== hand.currentHover) {
-        // debounce loss-of-hover only
-        if (hand.currentHover && now - hand.lastHoverChange < HOVER_DEBOUNCE_MS && !target) {
-          // ignore — keep current hover
-        } else {
-          hand.currentHover = target;
-          hand.lastHoverChange = now;
-          if (this.onHoverChange) this.onHoverChange(target, hand);
-        }
-      }
-
-      // Update reticle + beam visuals
-      if (hit) {
-        hand.reticle.position.copy(hit.point);
-        hand.reticle.visible = true;
-        if (hand.beam) {
-          hand.beam.scale.z = hit.distance;
-          hand.beam.visible = true;
-        }
+    if (target !== hand.currentHover) {
+      // debounce loss-of-hover only
+      if (hand.currentHover && now - hand.lastHoverChange < HOVER_DEBOUNCE_MS && !target) {
+        // ignore — keep current hover
       } else {
-        hand.reticle.visible = false;
-        if (hand.beam) hand.beam.visible = false;
+        hand.currentHover = target;
+        hand.lastHoverChange = now;
+        if (this.onHoverChange) this.onHoverChange(target, hand);
       }
     }
+
+    // Update reticle + beam visuals
+    if (hit) {
+      hand.reticle.position.copy(hit.point);
+      hand.reticle.visible = true;
+      if (hand.beam) {
+        hand.beam.scale.z = hit.distance;
+        hand.beam.visible = true;
+      }
+    } else {
+      hand.reticle.visible = false;
+      if (hand.beam) hand.beam.visible = false;
+    }
+    return hit;
+  }
+
+  update() {
+    for (const hand of this.hands) this._tickHand(hand);
   }
 }
 

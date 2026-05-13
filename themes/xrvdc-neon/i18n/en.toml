@@ -67,3 +67,9 @@ other = "// Image downloaded · link copied to clipboard — paste anywhere."
 [badge_social_hint]
 other = "// Badge downloaded · caption copied — attach the image in the new tab."
 
+[news_read_more]
+other = "▸ Read more"
+
+[news_back]
+other = "BACK TO NEWS"
+
