@@ -152,7 +152,14 @@ img {
   border: 1px solid transparent;
   border-bottom: 1px solid transparent;
   transition: all 120ms;
+  white-space: nowrap;
 }
+/* CJK glyphs are already wide; the global 0.18em tracking pushes labels
+   over two lines. Tighten it for Japanese and trim per-link padding. */
+html[lang^="ja"] .site-nav { letter-spacing: 0.06em; }
+html[lang^="ja"] .site-nav__menu { gap: 0.1rem; }
+html[lang^="ja"] .site-nav__menu a { padding: 0.4rem 0.55rem; }
+html[lang^="ja"] .site-nav__brand { white-space: nowrap; }
 .site-nav__menu a:hover,
 .site-nav__menu a.active {
   color: var(--yellow);

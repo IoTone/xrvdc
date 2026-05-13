@@ -114,7 +114,7 @@ buildFuture = true
       weight = 10
     [[languages.ja.menus.main]]
       identifier = "schedule"
-      name = "スケジュール"
+      name = "予定"
       pageRef = "/schedule/2026/"
       weight = 20
     [[languages.ja.menus.main]]
@@ -134,12 +134,12 @@ buildFuture = true
       weight = 25
     [[languages.ja.menus.main]]
       identifier = "badge"
-      name = "バッジ作成"
+      name = "バッジ"
       pageRef = "/badge/"
       weight = 27
     [[languages.ja.menus.main]]
       identifier = "organizers"
-      name = "主催者"
+      name = "主催"
       pageRef = "/organizers/"
       weight = 30
     [[languages.ja.menus.main]]
@@ -149,7 +149,7 @@ buildFuture = true
       weight = 40
     [[languages.ja.menus.main]]
       identifier = "contact"
-      name = "お問い合わせ"
+      name = "連絡"
       pageRef = "/contact/"
       weight = 50
     [[languages.ja.menus.main]]
