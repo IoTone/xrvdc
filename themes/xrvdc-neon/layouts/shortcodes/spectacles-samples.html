@@ -1,0 +1,27 @@
+{{- $d := site.Data.spectacles_samples -}}
+{{- $tree := $d.tree -}}
+{{- $raw := $d.raw -}}
+{{- $ja := eq .Page.Language.Lang "ja" -}}
+{{- range $d.categories }}
+  {{- $catName := cond $ja (.name_ja | default .name) .name -}}
+  {{- $catBlurb := cond $ja (.blurb_ja | default .blurb) .blurb -}}
+  <section class="sample-cat">
+    <h3>{{ $catName }}</h3>
+    <p class="sample-cat__blurb">{{ $catBlurb }}</p>
+    <div class="sample-grid">
+      {{- range .samples }}
+        {{- $dirURL := printf "%s/%s" $tree (replace .dir " " "%20") -}}
+        {{- $gifURL := printf "%s/%s" $raw (replace .gif " " "%20") -}}
+        {{- $desc := cond $ja (.desc_ja | default .desc) .desc -}}
+        <div class="sample-card">
+          <h4 class="sample-card__name">
+            <a href="{{ $dirURL }}" target="_blank" rel="noopener">{{ .name }}</a>
+          </h4>
+          <p class="sample-card__desc">{{ $desc }}</p>
+          <p class="sample-card__tags">{{ .tags }}</p>
+          <a class="sample-card__demo" href="{{ $gifURL }}" target="_blank" rel="noopener">&#9656; {{ i18n "samples_demo_gif" }}</a>
+        </div>
+      {{- end }}
+    </div>
+  </section>
+{{- end }}
