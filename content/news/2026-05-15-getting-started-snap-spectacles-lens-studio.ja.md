@@ -74,6 +74,6 @@ Lens Studio が初めてなら、**Getting Started** カテゴリから始めま
 - [空間デザインガイドライン](https://developers.snap.com/spectacles/best-practices/design-for-spectacles/introduction-to-spatial-design)
 - [Spectacles-Sample リポジトリ](https://github.com/Snapchat/Spectacles-Sample)
 - [ハッカソン詳細](/hackathon/) — 参加資格、チーム編成、AI ポリシー
-- [Luma で参加申込](https://luma.com/i5gerreb)
+- [Luma で参加申し込み](https://luma.com/i5gerreb)
 
 ネイティブプラットフォームシリーズ次回は、別のヘッドセットとそのスタータープロジェクトを取り上げます。ご質問は [お問い合わせ](/contact/) ページからどうぞ。

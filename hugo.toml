@@ -106,7 +106,7 @@ buildFuture = true
       venue = "エンジニアカフェ · CIC (福岡ワンビル)"
     [languages.ja.params.statusLabels]
       staging = "ステージング"
-      production = "申込受付中"
+      production = "申し込み受付中"
     [[languages.ja.menus.main]]
       identifier = "about"
       name = "概要"
