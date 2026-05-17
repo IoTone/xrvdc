@@ -1,0 +1,99 @@
+#+TITLE: XR VisionDevCamp — News Article Agenda
+#+STARTUP: overview
+#+TODO: IDEA(i) STAGED(s) | PUBLISHED(p) DROPPED(x)
+#+CATEGORY: News
+
+# Cadence: one article published per day.
+# Workflow per item:
+#   IDEA       — backlog; just a topic + source link.
+#   STAGED     — bilingual pages written into content/staging/news/ ONLY,
+#                awaiting review (visible at /staging/news/<slug>/).
+#   PUBLISHED  — promoted: staging files copied to content/news/, set CLOSED.
+#   DROPPED    — abandoned idea.
+# To publish: ask "publish <topic>"; the STAGED item with the nearest
+# SCHEDULED date is promoted to production and flipped to PUBLISHED.
+
+* PUBLISHED Building for Meta Ray-Ban Display Glasses (Wearables Web App Toolkit)
+  CLOSED: [2026-05-17 Sun] SCHEDULED: <2026-05-17 Sun>
+  :PROPERTIES:
+  :SERIES:     Native-platform starter series (part 2)
+  :TAG:        STARTER
+  :SLUG_EN:    meta-wearables-webapp-sdk
+  :SLUG_JA:    meta-wearables-webapp-sdk-入門
+  :SOURCE:     https://github.com/facebookincubator/meta-wearables-webapp
+  :STAGED_EN:  content/staging/news/2026-05-17-meta-wearables-webapp-sdk.en.md
+  :STAGED_JA:  content/staging/news/2026-05-17-meta-wearables-webapp-sdk.ja.md
+  :PUBLISHED_EN: content/news/2026-05-17-meta-wearables-webapp-sdk.en.md
+  :PUBLISHED_JA: content/news/2026-05-17-meta-wearables-webapp-sdk.ja.md
+  :END:
+  Plain HTML/CSS/JS web apps for Meta Ray-Ban Display glasses via the
+  AI-assisted toolkit (Claude Code / Codex / Cursor / Copilot): display +
+  D-pad + performance constraints, quick start, deploy to glasses. Framed
+  as part 2 of the native-platform starter series (follows Spectacles).
+
+* STAGED 3D Gaussian Splatting from a 360° camera — capture-to-scene workflow
+  SCHEDULED: <2026-05-18 Mon>
+  :PROPERTIES:
+  :TAG:        WORKFLOW
+  :SLUG_EN:    3dgs-360-camera-workflow
+  :SLUG_JA:    3dgs-360-カメラ-ワークフロー
+  :SOURCE:     https://qiita.com/Tks_Yoshinaga/items/354e9082bd607f3cefee
+  :ATTRIBUTION: Derivative summary of @Tks_Yoshinaga's Qiita article — credited + linked in-body
+  :STAGED_EN:  content/staging/news/2026-05-18-3dgs-360-camera-workflow.en.md
+  :STAGED_JA:  content/staging/news/2026-05-18-3dgs-360-camera-workflow.ja.md
+  :END:
+  Summarized 360°-video 3DGS pipeline: Insta360 capture → 360° Gaussian
+  (SphereSFM) → LichtFeld Studio training → .ply export → SuperSplat.
+  Highlights every tool/repo + the licensing & crash gotchas.
+
+* STAGED A visionOS On-Ramp — Satoshi Hattori's 30-Days Challenge
+  SCHEDULED: <2026-05-19 Tue>
+  :PROPERTIES:
+  :TAG:        STARTER
+  :SLUG_EN:    visionos-2-30-days
+  :SLUG_JA:    visionos-2-30日チャレンジ
+  :SOURCE:     https://github.com/satoshi0212/visionOS_2_30Days
+  :ATTRIBUTION: Community spotlight — Satoshi Hattori (@satoshi0212), VisionDevCamp Tokyo 2024 presenter; credited + linked in-body
+  :STAGED_EN:  content/staging/news/2026-05-19-visionos-2-30-days.en.md
+  :STAGED_JA:  content/staging/news/2026-05-19-visionos-2-30-days.ja.md
+  :END:
+  Apple Vision Pro / visionOS starter via a 30-day challenge repo of
+  small, Simulator-friendly samples. Community tie-in: the author is a
+  former VisionDevCamp Tokyo 2024 presenter.
+
+* STAGED A-Frame — the Fastest Way into WebXR (Quest 3 & Vision Pro)
+  SCHEDULED: <2026-05-20 Wed>
+  :PROPERTIES:
+  :TAG:        STARTER
+  :SLUG_EN:    aframe-webxr-starter
+  :SLUG_JA:    aframe-webxr-入門
+  :SOURCE:     https://github.com/aframevr/aframe
+  :STAGED_EN:  content/staging/news/2026-05-20-aframe-webxr-starter.en.md
+  :STAGED_JA:  content/staging/news/2026-05-20-aframe-webxr-starter.ja.md
+  :END:
+  One-file, no-build WebXR via A-Frame; honest device targeting —
+  Quest 3 + Vision Pro via WebXR, Spectacles redirected to Lens Studio
+  (cross-links the Spectacles article).
+
+* STAGED Giving Meta Ray-Ban Glasses Precise Location — MultiSet VPS
+  SCHEDULED: <2026-05-21 Thu>
+  :PROPERTIES:
+  :TAG:        SHOWCASE
+  :SLUG_EN:    multiset-vps-meta-glasses
+  :SLUG_JA:    multiset-vps-meta-glasses-入門
+  :SOURCE:     https://github.com/MultiSet-AI/wearable-vps-samples
+  :ATTRIBUTION: Surfaced by Nikhil Sawlani (MultiSet AI); credited in-body. SDK is proprietary (noted in article).
+  :STAGED_EN:  content/staging/news/2026-05-21-multiset-vps-meta-glasses.en.md
+  :STAGED_JA:  content/staging/news/2026-05-21-multiset-vps-meta-glasses.ja.md
+  :END:
+  Capability spotlight: MultiSet VPS + Meta Wearables DAT SDK on
+  Ray-Ban glasses — 6-DOF localization, audio turn-by-turn, multiplayer.
+  Cross-links the Meta Ray-Ban Display article.
+
+* Backlog
+  Add new topics below as IDEA headlines. On request they'll be
+  scheduled (one/day, after the last scheduled item), researched,
+  and drafted into staging.
+
+** IDEA Add a post about the workflow with AI to generate 3D worlds using image-blaster : https://github.com/neilsonnn/image-blaster  
+** IDEA <add the next topic here>
