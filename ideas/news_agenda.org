@@ -65,8 +65,8 @@
   small, Simulator-friendly samples. Community tie-in: the author is a
   former VisionDevCamp Tokyo 2024 presenter.
 
-* STAGED A-Frame — the Fastest Way into WebXR (Quest 3 & Vision Pro)
-  SCHEDULED: <2026-05-20 Wed>
+* PUBLISHED A-Frame — the Fastest Way into WebXR (Quest 3 & Vision Pro)
+  CLOSED: [2026-05-18 Mon] SCHEDULED: <2026-05-20 Wed>
   :PROPERTIES:
   :TAG:        STARTER
   :SLUG_EN:    aframe-webxr-starter
@@ -74,6 +74,8 @@
   :SOURCE:     https://github.com/aframevr/aframe
   :STAGED_EN:  content/staging/news/2026-05-20-aframe-webxr-starter.en.md
   :STAGED_JA:  content/staging/news/2026-05-20-aframe-webxr-starter.ja.md
+  :PUBLISHED_EN: content/news/2026-05-20-aframe-webxr-starter.en.md
+  :PUBLISHED_JA: content/news/2026-05-20-aframe-webxr-starter.ja.md
   :END:
   One-file, no-build WebXR via A-Frame; honest device targeting —
   Quest 3 + Vision Pro via WebXR, Spectacles redirected to Lens Studio
