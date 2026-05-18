@@ -1,9 +1,9 @@
 ---
-title: "A-Frame：WebXR への最短ルート（Quest 3 & Vision Pro）"
+title: "A-Frame：WebXR への最短ルート（Quest 3・Vision Pro・Spectacles）"
 date: 2026-05-20T10:00:00+09:00
 slug: "aframe-webxr-入門"
 tag: "スターター"
-summary: "HTML 1 ファイル、ビルド不要、ヘッドセット横断で動作。A-Frame の WebXR スターターと、Meta Quest 3・Apple Vision Pro をターゲットにする実践ガイド、そして Spectacles が別ルートである理由。"
+summary: "HTML 1 ファイル、ビルド不要、ヘッドセット横断で動作。A-Frame の WebXR スターターと、Meta Quest 3・Apple Vision Pro・Snap Spectacles をターゲットにする実践ガイド。"
 ---
 
 **ツールチェーン不要** で動くヘッドセットデモが欲しいなら、**A-Frame** による WebXR が最短ルートです。three.js + WebXR の上に乗った宣言的な Web フレームワークで、HTML ライクなタグでシーンを記述すれば、あとはブラウザがヘッドセットを処理します。
@@ -38,19 +38,19 @@ WebXR には **HTTPS** が必須です。静的ホスティング（GitHub Pages
 
 - **Meta Quest 3** — Meta Quest Browser は WebXR をフルサポート：`immersive-vr`、`immersive-ar`（パススルー）、ハンドトラッキング。URL を開いて **Enter VR/AR** をタップ。最もスムーズなターゲット。
 - **Apple Vision Pro** — visionOS の Safari が WebXR（`immersive-vr`）をサポート、手／transient-pointer 入力に対応。Quest より新しい対応のため、**Enter VR** の動作を早めに確認し、インタラクションはシンプルに。
-- **Snap Spectacles** — *別ルート。* Spectacles は汎用 WebXR ブラウザを持たず、Lens Studio の Lens を実行します。Spectacles 向けには Lens Studio を使用してください — [Spectacles & Lens Studio スターター](/ja/news/snap-spectacles-lens-studio-入門/) を参照。なお A-Frame の同一コードベースは、同じ URL で Quest 3 + Vision Pro をカバーします。
+- **Snap Spectacles** — **[Spectacles Browser Lens](https://developers.snap.com/spectacles/about-spectacles-features/webxr)** 経由でサポートされます。WebXR アプリは Lens Studio 不要でそのブラウザ上で直接、`immersive-ar` モード・**ハンドトラッキング** を主入力として動作します。Snap のドキュメント上の注意点：ヒットテストは現在エミュレーション（ネイティブ対応は将来予定）、WebXR ゲームパッドは実用的でないため、手の入力前提で設計してください。より深い *ネイティブ* 連携には Lens Studio ルートも選べます — [Spectacles & Lens Studio スターター](/ja/news/snap-spectacles-lens-studio-入門/) を参照。
 
 ## なぜ 2.5 日間のハッカソンに向くのか
 
 - **ビルド不要** — HTML を編集してヘッドセットのブラウザを更新、数秒で反復。
-- **1 コードベースで 2 ヘッドセット** — 同じ URL が Quest 3 と Vision Pro で動作。
+- **1 コードベースで 3 ターゲット** — 同じ URL が Quest 3・Vision Pro・Spectacles で動作（上記の各プラットフォームの入力／モードに留意）。
 - **巨大なコンポーネント群** — エンジンコードを書かず、物理・ネットワーク・コントローラを追加。
 
 ## 関連リンク
 
 - [A-Frame ドキュメント](https://aframe.io/docs/) ・ [aframe-boilerplate](https://github.com/aframevr/aframe-boilerplate)
 - [WebXR Device API](https://immersiveweb.dev/)
-- Spectacles 向けはこちら：[Snap Spectacles と Lens Studio](/ja/news/snap-spectacles-lens-studio-入門/)
+- Spectacles：[WebXR / Browser Lens（Snap 公式）](https://developers.snap.com/spectacles/about-spectacles-features/webxr) ・ [Spectacles と Lens Studio（ネイティブ）](/ja/news/snap-spectacles-lens-studio-入門/)
 - [ハッカソン詳細](/hackathon/) — 参加資格、チーム編成、AI ポリシー
 - [Luma で参加申し込み](https://luma.com/i5gerreb)
 
