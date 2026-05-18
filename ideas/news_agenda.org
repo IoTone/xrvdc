@@ -31,8 +31,8 @@
   D-pad + performance constraints, quick start, deploy to glasses. Framed
   as part 2 of the native-platform starter series (follows Spectacles).
 
-* STAGED 3D Gaussian Splatting from a 360° camera — capture-to-scene workflow
-  SCHEDULED: <2026-05-18 Mon>
+* PUBLISHED 3D Gaussian Splatting from a 360° camera — capture-to-scene workflow
+  CLOSED: [2026-05-17 Sun] SCHEDULED: <2026-05-18 Mon>
   :PROPERTIES:
   :TAG:        WORKFLOW
   :SLUG_EN:    3dgs-360-camera-workflow
@@ -41,13 +41,15 @@
   :ATTRIBUTION: Derivative summary of @Tks_Yoshinaga's Qiita article — credited + linked in-body
   :STAGED_EN:  content/staging/news/2026-05-18-3dgs-360-camera-workflow.en.md
   :STAGED_JA:  content/staging/news/2026-05-18-3dgs-360-camera-workflow.ja.md
+  :PUBLISHED_EN: content/news/2026-05-18-3dgs-360-camera-workflow.en.md
+  :PUBLISHED_JA: content/news/2026-05-18-3dgs-360-camera-workflow.ja.md
   :END:
   Summarized 360°-video 3DGS pipeline: Insta360 capture → 360° Gaussian
   (SphereSFM) → LichtFeld Studio training → .ply export → SuperSplat.
   Highlights every tool/repo + the licensing & crash gotchas.
 
-* STAGED A visionOS On-Ramp — Satoshi Hattori's 30-Days Challenge
-  SCHEDULED: <2026-05-19 Tue>
+* PUBLISHED A visionOS On-Ramp — Satoshi Hattori's 30-Days Challenge
+  CLOSED: [2026-05-17 Sun] SCHEDULED: <2026-05-19 Tue>
   :PROPERTIES:
   :TAG:        STARTER
   :SLUG_EN:    visionos-2-30-days
@@ -56,6 +58,8 @@
   :ATTRIBUTION: Community spotlight — Satoshi Hattori (@satoshi0212), VisionDevCamp Tokyo 2024 presenter; credited + linked in-body
   :STAGED_EN:  content/staging/news/2026-05-19-visionos-2-30-days.en.md
   :STAGED_JA:  content/staging/news/2026-05-19-visionos-2-30-days.ja.md
+  :PUBLISHED_EN: content/news/2026-05-19-visionos-2-30-days.en.md
+  :PUBLISHED_JA: content/news/2026-05-19-visionos-2-30-days.ja.md
   :END:
   Apple Vision Pro / visionOS starter via a 30-day challenge repo of
   small, Simulator-friendly samples. Community tie-in: the author is a
@@ -90,10 +94,25 @@
   Ray-Ban glasses — 6-DOF localization, audio turn-by-turn, multiplayer.
   Cross-links the Meta Ray-Ban Display article.
 
+* STAGED Image-blaster → engine → headset (AI worlds on Quest 3 & Vision Pro)
+  SCHEDULED: <2026-05-22 Fri>
+  :PROPERTIES:
+  :TAG:        WORKFLOW
+  :SLUG_EN:    image-blaster-xr-pipeline
+  :SLUG_JA:    image-blaster-xr-パイプライン
+  :SOURCE:     https://github.com/neilsonnn/image-blaster
+  :ANGLE:      Path B (native engine route) per user choice — Unity/Unreal/Godot import, build to Quest 3 / AVP
+  :STAGED_EN:  content/staging/news/2026-05-22-image-blaster-xr-pipeline.en.md
+  :STAGED_JA:  content/staging/news/2026-05-22-image-blaster-xr-pipeline.ja.md
+  :END:
+  image-blaster (Claude skillset) image→world: .glb/.obj + .spz splat +
+  .mp3. Engine pipeline to headsets; honest splat caveats (no native GS
+  in RealityKit/PolySpatial; mesh-only fallback for AVP). Cross-links
+  3DGS, A-Frame/WebXR, visionOS articles.
+
 * Backlog
   Add new topics below as IDEA headlines. On request they'll be
   scheduled (one/day, after the last scheduled item), researched,
   and drafted into staging.
 
-** IDEA Add a post about the workflow with AI to generate 3D worlds using image-blaster : https://github.com/neilsonnn/image-blaster  
 ** IDEA <add the next topic here>
