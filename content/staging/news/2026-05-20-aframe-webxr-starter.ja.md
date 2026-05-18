@@ -34,7 +34,7 @@ A-Frame は **Enter VR / Enter AR** ボタンを自動的に挿入します。�
 
 ## デプロイとデバイス対応
 
-WebXR には **HTTPS** が必須です。静的ホスティング（GitHub Pages、Vercel、Glitch）にファイルを置き、ヘッドセットのブラウザで URL を開きます：
+WebXR には **HTTPS** が必須です。静的ホスティング（GitHub Pages、Vercel、Cloudflare Pages）にデプロイするか、より素早い反復にはローカルで編集を続けつつ、トンネルで開発サーバーを公開 HTTPS URL として公開します — [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/)、[ngrok](https://ngrok.com/)、または [Tailscale Funnel](https://tailscale.com/kb/1223/funnel)。その URL をヘッドセットのブラウザで開きます：
 
 - **Meta Quest 3** — Meta Quest Browser は WebXR をフルサポート：`immersive-vr`、`immersive-ar`（パススルー）、ハンドトラッキング。URL を開いて **Enter VR/AR** をタップ。最もスムーズなターゲット。
 - **Apple Vision Pro** — visionOS の Safari が WebXR（`immersive-vr`）をサポート、手／transient-pointer 入力に対応。Quest より新しい対応のため、**Enter VR** の動作を早めに確認し、インタラクションはシンプルに。
