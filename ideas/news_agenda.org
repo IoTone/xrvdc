@@ -117,4 +117,7 @@
   scheduled (one/day, after the last scheduled item), researched,
   and drafted into staging.
 
+** We need to get a good news post for starting out with Godot and XR, likely for Meta Quest 3 and possibly AVP if it is supported.  https://docs.godotengine.org/en/stable/tutorials/xr/setting_up_xr.html
+** We need an article about BabylonJS and use for WebXR starter applications. https://www.babylonjs.com/
+
 ** IDEA <add the next topic here>
