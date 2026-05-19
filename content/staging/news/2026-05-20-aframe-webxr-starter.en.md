@@ -34,7 +34,15 @@ A-Frame automatically injects an **Enter VR / Enter AR** button. For a structure
 
 ## Deploy & target devices
 
-WebXR requires **HTTPS**. Either deploy to a static host (GitHub Pages, Vercel, Cloudflare Pages), or — better for fast iteration — keep editing locally and expose your dev server over a public HTTPS URL with a tunnel: [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/), [ngrok](https://ngrok.com/), or [Tailscale Funnel](https://tailscale.com/kb/1223/funnel). Open that URL in the headset's browser:
+WebXR requires **HTTPS**. Either deploy to a static host (GitHub Pages, Vercel, Cloudflare Pages), or — better for fast iteration — keep editing locally and expose your dev server over a public HTTPS URL with a tunnel: [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/), [ngrok](https://ngrok.com/), or [Tailscale Funnel](https://tailscale.com/kb/1223/funnel).
+
+The fastest of these is Cloudflare's **quick tunnel** — no account, one command. Point it at whatever port your local server uses:
+
+```bash
+cloudflared tunnel --url http://localhost:8080
+```
+
+It prints a public `https://<random>.trycloudflare.com` URL. Open that URL in the headset's browser:
 
 - **Meta Quest 3** — Meta Quest Browser has full WebXR: `immersive-vr`, `immersive-ar` passthrough, and hand tracking. Open the URL, tap **Enter VR/AR**. This is the smoothest target.
 - **Apple Vision Pro** — Safari on visionOS supports WebXR (`immersive-vr`) with hand/transient-pointer input. Support is newer than Quest's, so test the **Enter VR** flow early and keep interactions simple.

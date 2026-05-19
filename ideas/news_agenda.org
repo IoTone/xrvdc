@@ -65,7 +65,7 @@
   small, Simulator-friendly samples. Community tie-in: the author is a
   former VisionDevCamp Tokyo 2024 presenter.
 
-* PUBLISHED A-Frame — the Fastest Way into WebXR (Quest 3 & Vision Pro)
+* PUBLISHED A-Frame — the Fastest Way into WebXR (Quest 3, Vision Pro & Spectacles)
   CLOSED: [2026-05-18 Mon] SCHEDULED: <2026-05-20 Wed>
   :PROPERTIES:
   :TAG:        STARTER
@@ -78,8 +78,10 @@
   :PUBLISHED_JA: content/news/2026-05-20-aframe-webxr-starter.ja.md
   :END:
   One-file, no-build WebXR via A-Frame; honest device targeting —
-  Quest 3 + Vision Pro via WebXR, Spectacles redirected to Lens Studio
-  (cross-links the Spectacles article).
+  Quest 3, Vision Pro AND Spectacles all run WebXR (Spectacles via the
+  Browser Lens, immersive-ar + hand tracking, no Lens Studio needed;
+  hit-test emulated). Includes the cloudflared quick-tunnel callout.
+  Cross-links the Spectacles/Lens Studio article as the native option.
 
 * STAGED Giving Meta Ray-Ban Glasses Precise Location — MultiSet VPS
   SCHEDULED: <2026-05-21 Thu>
