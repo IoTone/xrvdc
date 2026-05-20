@@ -83,8 +83,8 @@
   hit-test emulated). Includes the cloudflared quick-tunnel callout.
   Cross-links the Spectacles/Lens Studio article as the native option.
 
-* STAGED Giving Meta Ray-Ban Glasses Precise Location — MultiSet VPS
-  SCHEDULED: <2026-05-21 Thu>
+* PUBLISHED Giving Meta Ray-Ban Glasses Precise Location — MultiSet VPS
+  CLOSED: [2026-05-20 Wed] SCHEDULED: <2026-05-21 Thu>
   :PROPERTIES:
   :TAG:        SHOWCASE
   :SLUG_EN:    multiset-vps-meta-glasses
@@ -93,6 +93,8 @@
   :ATTRIBUTION: Surfaced by Nikhil Sawlani (MultiSet AI); credited in-body. SDK is proprietary (noted in article).
   :STAGED_EN:  content/staging/news/2026-05-21-multiset-vps-meta-glasses.en.md
   :STAGED_JA:  content/staging/news/2026-05-21-multiset-vps-meta-glasses.ja.md
+  :PUBLISHED_EN: content/news/2026-05-21-multiset-vps-meta-glasses.en.md
+  :PUBLISHED_JA: content/news/2026-05-21-multiset-vps-meta-glasses.ja.md
   :END:
   Capability spotlight: MultiSet VPS + Meta Wearables DAT SDK on
   Ray-Ban glasses — 6-DOF localization, audio turn-by-turn, multiplayer.
@@ -122,4 +124,5 @@
 ** We need to get a good news post for starting out with Godot and XR, likely for Meta Quest 3 and possibly AVP if it is supported.  https://docs.godotengine.org/en/stable/tutorials/xr/setting_up_xr.html
 ** We need an article about BabylonJS and use for WebXR starter applications. https://www.babylonjs.com/
 
+** IDEA We need a getting started for AndroidXR .  Since this isn't availabe as a device yet, we need something that let's us develop, and test locally.  So explore all of the options, and clear instructions for getting setup: https://android-developers.googleblog.com/2026/05/android-xr-sdk-developer-preview-4-updates.html  
 ** IDEA <add the next topic here>
