@@ -35,7 +35,7 @@ Photoreal environments are a fast way to make an XR demo feel real. **3D Gaussia
 | [SuperSplat Editor](https://superspl.at/editor) | Browser viewer / cleanup / video export |
 | Insta360 Studio | Equirectangular export (native to Insta360) |
 
-## Gotchas worth knowing
+## Gotchas
 
 - **Wait for the full load** before training in LichtFeld Studio — the most common crash.
 - **Stabilization** sub-features must be off at capture or SfM accuracy degrades.

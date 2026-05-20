@@ -3,7 +3,7 @@ title: "A-Frame: the Fastest Way into WebXR (Quest 3, Vision Pro & Spectacles)"
 date: 2026-05-20T10:00:00+09:00
 slug: "aframe-webxr-starter"
 tag: "STARTER"
-summary: "One HTML file, no build step, runs across headsets: an A-Frame WebXR starter and honest guidance on targeting Meta Quest 3, Apple Vision Pro, and Snap Spectacles."
+summary: "One HTML file, no build step, runs across headsets: an A-Frame WebXR starter and practical guidance for targeting Meta Quest 3, Apple Vision Pro, and Snap Spectacles."
 ---
 
 If you want a working headset demo with **zero toolchain**, WebXR via **A-Frame** is the shortest path. It's a declarative web framework on top of three.js + WebXR — you describe a scene with HTML-like tags and the browser handles the headset.

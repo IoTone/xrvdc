@@ -37,7 +37,7 @@ Run `claude` in the repo, supply [World Labs](https://platform.worldlabs.ai/) an
 - **Meta Quest 3** — Unity (URP) or Unreal via **OpenXR**, Android build, hand tracking + controllers. The smoothest engine target.
 - **Apple Vision Pro** — Unity **PolySpatial** (shared space) or a fully-immersive visionOS app; favor the mesh environment for performance.
 
-## Honest takeaways for a 2.5-day hackathon
+## Hackathon takeaways
 
 - **Meshes are easy; splats are the risk.** The `.glb`/`.obj` outputs drop straight into any engine. The `.spz` environment needs conversion *and* an experimental renderer — on Quest 3 budget it carefully, and on Vision Pro prefer a **mesh environment** unless you've already proven a splat renderer.
 - **Lower the face count up front** — regenerating is a one-line flag; re-decimating later is not.

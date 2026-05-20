@@ -35,7 +35,7 @@ summary: "ハッカソン作品向けにフォトリアルな 3D シーンをキ
 | [SuperSplat Editor](https://superspl.at/editor) | ブラウザビューア / 整形 / 動画書き出し |
 | Insta360 Studio | equirectangular 書き出し（Insta360 純正） |
 
-## 知っておきたい落とし穴
+## 落とし穴
 
 - LichtFeld Studio では学習前に **読み込み完了を待つ** — 最も多いクラッシュ要因。
 - 撮影時に **手ブレ補正のサブ機能** をオフにしないと SfM 精度が低下。

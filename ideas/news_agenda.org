@@ -118,8 +118,8 @@
   in RealityKit/PolySpatial; mesh-only fallback for AVP). Cross-links
   3DGS, A-Frame/WebXR, visionOS articles.
 
-* STAGED Getting Started with Android XR — develop today, no hardware required
-  SCHEDULED: <2026-05-23 Sat>
+* PUBLISHED Getting Started with Android XR — develop today, no hardware required
+  CLOSED: [2026-05-20 Wed] SCHEDULED: <2026-05-23 Sat>
   :PROPERTIES:
   :TAG:        STARTER
   :SLUG_EN:    androidxr-getting-started
@@ -129,6 +129,8 @@
   :ANGLE:      Hackathon-pragmatic — Canary Studio + XR emulator/AVD + concrete Jetpack XR Gradle deps. Flags the API split: glasses targetSdk 34, VR targetSdk 36 (per user note); two distinct Jetpack stacks (Immersive vs Augmented).
   :STAGED_EN:  content/staging/news/2026-05-23-androidxr-getting-started.en.md
   :STAGED_JA:  content/staging/news/2026-05-23-androidxr-getting-started.ja.md
+  :PUBLISHED_EN: content/news/2026-05-23-androidxr-getting-started.en.md
+  :PUBLISHED_JA: content/news/2026-05-23-androidxr-getting-started.ja.md
   :END:
   Develop & test AndroidXR locally before consumer hardware ships.
   Canary Android Studio + AVD per form factor; pin alpha14/15/17/12/07
