@@ -100,8 +100,8 @@
   Ray-Ban glasses — 6-DOF localization, audio turn-by-turn, multiplayer.
   Cross-links the Meta Ray-Ban Display article.
 
-* STAGED Image-blaster → engine → headset (AI worlds on Quest 3 & Vision Pro)
-  SCHEDULED: <2026-05-22 Fri>
+* PUBLISHED Image-blaster → engine → headset (AI worlds on Quest 3 & Vision Pro)
+  CLOSED: [2026-05-20 Wed] SCHEDULED: <2026-05-22 Fri>
   :PROPERTIES:
   :TAG:        WORKFLOW
   :SLUG_EN:    image-blaster-xr-pipeline
@@ -110,11 +110,30 @@
   :ANGLE:      Path B (native engine route) per user choice — Unity/Unreal/Godot import, build to Quest 3 / AVP
   :STAGED_EN:  content/staging/news/2026-05-22-image-blaster-xr-pipeline.en.md
   :STAGED_JA:  content/staging/news/2026-05-22-image-blaster-xr-pipeline.ja.md
+  :PUBLISHED_EN: content/news/2026-05-22-image-blaster-xr-pipeline.en.md
+  :PUBLISHED_JA: content/news/2026-05-22-image-blaster-xr-pipeline.ja.md
   :END:
   image-blaster (Claude skillset) image→world: .glb/.obj + .spz splat +
   .mp3. Engine pipeline to headsets; honest splat caveats (no native GS
   in RealityKit/PolySpatial; mesh-only fallback for AVP). Cross-links
   3DGS, A-Frame/WebXR, visionOS articles.
+
+* STAGED Getting Started with Android XR — develop today, no hardware required
+  SCHEDULED: <2026-05-23 Sat>
+  :PROPERTIES:
+  :TAG:        STARTER
+  :SLUG_EN:    androidxr-getting-started
+  :SLUG_JA:    androidxr-入門
+  :SOURCE:     https://android-developers.googleblog.com/2026/05/android-xr-sdk-developer-preview-4-updates.html
+  :DOCS:       https://developer.android.com/develop/xr/jetpack-xr-sdk/set-up-sdk
+  :ANGLE:      Hackathon-pragmatic — Canary Studio + XR emulator/AVD + concrete Jetpack XR Gradle deps. Flags the API split: glasses targetSdk 34, VR targetSdk 36 (per user note); two distinct Jetpack stacks (Immersive vs Augmented).
+  :STAGED_EN:  content/staging/news/2026-05-23-androidxr-getting-started.en.md
+  :STAGED_JA:  content/staging/news/2026-05-23-androidxr-getting-started.ja.md
+  :END:
+  Develop & test AndroidXR locally before consumer hardware ships.
+  Canary Android Studio + AVD per form factor; pin alpha14/15/17/12/07
+  Jetpack XR artifacts; Compose XR + SceneCore + ARCore vs Glimmer +
+  Projected. Cross-links Spectacles, Meta Wearables, visionOS, A-Frame.
 
 * Backlog
   Add new topics below as IDEA headlines. On request they'll be
@@ -124,5 +143,8 @@
 ** We need to get a good news post for starting out with Godot and XR, likely for Meta Quest 3 and possibly AVP if it is supported.  https://docs.godotengine.org/en/stable/tutorials/xr/setting_up_xr.html
 ** We need an article about BabylonJS and use for WebXR starter applications. https://www.babylonjs.com/
 
-** IDEA We need a getting started for AndroidXR .  Since this isn't availabe as a device yet, we need something that let's us develop, and test locally.  So explore all of the options, and clear instructions for getting setup: https://android-developers.googleblog.com/2026/05/android-xr-sdk-developer-preview-4-updates.html  
+** IDEA Add Style WebAR as a starter project with this as a place where to start.  Rather than give a full end to end flow, just summarize since the contents are limited: https://webar-editor.styly.cc/documents_download
+** IDEA Add https://iwsdk.dev/ which as a starter for agentic webxr
+** IDEA Add https://reactvision.xyz/studio/ as a react native SDK starter for spatial apps
+** IDEA Add https://github.com/webspatial/webspatial-sdk as a good start for WebXR (pico ecosystem)
 ** IDEA <add the next topic here>
