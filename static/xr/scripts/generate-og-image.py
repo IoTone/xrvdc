@@ -115,7 +115,7 @@ d.text((80, 372), "// 26 - 28 JUNE 2026", font=FONT_MONO_B, fill=MAGENTA)
 d.text((80, 422), "@ Engineer Cafe  ::  CIC Fukuoka", font=FONT_MONO_S, fill=AMBER)
 
 # ── URL bottom-left ──────────────────────────────────────────────────────
-d.text((80, H - 78), "// xrvdc.pages.dev", font=FONT_MONO_S, fill=AMBER)
+d.text((80, H - 78), "// xrvdc.org", font=FONT_MONO_S, fill=AMBER)
 
 # ── Logo on the right ────────────────────────────────────────────────────
 if LOGO.exists():

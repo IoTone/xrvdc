@@ -11,7 +11,7 @@
 #   bash static/xr/scripts/regen-og-image.sh
 #       Captures http://127.0.0.1:1313/  (default Hugo dev server)
 #
-#   bash static/xr/scripts/regen-og-image.sh https://xrvdc.pages.dev/
+#   bash static/xr/scripts/regen-og-image.sh https://www.xrvdc.org/
 #       Captures the deployed production site instead
 #
 #   bash static/xr/scripts/regen-og-image.sh /ja/
