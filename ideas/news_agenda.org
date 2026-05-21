@@ -13,6 +13,22 @@
 # To publish: ask "publish <topic>"; the STAGED item with the nearest
 # SCHEDULED date is promoted to production and flipped to PUBLISHED.
 
+* PUBLISHED Official site URL — xrvdc.org
+  CLOSED: [2026-05-21 Thu] SCHEDULED: <2026-05-21 Thu>
+  :PROPERTIES:
+  :TAG:        UPDATE
+  :SLUG_EN:    official-url-xrvdc-org
+  :SLUG_JA:    公式url-xrvdc-org
+  :NOTE:       Published immediately at user request (no STAGED phase). Same files written to /content/news/ and /content/staging/news/ as byte-identical copies per convention.
+  :STAGED_EN:  content/staging/news/2026-05-21-official-url-xrvdc-org.en.md
+  :STAGED_JA:  content/staging/news/2026-05-21-official-url-xrvdc-org.ja.md
+  :PUBLISHED_EN: content/news/2026-05-21-official-url-xrvdc-org.en.md
+  :PUBLISHED_JA: content/news/2026-05-21-official-url-xrvdc-org.ja.md
+  :END:
+  Announce that the site is live at https://xrvdc.org and ask readers
+  to use it going forward. Lists all top-level sections as reachable
+  from the new domain unchanged.
+
 * PUBLISHED Building for Meta Ray-Ban Display Glasses (Wearables Web App Toolkit)
   CLOSED: [2026-05-17 Sun] SCHEDULED: <2026-05-17 Sun>
   :PROPERTIES:
