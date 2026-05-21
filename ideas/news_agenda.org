@@ -134,6 +134,24 @@
   in RealityKit/PolySpatial; mesh-only fallback for AVP). Cross-links
   3DGS, A-Frame/WebXR, visionOS articles.
 
+* PUBLISHED Babylon.js — an engine-grade path to WebXR (Quest 3, Vision Pro & Spectacles)
+  CLOSED: [2026-05-21 Thu] SCHEDULED: <2026-05-24 Sun>
+  :PROPERTIES:
+  :TAG:        STARTER
+  :SLUG_EN:    babylonjs-webxr-starter
+  :SLUG_JA:    babylonjs-webxr-入門
+  :SOURCE:     https://github.com/BabylonJS/Babylon.js
+  :DOCS:       https://doc.babylonjs.com/features/featuresDeepDive/webXR
+  :ANGLE:      Engine-grade complement to A-Frame — when the demo needs PBR, physics, GUI, or AR feature manager. Same 3 WebXR targets (Quest 3, Vision Pro, Spectacles Browser Lens). One-shot stage+publish (queue was empty). Bumped site version 1.7 → 1.8.
+  :NOTE:       Stage+publish performed in one operation — file written directly with production links to /content/news/ and mirrored byte-identical to /content/staging/news/. Version field bumped per the saved practice.
+  :PUBLISHED_EN: content/news/2026-05-24-babylonjs-webxr-starter.en.md
+  :PUBLISHED_JA: content/news/2026-05-24-babylonjs-webxr-starter.ja.md
+  :END:
+  Babylon.js 9.8.0 starter — single-HTML CDN, then npm/ES6. WebXR
+  Experience Helper one-liner, feature manager for hit-test/anchors/
+  planes/hand tracking. Same 3 targets as A-Frame, presented as the
+  imperative TS engine for richer demos.
+
 * PUBLISHED Getting Started with Android XR — develop today, no hardware required
   CLOSED: [2026-05-20 Wed] SCHEDULED: <2026-05-23 Sat>
   :PROPERTIES:
