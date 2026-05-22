@@ -95,9 +95,9 @@ scene.background = new THREE.Color(PAL.bgSky);
 const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.05, 50);
 camera.position.set(0, 1.55, 2.0); // EYE_TO_FLOOR_M from doc
 
-const ambient = new THREE.AmbientLight(0xffe4b8, 0.55);
+const ambient = new THREE.AmbientLight(0xffe4b8, 0.35);
 scene.add(ambient);
-const key = new THREE.DirectionalLight(0xffd9a8, 0.8);
+const key = new THREE.DirectionalLight(0xffd9a8, 0.45);
 key.position.set(0.6, 2, 1);
 scene.add(key);
 
@@ -113,6 +113,21 @@ root.add(oct.group);
 const logo = buildLogo(loader);
 logo.position.set(0, oct.HEIGHT / 2 + 0.32, 0);
 root.add(logo);
+
+// ───── dynamic lighting — three warm-palette point lights orbiting the octahedron ─────
+// Added to `root` so they orbit with the octahedron's frame; their relative
+// motion across the lit-emissive faces paints shifting magenta/yellow/amber
+// highlights over the warm-brown ground.
+const orbitLights = [
+  { color: PAL.magenta, phase: 0,                radius: 0.55, height:  0.05, speed: 0.7 },
+  { color: PAL.yellow,  phase: Math.PI * 2 / 3, radius: 0.55, height: -0.05, speed: 0.55 },
+  { color: PAL.amber,   phase: Math.PI * 4 / 3, radius: 0.50, height:  0.00, speed: 0.9 },
+].map(spec => {
+  const light = new THREE.PointLight(spec.color, 1.4, 2.0, 2);
+  light.userData = spec;
+  root.add(light);
+  return light;
+});
 
 // Floor reference grid (warm amber)
 const grid = new THREE.GridHelper(6, 12, PAL.warmEdge, PAL.amberDim);
@@ -130,25 +145,55 @@ const targets = [...oct.faceTargets, panel.closeBtn];
 const inputs = new HandInputs(scene, targets);
 
 let isPanelOpen = false;
-function openPanelFor(item) {
+
+// Anchor the content panel to the touched face: position it just in front
+// of the face along its outward normal, then orient it to face the active
+// camera (XR camera in immersive mode, otherwise the orbit camera). This
+// makes the content appear to project out of the face the user selected.
+const _facePos    = new THREE.Vector3();
+const _faceNormal = new THREE.Vector3();
+const _faceQuat   = new THREE.Quaternion();
+const _camPos     = new THREE.Vector3();
+const PANEL_STANDOFF = 0.42;  // metres from face surface
+
+function anchorPanelToFace(target) {
+  target.updateWorldMatrix(true, false);
+  target.getWorldPosition(_facePos);
+  target.getWorldQuaternion(_faceQuat);
+  // The face mesh was built with its visible side on +Z (see orientOutward),
+  // so its world-space outward direction is +Z transformed by its quaternion.
+  _faceNormal.set(0, 0, 1).applyQuaternion(_faceQuat).normalize();
+  panel.container.position.copy(_facePos).addScaledVector(_faceNormal, PANEL_STANDOFF);
+
+  const activeCam = renderer.xr.isPresenting ? renderer.xr.getCamera() : camera;
+  activeCam.getWorldPosition(_camPos);
+  panel.container.lookAt(_camPos);
+}
+
+function openPanelFor(item, target) {
   panel.setContent(item);
-  // Recede octagon
-  root.position.z = -1.7;
+  if (target) anchorPanelToFace(target);
   panel.container.visible = true;
   materializeIn(panel.container);
   isPanelOpen = true;
 }
 function closePanel() {
   if (!isPanelOpen) return;
-  materializeOut(panel.container, () => {
-    root.position.z = -1.4;
-  });
+  materializeOut(panel.container);
   isPanelOpen = false;
 }
 
 inputs.onHoverChange = (target, hand) => {
-  // Cosmetic: tint the hovered face's ring tone (bracket-ish via mesh.color)
-  // For v1, we just rely on reticle + beam to indicate hover.
+  // Cosmetic hover: brighten the hovered face's emissive a touch so the user
+  // gets visible feedback before pressing. Reset previously-hovered face.
+  for (const m of oct.faceTargets) {
+    if (m.material && m.material.emissiveIntensity !== undefined) {
+      m.material.emissiveIntensity = 0.85;
+    }
+  }
+  if (target && target.material && target.material.emissiveIntensity !== undefined) {
+    target.material.emissiveIntensity = 1.15;
+  }
 };
 
 inputs.onSelect = (target) => {
@@ -157,8 +202,15 @@ inputs.onSelect = (target) => {
     return;
   }
   if (target.userData && target.userData.menuItem) {
-    if (isPanelOpen) closePanel();
-    setTimeout(() => openPanelFor(target.userData.menuItem), 220);
+    // Pause rotation immediately so the face doesn't drift during the
+    // close-out / open-in animation.
+    isPanelOpen = true;
+    if (panel.container.visible) {
+      // Switching faces — close the current panel first, then open the new one.
+      materializeOut(panel.container, () => openPanelFor(target.userData.menuItem, target));
+    } else {
+      openPanelFor(target.userData.menuItem, target);
+    }
   }
 };
 
@@ -266,6 +318,14 @@ renderer.setAnimationLoop((t) => {
   }
   // Logo slow spin
   logo.rotation.y += 0.005;
+
+  // Orbit the dynamic point lights around the octahedron's local frame.
+  const secs = (t || performance.now()) * 0.001;
+  for (const light of orbitLights) {
+    const { phase, radius, height, speed } = light.userData;
+    const a = phase + secs * speed;
+    light.position.set(Math.cos(a) * radius, height, Math.sin(a) * radius);
+  }
 
   inputs.update();
   ThreeMeshUI.update();

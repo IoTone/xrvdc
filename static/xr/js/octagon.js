@@ -213,8 +213,17 @@ export function buildOctagon() {
     if (!item) return;
     const center = new THREE.Vector3(face.octant[0], face.octant[1], face.octant[2]).multiplyScalar(SCALE);
     const geom = hexShapeGeom(HEX_RADIUS);
-    const mat = new THREE.MeshBasicMaterial({
-      map: texFromCanvas(makeHexCanvas(item)),
+    const tex = texFromCanvas(makeHexCanvas(item));
+    // Lit material: the canvas is the emissive map (keeps text crisp + readable)
+    // while a low-albedo base lets the orbiting point lights paint the face
+    // with shifting colour over the warm dark brown ground.
+    const mat = new THREE.MeshStandardMaterial({
+      map: tex,
+      emissive: 0xffffff,
+      emissiveMap: tex,
+      emissiveIntensity: 0.85,
+      metalness: 0.15,
+      roughness: 0.55,
       transparent: true,
       side: THREE.DoubleSide,
     });
@@ -239,8 +248,14 @@ export function buildOctagon() {
   sf.forEach((face, i) => {
     const center = new THREE.Vector3(face.center[0], face.center[1], face.center[2]).multiplyScalar(SCALE);
     const geom = squareShapeGeom();
-    const mat = new THREE.MeshBasicMaterial({
-      map: texFromCanvas(makeSquareCanvas(squareInfo[i])),
+    const tex = texFromCanvas(makeSquareCanvas(squareInfo[i]));
+    const mat = new THREE.MeshStandardMaterial({
+      map: tex,
+      emissive: 0xffffff,
+      emissiveMap: tex,
+      emissiveIntensity: 0.85,
+      metalness: 0.15,
+      roughness: 0.55,
       transparent: true,
       side: THREE.DoubleSide,
     });

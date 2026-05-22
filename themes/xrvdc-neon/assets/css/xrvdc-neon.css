@@ -807,6 +807,11 @@ html[lang^="ja"] .site-nav__brand { white-space: nowrap; }
   position: absolute; inset: 0;
   width: 100% !important; height: 100% !important;
   display: block;
+  /* Don't let mobile browsers eat pointer events for scroll/zoom — the
+     interaction code needs every pointerdown/up to reach the canvas. */
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 .xr-hud {
   position: absolute; top: 0; left: 0; right: 0;
