@@ -171,16 +171,32 @@
   Jetpack XR artifacts; Compose XR + SceneCore + ARCore vs Glimmer +
   Projected. Cross-links Spectacles, Meta Wearables, visionOS, A-Frame.
 
+* STAGED Immersive Web SDK — Meta's AI-native WebXR toolkit
+  SCHEDULED: <2026-05-25 Mon>
+  :PROPERTIES:
+  :TAG:        STARTER
+  :SLUG_EN:    immersive-web-sdk-ai-native
+  :SLUG_JA:    immersive-web-sdk-入門
+  :SOURCE:     https://iwsdk.dev/
+  :REPO:       https://github.com/facebook/immersive-web-sdk
+  :ANGLE:      AI-native angle — 32 tools for AI agents to inspect/debug WebXR scenes. Pairs with the Meta Wearables Web App AI Toolkit (same Meta + AI-toolkit family). Caveats: device/session matrix not enumerated on the homepage; pin SDK version (@iwsdk/core@0.4.x is alpha-style).
+  :STAGED_EN:  content/staging/news/2026-05-25-immersive-web-sdk-ai-native.en.md
+  :STAGED_JA:  content/staging/news/2026-05-25-immersive-web-sdk-ai-native.ja.md
+  :END:
+  Meta-maintained MIT WebXR SDK whose distinguishing feature is the
+  agent-tool surface (32 tools: screenshots, scene inspection, input
+  simulation, state snapshots). `npm create @iwsdk@latest`. Third in
+  the WebXR series alongside A-Frame and Babylon.js.
+
 * Backlog
   Add new topics below as IDEA headlines. On request they'll be
   scheduled (one/day, after the last scheduled item), researched,
   and drafted into staging.
 
 ** We need to get a good news post for starting out with Godot and XR, likely for Meta Quest 3 and possibly AVP if it is supported.  https://docs.godotengine.org/en/stable/tutorials/xr/setting_up_xr.html
-** We need an article about BabylonJS and use for WebXR starter applications. https://www.babylonjs.com/
+   (Godot researched but not yet staged — see prior turn's findings.)
 
 ** IDEA Add Style WebAR as a starter project with this as a place where to start.  Rather than give a full end to end flow, just summarize since the contents are limited: https://webar-editor.styly.cc/documents_download
-** IDEA Add https://iwsdk.dev/ which as a starter for agentic webxr
 ** IDEA Add https://reactvision.xyz/studio/ as a react native SDK starter for spatial apps
 ** IDEA Add https://github.com/webspatial/webspatial-sdk as a good start for WebXR (pico ecosystem)
 ** IDEA <add the next topic here>
