@@ -171,8 +171,8 @@
   Jetpack XR artifacts; Compose XR + SceneCore + ARCore vs Glimmer +
   Projected. Cross-links Spectacles, Meta Wearables, visionOS, A-Frame.
 
-* STAGED Immersive Web SDK — Meta's AI-native WebXR toolkit
-  SCHEDULED: <2026-05-25 Mon>
+* PUBLISHED Immersive Web SDK — Meta's AI-native WebXR toolkit
+  CLOSED: [2026-05-23 Sat] SCHEDULED: <2026-05-25 Mon>
   :PROPERTIES:
   :TAG:        STARTER
   :SLUG_EN:    immersive-web-sdk-ai-native
@@ -182,6 +182,8 @@
   :ANGLE:      AI-native angle — 32 tools for AI agents to inspect/debug WebXR scenes. Pairs with the Meta Wearables Web App AI Toolkit (same Meta + AI-toolkit family). Caveats: device/session matrix not enumerated on the homepage; pin SDK version (@iwsdk/core@0.4.x is alpha-style).
   :STAGED_EN:  content/staging/news/2026-05-25-immersive-web-sdk-ai-native.en.md
   :STAGED_JA:  content/staging/news/2026-05-25-immersive-web-sdk-ai-native.ja.md
+  :PUBLISHED_EN: content/news/2026-05-25-immersive-web-sdk-ai-native.en.md
+  :PUBLISHED_JA: content/news/2026-05-25-immersive-web-sdk-ai-native.ja.md
   :END:
   Meta-maintained MIT WebXR SDK whose distinguishing feature is the
   agent-tool surface (32 tools: screenshots, scene inspection, input
