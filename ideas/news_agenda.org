@@ -171,6 +171,25 @@
   Jetpack XR artifacts; Compose XR + SceneCore + ARCore vs Glimmer +
   Projected. Cross-links Spectacles, Meta Wearables, visionOS, A-Frame.
 
+* PUBLISHED WebSpatial SDK — when the web app becomes a native spatial app (visionOS)
+  CLOSED: [2026-05-24 Sun] SCHEDULED: <2026-05-26 Tue>
+  :PROPERTIES:
+  :TAG:        STARTER
+  :SLUG_EN:    webspatial-sdk-visionos
+  :SLUG_JA:    webspatial-sdk-visionos-入門
+  :SOURCE:     https://github.com/webspatial/webspatial-sdk
+  :HOMEPAGE:   https://webspatial.dev/
+  :ANGLE:      Different from WebXR-in-browser: HTML/CSS/DOM extensions + polyfill → React app shipped as a native visionOS .app via @webspatial/builder. "2D containing 3D". Corrects the IDEA's Pico framing — current platform package is visionOS only. W3C alignment (TPAC 2025). One-shot stage+publish (queue was empty). Version bumped 1.10 → 1.11.
+  :PUBLISHED_EN: content/news/2026-05-26-webspatial-sdk-visionos.en.md
+  :PUBLISHED_JA: content/news/2026-05-26-webspatial-sdk-visionos.ja.md
+  :END:
+  WebSpatial SDK (MIT, TypeScript) — @webspatial/{react-sdk, core-sdk,
+  builder, platform-visionos}. Builder CLI run/build/publish ships a
+  React app as a native visionOS spatial app. Polyfill in run mode
+  lets desktop iteration stay fast. Cross-links A-Frame, Babylon,
+  IWSDK, AndroidXR. Caveats: visionOS-only platform package, Node 22+
+  / pnpm 9+, alpha-stage spec.
+
 * PUBLISHED Immersive Web SDK — Meta's AI-native WebXR toolkit
   CLOSED: [2026-05-23 Sat] SCHEDULED: <2026-05-25 Mon>
   :PROPERTIES:
