@@ -171,6 +171,23 @@
   Jetpack XR artifacts; Compose XR + SceneCore + ARCore vs Glimmer +
   Projected. Cross-links Spectacles, Meta Wearables, visionOS, A-Frame.
 
+* PUBLISHED ViroReact — React Native AR for iOS, Android, and Meta Quest 3
+  CLOSED: [2026-05-26 Tue] SCHEDULED: <2026-05-27 Wed>
+  :PROPERTIES:
+  :TAG:        STARTER
+  :SLUG_EN:    reactvision-react-native-ar
+  :SLUG_JA:    reactvision-react-native-ar-入門
+  :SOURCE:     https://github.com/ReactVision/viro
+  :NPM:        https://www.npmjs.com/package/@reactvision/react-viro
+  :ANGLE:      Pivot from web/WebXR to React Native. Corrected the platform list to the README's currently-supported matrix — iOS (ARKit), Android (ARCore), Meta Horizon OS — dropping the earlier overpromise of Vision Pro / Android XR. Cloud features (Cloud Anchors, Geospatial Anchors, AI 3D-asset gen) routed through ReactVision Platform. Concrete starter snippet uses Expo + TS kit. One-shot stage+publish; version 1.11 → 1.12.
+  :PUBLISHED_EN: content/news/2026-05-27-reactvision-react-native-ar.en.md
+  :PUBLISHED_JA: content/news/2026-05-27-reactvision-react-native-ar.ja.md
+  :END:
+  ViroReact (MIT, 1.8k★, @reactvision/react-viro). React Native + TS,
+  Expo dev builds or RN CLI. ViroARSceneNavigator/ViroARScene/
+  ViroARPlane/Viro3DObject + physics, particles, shaders, 360°, portals,
+  spatial audio. Cross-links WebSpatial, Android XR, A-Frame.
+
 * PUBLISHED WebSpatial SDK — when the web app becomes a native spatial app (visionOS)
   CLOSED: [2026-05-24 Sun] SCHEDULED: <2026-05-26 Tue>
   :PROPERTIES:
@@ -217,7 +234,9 @@
 ** We need to get a good news post for starting out with Godot and XR, likely for Meta Quest 3 and possibly AVP if it is supported.  https://docs.godotengine.org/en/stable/tutorials/xr/setting_up_xr.html
    (Godot researched but not yet staged — see prior turn's findings.)
 
-** IDEA Add Style WebAR as a starter project with this as a place where to start.  Rather than give a full end to end flow, just summarize since the contents are limited: https://webar-editor.styly.cc/documents_download
+** IDEA Add STYLY WebAR as a starter project with this as a place where to start.  Rather than give a full end to end flow, just summarize since the contents are limited: https://webar-editor.styly.cc/documents_download
 ** IDEA Add https://reactvision.xyz/studio/ as a react native SDK starter for spatial apps
-** IDEA Add https://github.com/webspatial/webspatial-sdk as a good start for WebXR (pico ecosystem)
+** IDEA new Lens Studio Starter content on youtube that can have CC turned on:  https://youtu.be/piNmt2kqih8?si=6TOY75HP4t1hZhjL 
+
 ** IDEA <add the next topic here>
+
