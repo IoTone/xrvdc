@@ -1,11 +1,14 @@
 #+TITLE: XR VisionDevCamp — News Article Agenda
 #+STARTUP: overview
-#+TODO: IDEA(i) STAGED(s) | PUBLISHED(p) DROPPED(x)
+#+TODO: IDEA(i) HOLD(h) STAGED(s) | PUBLISHED(p) DROPPED(x)
 #+CATEGORY: News
 
 # Cadence: one article published per day.
 # Workflow per item:
 #   IDEA       — backlog; just a topic + source link.
+#   HOLD       — paused / blocked on something external (e.g., awaiting a
+#                contributed post from a partner). Skip when picking the
+#                next item to stage.
 #   STAGED     — bilingual pages written into content/staging/news/ ONLY,
 #                awaiting review (visible at /staging/news/<slug>/).
 #   PUBLISHED  — promoted: staging files copied to content/news/, set CLOSED.
@@ -171,6 +174,22 @@
   Jetpack XR artifacts; Compose XR + SceneCore + ARCore vs Glimmer +
   Projected. Cross-links Spectacles, Meta Wearables, visionOS, A-Frame.
 
+* PUBLISHED Godot XR — built-in OpenXR for Meta Quest 3
+  CLOSED: [2026-05-27 Wed] SCHEDULED: <2026-05-28 Thu>
+  :PROPERTIES:
+  :TAG:        STARTER
+  :SLUG_EN:    godot-xr-quest-3
+  :SLUG_JA:    godot-xr-quest-3-入門
+  :SOURCE:     https://docs.godotengine.org/en/stable/tutorials/xr/setting_up_xr.html
+  :ANGLE:      Native-engine route, open-source. Godot 4.6 built-in OpenXR (no plugin). Project-settings checklist + 6-node scene + 5-line init script + Android export to Quest 3. Flags clearly that AVP is NOT a Godot target (no OpenXR on AVP) and routes AVP readers to WebSpatial / Unity PolySpatial / Safari WebXR. One-shot stage+publish; version 1.12 → 1.13.
+  :PUBLISHED_EN: content/news/2026-05-28-godot-xr-quest-3.en.md
+  :PUBLISHED_JA: content/news/2026-05-28-godot-xr-quest-3.ja.md
+  :END:
+  Godot 4.6 + core OpenXR. Compatibility renderer for Quest 3 standalone;
+  XROrigin3D rig; vsync off + physics 90Hz; Android Build Template export.
+  Caveats: single XR interface, post-effect stereo gaps, silent init
+  failure, no AVP. Cross-links Android XR, WebSpatial, A-Frame, ViroReact.
+
 * PUBLISHED ViroReact — React Native AR for iOS, Android, and Meta Quest 3
   CLOSED: [2026-05-26 Tue] SCHEDULED: <2026-05-27 Wed>
   :PROPERTIES:
@@ -226,17 +245,36 @@
   simulation, state snapshots). `npm create @iwsdk@latest`. Third in
   the WebXR series alongside A-Frame and Babylon.js.
 
+* HOLD STYLY WebAR — contributed post (awaiting STYLY team)
+  :PROPERTIES:
+  :TAG:        STARTER
+  :SOURCE:     https://webar-editor.styly.cc/
+  :STATUS:     On hold per user instruction (2026-05-27) — STYLY team to
+               write and contribute the post rather than us drafting it.
+               Skip when picking the next item to stage. Move to STAGED
+               once the contributed content arrives (editorial pass +
+               bilingual + slug + frontmatter), then publish via the
+               normal flow.
+  :CONTACT_NEXT_STEP: Confirm contact path / deadline with the STYLY team.
+  :END:
+  STYLY WebAR Editor (browser-based no-code WebAR; 3 editing modes;
+  glb/gltf/obj/fbx + jpg/png/gif/webp + mp4 + mp3; 12+ AR types incl.
+  marker / image / plane / markerless / hand / face / GPS / volumetric;
+  free tier; QR or URL distribution; 250+ samples). Earlier research
+  retained below for editorial reference once the draft arrives.
+
 * Backlog
   Add new topics below as IDEA headlines. On request they'll be
   scheduled (one/day, after the last scheduled item), researched,
   and drafted into staging.
 
 ** We need to get a good news post for starting out with Godot and XR, likely for Meta Quest 3 and possibly AVP if it is supported.  https://docs.godotengine.org/en/stable/tutorials/xr/setting_up_xr.html
-   (Godot researched but not yet staged — see prior turn's findings.)
+   (Godot researched and ready to stage — see prior turn's findings.)
 
-** IDEA Add STYLY WebAR as a starter project with this as a place where to start.  Rather than give a full end to end flow, just summarize since the contents are limited: https://webar-editor.styly.cc/documents_download
-** IDEA Add https://reactvision.xyz/studio/ as a react native SDK starter for spatial apps
-** IDEA new Lens Studio Starter content on youtube that can have CC turned on:  https://youtu.be/piNmt2kqih8?si=6TOY75HP4t1hZhjL 
+** IDEA new Lens Studio Starter content on youtube that can have CC turned on:  https://youtu.be/piNmt2kqih8?si=6TOY75HP4t1hZhjL
+   (Researched: "6 Lens Studio Assets to Level Up Your Spectacles Projects"
+   by Bad Chick Studios. Treatment TBD — standalone short RESOURCE post
+   vs. patch the existing Spectacles/Lens Studio article.)
 
 ** IDEA <add the next topic here>
 
