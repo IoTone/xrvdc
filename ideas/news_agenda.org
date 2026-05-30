@@ -245,6 +245,25 @@
   simulation, state snapshots). `npm create @iwsdk@latest`. Third in
   the WebXR series alongside A-Frame and Babylon.js.
 
+* PUBLISHED Developing for XREAL glasses — XREAL SDK today, Android XR tomorrow
+  CLOSED: [2026-05-29 Fri] SCHEDULED: <2026-05-29 Fri>
+  :PROPERTIES:
+  :TAG:        STARTER
+  :SLUG_EN:    xreal-android-xr-glasses
+  :SLUG_JA:    xreal-android-xr-glasses-入門
+  :SOURCE:     https://developer.xreal.com/ ; https://www.xreal.com/us/aura
+  :ANGLE:      Two-path starter: (1) build today on shipping XREAL glasses with XREAL SDK 3.0 (Unity + XRI + AR Foundation); (2) prepare for Project Aura — XREAL's first Android XR glasses — via the Android XR SDK + emulator (cross-links the AndroidXR article) and the Catalyst program. Timeline-sensitive: Aura dev kits summer 2026, consumer launch end of 2026 — staged for review, not auto-published.
+  :STAGED_EN:  content/staging/news/2026-05-29-xreal-android-xr-glasses.en.md
+  :STAGED_JA:  content/staging/news/2026-05-29-xreal-android-xr-glasses.ja.md
+  :PUBLISHED_EN: content/news/2026-05-29-xreal-android-xr-glasses.en.md
+  :PUBLISHED_JA: content/news/2026-05-29-xreal-android-xr-glasses.ja.md
+  :END:
+  XREAL SDK 3.0 (Unity, XRI/AR Foundation): 6DoF, plane detection, image
+  + hand tracking, depth mesh, spatial anchors; Air 2 Ultra / Air 2 / Air
+  / Light / One Pro; Snapdragon host for full spatial. Project Aura =
+  Android XR glasses (optical see-through, ~70° FoV, X1S + Snapdragon XR,
+  split puck) → build with Android XR SDK, Catalyst kits summer 2026.
+
 * HOLD STYLY WebAR — contributed post (awaiting STYLY team)
   :PROPERTIES:
   :TAG:        STARTER
@@ -276,5 +295,6 @@
    by Bad Chick Studios. Treatment TBD — standalone short RESOURCE post
    vs. patch the existing Spectacles/Lens Studio article.)
 
+** IDEA we need a summary of this youtube video which is a vibe coding starter for Snap Spectacles:  https://www.youtube.com/watch?v=RzIyVkQfGOI 
 ** IDEA <add the next topic here>
 
