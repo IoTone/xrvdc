@@ -3,6 +3,7 @@ title: 'Manabu Hubs'
 date: 2026-05-29
 weight: 5
 position: '創業者特典・スタートアップエコシステムパートナー'
+tiers: ['プロモーション']
 logo: 'images/sponsors/manabu-hubs.png'
 companyUrl: 'https://manabuhubs.com'
 description: 'XR VisionDevCamp Fukuoka 2026 参加者へ創業者特典とスタートアップエコシステム支援を提供。'

@@ -23,6 +23,11 @@
               <img class="logo" src="{{ . | relURL }}" alt="{{ $.Title }}">
             {{ end }}
             <h3>{{ .Title }}</h3>
+            {{ with .Params.tiers }}
+              <ul class="tiers">
+                {{ range . }}<li class="tier">{{ . }}</li>{{ end }}
+              </ul>
+            {{ end }}
             {{ with .Params.position }}<p class="role">{{ . }}</p>{{ end }}
             {{ with .Params.expertise }}<p class="expertise">▸ {{ . }}</p>{{ end }}
             {{ with .Params.description }}<p class="desc">{{ . }}</p>{{ end }}
