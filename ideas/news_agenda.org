@@ -16,6 +16,22 @@
 # To publish: ask "publish <topic>"; the STAGED item with the nearest
 # SCHEDULED date is promoted to production and flipped to PUBLISHED.
 
+* PUBLISHED Manabu Hubs joins as a sponsor — founder perks
+  CLOSED: [2026-06-01 Mon] SCHEDULED: <2026-06-01 Mon>
+  :PROPERTIES:
+  :TAG:        SPONSOR
+  :SLUG_EN:    manabu-hubs-sponsor
+  :SLUG_JA:    manabu-hubs-スポンサー
+  :SOURCE:     https://manabuhubs.com
+  :NOTE:       Sponsorship announcement, published directly (no STAGED review phase), same pattern as the Official-URL post. Companion to the Manabu Hubs sponsor card added to /sponsors/. Omitted the internal "small fee for longer promo" commercial term; referral link + discount code not yet provided (described as shared with registered participants). Version 1.15 → 1.16.
+  :PUBLISHED_EN: content/news/2026-06-01-manabu-hubs-sponsor.en.md
+  :PUBLISHED_JA: content/news/2026-06-01-manabu-hubs-sponsor.ja.md
+  :END:
+  Announce Manabu Hubs sponsorship + participant perks: 6mo Notion
+  Business + AI ($12k value), 10% off APAC Founder incubator plan,
+  promotion across their 25k-newsletter / Fukuoka Startup Collective /
+  Discord+LINE network. Cross-links /sponsors/ and manabuhubs.com.
+
 * PUBLISHED Official site URL — xrvdc.org
   CLOSED: [2026-05-21 Thu] SCHEDULED: <2026-05-21 Thu>
   :PROPERTIES:
