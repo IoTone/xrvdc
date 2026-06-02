@@ -1,7 +1,7 @@
 ---
 title: 'Gracia.ai'
 date: 2026-05-18
-weight: 1
+weight: 5
 position: 'SDK サンプル提供・技術サポート'
 tiers: ['ソフトウェア']
 logo: 'images/sponsors/gracia.png'

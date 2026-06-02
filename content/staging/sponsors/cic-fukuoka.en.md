@@ -1,7 +1,7 @@
 ---
 title: 'CIC Fukuoka'
 date: 2026-05-18
-weight: 2
+weight: 1
 position: 'Venue partner'
 tiers: ['SITE']
 logo: 'images/sponsors/cic-fukuoka.png'

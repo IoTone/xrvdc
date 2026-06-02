@@ -1,7 +1,7 @@
 ---
 title: 'Manabu Hubs'
 date: 2026-05-29
-weight: 5
+weight: 4
 position: '創業者特典・スタートアップエコシステムパートナー'
 tiers: ['プロモーション']
 logo: 'images/sponsors/manabu-hubs.png'

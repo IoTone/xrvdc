@@ -1,7 +1,7 @@
 ---
 title: 'Manabu Hubs'
 date: 2026-05-29
-weight: 5
+weight: 4
 position: 'Founder perks & startup-ecosystem partner'
 tiers: ['PROMOTIONAL']
 logo: 'images/sponsors/manabu-hubs.png'
