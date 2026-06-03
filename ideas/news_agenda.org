@@ -16,8 +16,27 @@
 # To publish: ask "publish <topic>"; the STAGED item with the nearest
 # SCHEDULED date is promoted to production and flipped to PUBLISHED.
 
-* STAGED Six Lens Studio assets to level up your Spectacles projects
-  SCHEDULED: <2026-06-02 Tue>
+* STAGED Vibe coding for Spectacles — AI assistants in the Lens Studio loop
+  SCHEDULED: <2026-06-03 Wed>
+  :PROPERTIES:
+  :TAG:        STARTER
+  :SLUG_EN:    vibe-coding-spectacles
+  :SLUG_JA:    vibe-coding-spectacles-入門
+  :SOURCE:     https://www.youtube.com/watch?v=RzIyVkQfGOI
+  :ATTRIBUTION: Community spotlight — Andrew Douglas, "Vibe Coding For Spectacles Tutorial" (2026-05-21); credited + linked in-body. Video covers Cursor (1:03) + VS Code Copilot (9:14).
+  :ANGLE:      Two-layer framing: (1) AI-assisted TypeScript scripting (external editor, auto-generated .d.ts in Support/ grounds the assistant, ls_ snippets via the VS Code extension); (2) the real hook — Lens Studio's Developer Mode MCP server (AI Assistant > MCP > Start Server, .vscode/mcp.json) exposing GetLensStudioSceneGraph / CreateLensStudioSceneObject / asset install / debug to Copilot, Cursor, AND Claude Code. Video itself only shows Cursor + Copilot; the MCP/scripting specifics are grounded in Snap's official docs, not the video. Caveats: ground the model or it hallucinates APIs; MCP drives the editor's LS instance not the glasses (still Send to Spectacles); LS 5.x + MCP-capable editor. Cross-links the just-published Lens Studio assets post + the Spectacles starter. Staged for review (staging only — NOT published); version 1.20 → 1.21.
+  :STAGED_EN:  content/staging/news/2026-06-03-vibe-coding-spectacles.en.md
+  :STAGED_JA:  content/staging/news/2026-06-03-vibe-coding-spectacles.ja.md
+  :END:
+  Vibe coding a Spectacles Lens with Cursor / VS Code Copilot / Claude
+  Code. TypeScript scripting + auto-generated .d.ts types for grounded
+  completion, then Lens Studio's MCP server so the assistant queries the
+  scene graph, creates objects, writes scripts, and installs Asset
+  Library assets directly. Cross-links the Lens Studio assets and
+  Spectacles/Lens Studio starter articles.
+
+* PUBLISHED Six Lens Studio assets to level up your Spectacles projects
+  CLOSED: [2026-06-02 Tue] SCHEDULED: <2026-06-02 Tue>
   :PROPERTIES:
   :TAG:        STARTER
   :SLUG_EN:    lens-studio-assets-spectacles
@@ -25,9 +44,11 @@
   :SOURCE:     https://youtu.be/piNmt2kqih8
   :DEMO:       https://github.com/badchickstudios/LSAssetDemo
   :ATTRIBUTION: Community spotlight — Lafiya Watson (Bad Chick Studios, badchickstudios.com); credited + linked in-body.
-  :ANGLE:      Standalone RESOURCE roundup (chose standalone over patching the Spectacles starter article, per the IDEA's open question). Six Asset Library components named in the creator's video; descriptions grounded in the video chapters + the LSAssetDemo README, not invented. Tagged STARTER / JA スターター (per user choice over RESOURCE). Staged for review (staging only — NOT published to content/news/); version 1.18 → 1.19.
+  :ANGLE:      Standalone RESOURCE roundup (chose standalone over patching the Spectacles starter article, per the IDEA's open question). Six Asset Library components named in the creator's video; descriptions grounded in the video chapters + the LSAssetDemo README, not invented. Tagged STARTER / JA スターター (per user choice over RESOURCE). Staged version 1.18 → 1.19; promoted to production (staging files copied byte-identical to content/news/) version 1.19 → 1.20.
   :STAGED_EN:  content/staging/news/2026-06-02-lens-studio-assets-spectacles.en.md
   :STAGED_JA:  content/staging/news/2026-06-02-lens-studio-assets-spectacles.ja.md
+  :PUBLISHED_EN: content/news/2026-06-02-lens-studio-assets-spectacles.en.md
+  :PUBLISHED_JA: content/news/2026-06-02-lens-studio-assets-spectacles.ja.md
   :END:
   Surface Placement, Spectacles 3D Hand Hints, Spectacles UI Kit,
   Interactable Helper, Access Components, and Marker Tracking — six
@@ -323,9 +344,5 @@
   scheduled (one/day, after the last scheduled item), researched,
   and drafted into staging.
 
-** We need to get a good news post for starting out with Godot and XR, likely for Meta Quest 3 and possibly AVP if it is supported.  https://docs.godotengine.org/en/stable/tutorials/xr/setting_up_xr.html
-   (Godot researched and ready to stage — see prior turn's findings.)
-
-** IDEA we need a summary of this youtube video which is a vibe coding starter for Snap Spectacles:  https://www.youtube.com/watch?v=RzIyVkQfGOI 
 ** IDEA <add the next topic here>
 
