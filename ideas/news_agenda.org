@@ -16,17 +16,94 @@
 # To publish: ask "publish <topic>"; the STAGED item with the nearest
 # SCHEDULED date is promoted to production and flipped to PUBLISHED.
 
-* STAGED Vibe coding for Spectacles — AI assistants in the Lens Studio loop
-  SCHEDULED: <2026-06-03 Wed>
+* PUBLISHED Turn Spectacles into a MIDI controller — the MIDI Bleep Blop starter
+  CLOSED: [2026-06-03 Wed] SCHEDULED: <2026-06-03 Wed>
+  :PROPERTIES:
+  :TAG:        STARTER
+  :SLUG_EN:    midi-bleep-blop-spectacles
+  :SLUG_JA:    midi-bleep-blop-spectacles-入門
+  :SOURCE:     https://github.com/IoTone/MIDIBleepBlop
+  :ATTRIBUTION: First-party — IoTone (organizing partner). Repo MIT (device catalog data CC-BY-SA-4.0). Author truedat101.
+  :ANGLE:      Honest "very new + experimental" framing (v0.1.0, ~9 commits, days old, 9 open issues — do NOT claim npm published; repo root is private:true, so clone-and-build, not npx). The real teachable story = the WebSocket bridge architecture and WHY it exists: Spectacles BLE API lacks createBond(), so bonded BLE-MIDI is infeasible on-device → Lens (InternetModule WebSocket / SpectaclesWebSocketTransport) → Node/Bun bridge (JZZ) → CoreMIDI/ALSA/WinMM → synth. Platform gotchas surfaced: ws:// needs Experimental APIs + can't publish (wss:// for published); localhost = the glasses, use LAN IP; no auth. Concrete run steps (IAC + GarageBand no-hardware path). Cross-links Spectacles starter / Lens Studio assets / vibe-coding.
+  :STAGED_EN:  content/staging/news/2026-06-03-midi-bleep-blop-spectacles.en.md
+  :STAGED_JA:  content/staging/news/2026-06-03-midi-bleep-blop-spectacles.ja.md
+  :PUBLISHED_EN: content/news/2026-06-03-midi-bleep-blop-spectacles.en.md
+  :PUBLISHED_JA: content/news/2026-06-03-midi-bleep-blop-spectacles.ja.md
+  :END:
+  IoTone's first-party experimental starter: a Snap Spectacles Lens as a
+  live MIDI controller for real synths/DAWs, routed through a Node/Bun
+  WebSocket bridge to CoreMIDI/ALSA/WinMM because Spectacles can't pair
+  bonded BLE-MIDI on-device. .lspkg + MidiClient prefab to remix; TesterLens
+  for end-to-end. Cross-links the Spectacles starters.
+
+* PUBLISHED LichtFeld Studio + MCP — an AI agent in your Gaussian splatting loop
+  CLOSED: [2026-06-03 Wed] SCHEDULED: <2026-06-03 Wed>
+  :PROPERTIES:
+  :TAG:        WORKFLOW
+  :SLUG_EN:    lichtfeld-studio-mcp-xr
+  :SLUG_JA:    lichtfeld-studio-mcp-xr-入門
+  :SOURCE:     https://github.com/MrNeRF/LichtFeld-Studio
+  :ANGLE:      Fresh hook = LichtFeld Studio v0.5.2's REAL native MCP server (verified in src/mcp/: HTTP server, training.get_state/get_loss_history/list_operations, CommandCenter {target}.{operation} tools, scene tools, viewport capture) — an AI agent drives training/edit/capture via the same code paths as the UI. Honest caveat: capability is source-backed but NO MCP wiki page / connect tutorial yet → describe, don't invent setup commands. Tool = C++23/CUDA, GPL-3.0, NVIDIA-only training, COLMAP in, PLY/SOG/SPZ/USD/HTML out; prebuilt v0.5.2 donation-gated, v0.4.0 free / build from source. XR delivery leg is separate: SPZ → WebXR on Quest 3; AVP weak (Safari WebXR jittery; MetalSplatter native; no RealityKit splat primitive). Distinct from the 3dgs-360 article (which only used LichtFeld as a GUI trainer).
+  :STAGED_EN:  content/staging/news/2026-06-03-lichtfeld-studio-mcp-xr.en.md
+  :STAGED_JA:  content/staging/news/2026-06-03-lichtfeld-studio-mcp-xr.ja.md
+  :PUBLISHED_EN: content/news/2026-06-03-lichtfeld-studio-mcp-xr.en.md
+  :PUBLISHED_JA: content/news/2026-06-03-lichtfeld-studio-mcp-xr.ja.md
+  :END:
+  LichtFeld Studio v0.5 as a native 3DGS workstation with a genuine MCP
+  server: an assistant starts/monitors training, runs model/optimizer/
+  session ops, edits the scene, captures renders. Then export SPZ → WebXR
+  on Quest 3 (AVP caveated). Cross-links 3dgs-360, Scaniverse, vibe-coding.
+
+* PUBLISHED One photo to a 3D splat — Apple's LiTo into WebXR
+  CLOSED: [2026-06-03 Wed] SCHEDULED: <2026-06-03 Wed>
+  :PROPERTIES:
+  :TAG:        WORKFLOW
+  :SLUG_EN:    lito-single-image-3dgs-webxr
+  :SLUG_JA:    lito-single-image-3dgs-webxr-入門
+  :SOURCE:     https://github.com/apple/ml-lito
+  :PAPER:      https://arxiv.org/abs/2603.11047  (LiTo: Surface Light Field Tokenization, ICLR 2026)
+  :ANGLE:      Honest core = single image → LiTo Gaussian splat (.ply) → WebXR (SuperSplat/Spark/Babylon on Quest 3, AVP Safari). Hard truths called out explicitly: NOT an AVP/CoreML/visionOS tool (PyTorch research code, zero Apple-platform code despite the apple/ org); research sample-code LICENSE (+ LICENSE_MODEL / LICENSE_generated_samples) — NOT MIT, don't imply free-to-ship; GPU-heavy (~5s H100 / ~160s M4 Max); AVP = lossy stretch goal (MetalSplatter native, or splat→mesh→USDZ which discards LiTo's view-dependent lighting). PLY export path via repo notebooks + community ComfyUI-LiTo node.
+  :STAGED_EN:  content/staging/news/2026-06-03-lito-single-image-3dgs-webxr.en.md
+  :STAGED_JA:  content/staging/news/2026-06-03-lito-single-image-3dgs-webxr.ja.md
+  :PUBLISHED_EN: content/news/2026-06-03-lito-single-image-3dgs-webxr.en.md
+  :PUBLISHED_JA: content/news/2026-06-03-lito-single-image-3dgs-webxr.ja.md
+  :END:
+  Apple Research LiTo turns one image into a view-dependent 3D Gaussian
+  splat, exportable as PLY → WebXR splat viewers. Framed honestly: it's a
+  PyTorch research model, not Vision Pro tooling; AVP is a lossy/effortful
+  stretch. Cross-links Scaniverse + image-blaster.
+
+* PUBLISHED Phone-captured Gaussian splats — Scaniverse into WebXR and Godot
+  CLOSED: [2026-06-03 Wed] SCHEDULED: <2026-06-03 Wed>
+  :PROPERTIES:
+  :TAG:        WORKFLOW
+  :SLUG_EN:    scaniverse-3dgs-webxr-godot
+  :SLUG_JA:    scaniverse-3dgs-webxr-godot-入門
+  :SOURCE:     https://www.nianticspatial.com/products/capture
+  :ANGLE:      The phone-capture counterpart to the 3dgs-360 article: Scaniverse (Niantic Spatial, free, on-device GS) exports .ply or the open-source MIT .spz (~10x smaller). Delivery: cleanest = .ply → SuperSplat → WebXR viewer in Quest 3 browser (AR/VR tested incl. AVP); code-level = Spark (Three.js; NOTE: World Labs not Niantic) or Babylon.js (only native .spz ingest). Godot path is the weak leg — GDGS addon is Forward+ desktop-only, NOT Quest mobile renderer; stated plainly. AVP corrections: Godot 4.5 has visionOS (windowed) but no OpenXR/immersive splat path; RealityKit/PolySpatial no native splat → WebXR Safari (enable flag) or MetalSplatter. Format conversion (nianticlabs.github.io/spz, gsbox) + orientation-fix caveats; don't overclaim scan rights.
+  :STAGED_EN:  content/staging/news/2026-06-03-scaniverse-3dgs-webxr-godot.en.md
+  :STAGED_JA:  content/staging/news/2026-06-03-scaniverse-3dgs-webxr-godot.ja.md
+  :PUBLISHED_EN: content/news/2026-06-03-scaniverse-3dgs-webxr-godot.en.md
+  :PUBLISHED_JA: content/news/2026-06-03-scaniverse-3dgs-webxr-godot.ja.md
+  :END:
+  Phone-capture 3DGS: Scaniverse trains a splat on-device, exports .ply/.spz,
+  then SuperSplat/Spark/Babylon → WebXR on Quest 3 & AVP. Godot path flagged
+  as weak (splat addon is desktop-renderer only). Companion to the 360-camera
+  article; shares the Scaniverse/LiTo/LichtFeld XR-delivery story.
+
+* PUBLISHED Vibe coding for Spectacles — AI assistants in the Lens Studio loop
+  CLOSED: [2026-06-03 Wed] SCHEDULED: <2026-06-03 Wed>
   :PROPERTIES:
   :TAG:        STARTER
   :SLUG_EN:    vibe-coding-spectacles
   :SLUG_JA:    vibe-coding-spectacles-入門
   :SOURCE:     https://www.youtube.com/watch?v=RzIyVkQfGOI
   :ATTRIBUTION: Community spotlight — Andrew Douglas, "Vibe Coding For Spectacles Tutorial" (2026-05-21); credited + linked in-body. Video covers Cursor (1:03) + VS Code Copilot (9:14).
-  :ANGLE:      Two-layer framing: (1) AI-assisted TypeScript scripting (external editor, auto-generated .d.ts in Support/ grounds the assistant, ls_ snippets via the VS Code extension); (2) the real hook — Lens Studio's Developer Mode MCP server (AI Assistant > MCP > Start Server, .vscode/mcp.json) exposing GetLensStudioSceneGraph / CreateLensStudioSceneObject / asset install / debug to Copilot, Cursor, AND Claude Code. Video itself only shows Cursor + Copilot; the MCP/scripting specifics are grounded in Snap's official docs, not the video. Caveats: ground the model or it hallucinates APIs; MCP drives the editor's LS instance not the glasses (still Send to Spectacles); LS 5.x + MCP-capable editor. Cross-links the just-published Lens Studio assets post + the Spectacles starter. Staged for review (staging only — NOT published); version 1.20 → 1.21.
+  :ANGLE:      Two-layer framing: (1) AI-assisted TypeScript scripting (external editor, auto-generated .d.ts in Support/ grounds the assistant, ls_ snippets via the VS Code extension); (2) the real hook — Lens Studio's Developer Mode MCP server (AI Assistant > MCP > Start Server, .vscode/mcp.json) exposing GetLensStudioSceneGraph / CreateLensStudioSceneObject / asset install / debug to Copilot, Cursor, AND Claude Code. Video itself only shows Cursor + Copilot; the MCP/scripting specifics are grounded in Snap's official docs, not the video. Caveats: ground the model or it hallucinates APIs; MCP drives the editor's LS instance not the glasses (still Send to Spectacles); LS 5.x + MCP-capable editor. Cross-links the just-published Lens Studio assets post + the Spectacles starter. Staged version 1.20 → 1.21; then published 2026-06-03 as part of a 5-article batch all dated 2026-06-03 (per user request), batch version bump 1.21 → 1.22.
   :STAGED_EN:  content/staging/news/2026-06-03-vibe-coding-spectacles.en.md
   :STAGED_JA:  content/staging/news/2026-06-03-vibe-coding-spectacles.ja.md
+  :PUBLISHED_EN: content/news/2026-06-03-vibe-coding-spectacles.en.md
+  :PUBLISHED_JA: content/news/2026-06-03-vibe-coding-spectacles.ja.md
   :END:
   Vibe coding a Spectacles Lens with Cursor / VS Code Copilot / Claude
   Code. TypeScript scripting + auto-generated .d.ts types for grounded
@@ -345,4 +422,7 @@
   and drafted into staging.
 
 ** IDEA <add the next topic here>
+   (All four prior backlog IDEAs — Scaniverse, ml-lito/LiTo, LichtFeld+MCP,
+   MIDI Bleep Blop — were researched, drafted, and PUBLISHED in the
+   2026-06-03 batch above.)
 
