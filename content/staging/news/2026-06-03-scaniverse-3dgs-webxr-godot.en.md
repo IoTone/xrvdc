@@ -3,7 +3,7 @@ title: "Phone-Captured Gaussian Splats — Scaniverse into WebXR and Godot"
 date: 2026-06-03T11:00:00+09:00
 slug: "scaniverse-3dgs-webxr-godot"
 tag: "WORKFLOW"
-summary: "The phone-capture counterpart to our 360-camera 3DGS pipeline: scan a scene with Niantic's free Scaniverse app, which trains a Gaussian splat on-device and exports .ply or the compact open-source .spz, then bring it into WebXR (Quest 3 browser, Vision Pro Safari) or Godot — with honest notes on where each path breaks down."
+summary: "The phone-capture counterpart to our 360-camera 3DGS pipeline: scan a scene with Niantic's free Scaniverse app, which trains a Gaussian splat on-device and exports .ply or the compact open-source .spz, then bring it into WebXR (Quest 3 browser, Vision Pro Safari) or Godot — with clear notes on where each path breaks down."
 ---
 
 Our [360-camera Gaussian Splatting workflow](/news/3dgs-360-camera-workflow/) took a desktop route — Insta360 capture, SphereSFM, LichtFeld Studio training. This is the phone counterpart: point [**Scaniverse**](https://www.nianticspatial.com/products/capture) at a subject, and it trains a 3D Gaussian splat **on-device in minutes, for free**. For a hackathon, it is the fastest way to get a real-world object or space into an XR scene.

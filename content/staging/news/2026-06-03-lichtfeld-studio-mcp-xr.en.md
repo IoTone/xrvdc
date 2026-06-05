@@ -3,7 +3,7 @@ title: "LichtFeld Studio + MCP — An AI Agent in Your Gaussian Splatting Loop"
 date: 2026-06-03T13:00:00+09:00
 slug: "lichtfeld-studio-mcp-xr"
 tag: "WORKFLOW"
-summary: "LichtFeld Studio v0.5 is a native desktop workstation for training, editing, and exporting 3D Gaussian splats — and it ships a real Model Context Protocol server, so an AI assistant can drive training and scene edits through the same code paths as the UI. Here's that workflow, plus the honest export-to-XR leg for Quest 3 and Vision Pro."
+summary: "LichtFeld Studio v0.5 is a native desktop workstation for training, editing, and exporting 3D Gaussian splats — and it ships a real Model Context Protocol server, so an AI assistant can drive training and scene edits through the same code paths as the UI. Here's that workflow, plus the export-to-XR leg for Quest 3 and Vision Pro."
 ---
 
 Our [360-camera 3DGS pipeline](/news/3dgs-360-camera-workflow/) used [**LichtFeld Studio**](https://github.com/MrNeRF/LichtFeld-Studio) as a GUI trainer. The project has moved on: **v0.5** is a full native workstation for 3D Gaussian Splatting — train, inspect, edit, automate, and export from one app — and the headline for this audience is that it ships a genuine **Model Context Protocol (MCP) server**. That makes an AI assistant a first-class operator of your splat pipeline.
@@ -25,7 +25,7 @@ The [registered tools](https://raw.githubusercontent.com/MrNeRF/LichtFeld-Studio
 - manipulate the scene; and
 - capture rendered views to see what it just did.
 
-One honest limitation: the capability is verifiable in the source and README, but there is **no MCP wiki page or step-by-step "connect your assistant" tutorial yet**. Describe it as a real, source-backed capability — and expect to wire up the connection yourself rather than follow an official recipe.
+One real limitation: the capability is verifiable in the source and README, but there is **no MCP wiki page or step-by-step "connect your assistant" tutorial yet**. Describe it as a real, source-backed capability — and expect to wire up the connection yourself rather than follow an official recipe.
 
 ## The export-to-XR leg
 

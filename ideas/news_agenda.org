@@ -16,6 +16,122 @@
 # To publish: ask "publish <topic>"; the STAGED item with the nearest
 # SCHEDULED date is promoted to production and flipped to PUBLISHED.
 
+* PUBLISHED Your first Vision Pro mixed-reality scene — RealityKit + ARKit in Swift
+  CLOSED: [2026-06-05 Fri] SCHEDULED: <2026-06-04 Thu>
+  :PROPERTIES:
+  :SERIES:     Apple Vision Pro native-development cluster (1 of 4)
+  :TAG:        STARTER
+  :SLUG_EN:    vision-pro-mixed-reality-realitykit-arkit
+  :SLUG_JA:    vision-pro-mixed-reality-realitykit-arkit-入門
+  :SOURCE:     https://developer.apple.com/documentation/arkit/arkit-in-visionos
+  :ANGLE:      The core native MR on-ramp. RealityKit ECS (Entity/Component) +
+               RealityView, .mixed ImmersiveSpace = virtual over passthrough.
+               The teachable distinction: floating model vs content ANCHORED to
+               the room via ARKit. visionOS ARKit is provider-based (ARKitSession
+               + WorldTracking/HandTracking/SceneReconstruction/PlaneDetection),
+               NOT iOS ARSession — code doesn't port. Authorization (worldSensing
+               / handTracking) + Info.plist usage strings mandatory. Honest core:
+               simulator can't do the MR core (no passthrough, no hand tracking,
+               plane/scene providers error) → DEVICE-ONLY + paid AVP. Version
+               gating noted (object/room tracking = visionOS 2; ManipulationComponent
+               = 26). Enterprise camera APIs explicitly out of scope. Cross-links
+               the visionOS-26 manipulation piece + visionos-2-30-days.
+  :STAGED_EN:  content/staging/news/2026-06-04-vision-pro-mixed-reality-realitykit-arkit.en.md
+  :STAGED_JA:  content/staging/news/2026-06-04-vision-pro-mixed-reality-realitykit-arkit.ja.md
+  :PUBLISHED_EN: content/news/2026-06-04-vision-pro-mixed-reality-realitykit-arkit.en.md
+  :PUBLISHED_JA: content/news/2026-06-04-vision-pro-mixed-reality-realitykit-arkit.ja.md
+  :END:
+  Native AVP mixed reality in Swift: build a .mixed ImmersiveSpace with
+  RealityKit, then anchor content to the real room with ARKit hand
+  tracking / scene reconstruction. Device-only caveats stated plainly.
+  First of a four-article AVP engine cluster (Swift core → visionOS 26
+  manipulation → Unity → Unreal). Staged 2026-06-04; version 1.22 → 1.23.
+
+* STAGED Grab, rotate, scale — visionOS 26 object manipulation in Swift
+  SCHEDULED: <2026-06-05 Fri>
+  :PROPERTIES:
+  :SERIES:     Apple Vision Pro native-development cluster (2 of 4)
+  :TAG:        STARTER
+  :SLUG_EN:    vision-pro-object-manipulation-visionos26
+  :SLUG_JA:    vision-pro-object-manipulation-visionos26-入門
+  :SOURCE:     https://developer.apple.com/videos/play/wwdc2025/274/
+  :ANGLE:      The high-level interaction layer that sits ON TOP of the raw ARKit
+               plumbing (deliberately distinct from article 1, no overlap).
+               ManipulationComponent.configureEntity auto-adds InputTarget/Collision/
+               HoverEffect/Manipulation; .manipulable SwiftUI modifier; ManipulationEvents;
+               ViewAttachmentComponent/GestureComponent/PresentationComponent;
+               observable entities + unified CoordinateSpace3D conversion. Sidebar:
+               environment occlusion, 90Hz hand tracking, content.animate. Honest
+               caveats: visionOS 26 / Xcode 26 ONLY (won't compile on 1.x/2.x);
+               device-only hand input; "few lines not zero" (collision-shape gotcha,
+               early-beta forum reports); abstracts hand-joint data away (raw joints
+               still need article 1's HandTrackingProvider).
+  :STAGED_EN:  content/staging/news/2026-06-05-vision-pro-object-manipulation-visionos26.en.md
+  :STAGED_JA:  content/staging/news/2026-06-05-vision-pro-object-manipulation-visionos26.ja.md
+  :END:
+  visionOS 26's ManipulationComponent: make any entity grabbable/rotatable/
+  scalable in a few lines, plus SwiftUI panels/gestures pinned directly onto
+  entities. Builds on article 1's RealityKit/ARKit foundation. visionOS 26 /
+  Xcode 26 only; device-only. Staged 2026-06-05 (cluster 2 of 4).
+
+* STAGED Vision Pro mixed reality in Unity — getting started with PolySpatial
+  SCHEDULED: <2026-06-06 Sat>
+  :PROPERTIES:
+  :SERIES:     Apple Vision Pro native-development cluster (3 of 4)
+  :TAG:        STARTER
+  :SLUG_EN:    vision-pro-mixed-reality-unity-polyspatial
+  :SLUG_JA:    vision-pro-mixed-reality-unity-polyspatial-入門
+  :SOURCE:     https://docs.unity3d.com/Manual/visionOS.html
+  :ANGLE:      Unity (not Swift) AVP MR via PolySpatial + visionOS XR plugin. Central
+               model: Unity SIMULATES, RealityKit RENDERS (root of all limits). Day-one
+               decision = the four app modes (Windowed / Bounded MR / Unbounded MR /
+               Fully-Immersive Metal); Unbounded = the MR target; Hybrid can't run
+               Metal+Unbounded simultaneously. 3 packages for MR; AR Foundation for
+               ARKit features; gaze+pinch SpatialPointerDevice, PolySpatial Input layer.
+               The TWO things people get wrong, stated plainly: (1) Pro/Enterprise/
+               Industry license REQUIRED for any MR/VR app — Personal/Free can't ship;
+               only Student/Educator is the free route (Student auto-Pro-for-visionOS
+               since Jan 2025). (2) No custom HLSL/ShaderLab — Shader Graph → MaterialX
+               subset only (# = unsupported node). Plus device-only ARKit, 2-UV limit,
+               ~$3,499 hardware, version churn (Unity 6.x LTS). Cross-links image-blaster
+               (engine route) + the Swift core article.
+  :STAGED_EN:  content/staging/news/2026-06-06-vision-pro-mixed-reality-unity-polyspatial.en.md
+  :STAGED_JA:  content/staging/news/2026-06-06-vision-pro-mixed-reality-unity-polyspatial.ja.md
+  :END:
+  AVP passthrough MR in Unity with PolySpatial — choose the right app mode
+  (Unbounded = MR), wire gaze+pinch and AR Foundation, and dodge the two
+  classic traps: the Unity Pro license gate and the Shader Graph/MaterialX
+  limits. Staged 2026-06-06 (cluster 3 of 4).
+
+* STAGED Unreal Engine on Vision Pro — native visionOS and the Polyarc fork
+  SCHEDULED: <2026-06-07 Sun>
+  :PROPERTIES:
+  :SERIES:     Apple Vision Pro native-development cluster (4 of 4)
+  :TAG:        STARTER
+  :SLUG_EN:    unreal-engine-vision-pro-getting-started
+  :SLUG_JA:    unreal-engine-vision-pro-入門
+  :SOURCE:     https://polyarcgames.github.io/
+  :FORK:       Epic forum — https://forums.unrealengine.com/t/polyarc-visionos-fork-is-out/2699827 (branch polyarc-visionos-5.6)
+  :ANGLE:      PREMISE CORRECTED during research: "Unreal has no AVP support, fork-only"
+               is stale. Epic ships EXPERIMENTAL native visionOS in mainline since UE 5.4
+               (full immersion), mixed/passthrough added in 5.5 (Metal, after visionOS 2.0).
+               The "unreal fork" the user meant = Polyarc visionOS fork (Feb 2026, UE 5.6):
+               foveated rendering / multiview / layered RTs ≈ 2x GPU output vs mainline;
+               shipped Glassbreakers (first UE VR title on AVP); mainline-merge PR ~Apr 2026.
+               Honest framing: full-immersion VR = reliable hackathon target; MR passthrough
+               newer + FRAGILE (broke in recent visionOS betas) = stretch. Build pain:
+               Apple Silicon Mac + Xcode 15.3+ (fork → 26) + Apple Dev acct + paired AVP;
+               fork = compile custom engine from source; Metal Desktop Renderer, TSR too
+               costly. Access EULA-gated behind Epic GitHub (not public, not open source).
+               Pixel-streaming = separate fallback, don't conflate. Date-sensitive (PR pending).
+  :STAGED_EN:  content/staging/news/2026-06-07-unreal-engine-vision-pro-getting-started.en.md
+  :STAGED_JA:  content/staging/news/2026-06-07-unreal-engine-vision-pro-getting-started.ja.md
+  :END:
+  Native UE5 on AVP is real but experimental (full-immersion VR solid,
+  MR passthrough fragile); Polyarc's UE 5.6 visionOS fork closes the perf
+  gaps. EULA-gated source, custom-engine build. Corrects the stale
+  "fork-only" premise. Staged 2026-06-07 (cluster 4 of 4).
+
 * PUBLISHED Turn Spectacles into a MIDI controller — the MIDI Bleep Blop starter
   CLOSED: [2026-06-03 Wed] SCHEDULED: <2026-06-03 Wed>
   :PROPERTIES:

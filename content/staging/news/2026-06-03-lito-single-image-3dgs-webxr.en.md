@@ -3,7 +3,7 @@ title: "One Photo to a 3D Splat — Apple's LiTo into WebXR"
 date: 2026-06-03T12:00:00+09:00
 slug: "lito-single-image-3dgs-webxr"
 tag: "WORKFLOW"
-summary: "Apple Research's LiTo turns a single image into a 3D Gaussian splat that preserves view-dependent lighting, exportable as PLY. Here's a realistic single-image → splat → WebXR pipeline — and an honest account of why it is a PyTorch research model, not a Vision Pro tool, and what getting it onto Apple Vision Pro actually costs."
+summary: "Apple Research's LiTo turns a single image into a 3D Gaussian splat that preserves view-dependent lighting, exportable as PLY. Here's a realistic single-image → splat → WebXR pipeline — and a clear-eyed account of why it is a PyTorch research model, not a Vision Pro tool, and what getting it onto Apple Vision Pro actually costs."
 ---
 
 [**LiTo**](https://machinelearning.apple.com/research/lito) (Surface Light Field Tokenization) is an Apple Machine Learning Research project, accepted to ICLR 2026, that generates a **3D object from a single input image** — and unlike most image-to-3D methods, it captures *view-dependent appearance*: specular highlights, reflections, and Fresnel effects, with geometry and lighting cleanly separated. Its native output is a **3D Gaussian splat**, which makes it a natural fit for the splat-to-XR pipelines we have been covering.
@@ -18,7 +18,7 @@ It is also GPU-heavy: roughly 5 seconds per image on an H100, ~160 seconds on an
 
 ## The realistic pipeline: image → splat → WebXR
 
-The honest connection to XR runs through the **output format**, not through any Apple integration:
+The real connection to XR runs through the **output format**, not through any Apple integration:
 
 1. Run the LiTo demo locally (Apple Silicon works, slowly) or on a rented NVIDIA GPU, feeding it a single image.
 2. Export the result as a Gaussian-splat **`.ply`** — the reconstruction notebook saves PLY directly, and a community [ComfyUI wrapper](https://github.com/PozzettiAndrea/ComfyUI-LiTo) adds an explicit "export PLY" node for a single-image → splat flow.
