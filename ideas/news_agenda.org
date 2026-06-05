@@ -47,8 +47,8 @@
   First of a four-article AVP engine cluster (Swift core → visionOS 26
   manipulation → Unity → Unreal). Staged 2026-06-04; version 1.22 → 1.23.
 
-* STAGED Grab, rotate, scale — visionOS 26 object manipulation in Swift
-  SCHEDULED: <2026-06-05 Fri>
+* PUBLISHED Grab, rotate, scale — visionOS 26 object manipulation in Swift
+  CLOSED: [2026-06-05 Fri] SCHEDULED: <2026-06-05 Fri>
   :PROPERTIES:
   :SERIES:     Apple Vision Pro native-development cluster (2 of 4)
   :TAG:        STARTER
@@ -68,6 +68,8 @@
                still need article 1's HandTrackingProvider).
   :STAGED_EN:  content/staging/news/2026-06-05-vision-pro-object-manipulation-visionos26.en.md
   :STAGED_JA:  content/staging/news/2026-06-05-vision-pro-object-manipulation-visionos26.ja.md
+  :PUBLISHED_EN: content/news/2026-06-05-vision-pro-object-manipulation-visionos26.en.md
+  :PUBLISHED_JA: content/news/2026-06-05-vision-pro-object-manipulation-visionos26.ja.md
   :END:
   visionOS 26's ManipulationComponent: make any entity grabbable/rotatable/
   scalable in a few lines, plus SwiftUI panels/gestures pinned directly onto
