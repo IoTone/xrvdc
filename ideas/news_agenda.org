@@ -16,6 +16,72 @@
 # To publish: ask "publish <topic>"; the STAGED item with the nearest
 # SCHEDULED date is promoted to production and flipped to PUBLISHED.
 
+* PUBLISHED Grab, teleport, point — VR interactions in Godot with XR Tools
+  CLOSED: [2026-06-10 Wed] SCHEDULED: <2026-06-08 Mon>
+  :PROPERTIES:
+  :SERIES:     Godot XR cluster (2 of 3; 1 of 3 = the already-published godot-xr-quest-3 OpenXR on-ramp)
+  :TAG:        STARTER
+  :SLUG_EN:    godot-xr-tools-interaction
+  :SLUG_JA:    godot-xr-tools-入門
+  :SOURCE:     https://github.com/GodotVR/godot-xr-tools
+  :TEMPLATE:   https://github.com/GodotVR/godot-xr-template (XR Tools 4.5.1 on Godot 4.6 + Quest exports)
+  :ANGLE:      The "now make it interactive" follow-up to the published godot-xr-quest-3
+               OpenXR setup. Godot XR Tools = community add-on (GodotVR org / Olij+Nixon),
+               MIT, NOT engine built-in; a SCAFFOLD of prefab scenes, not a framework
+               (you still write glue). Verified names: XRToolsPlayerBody + movement
+               providers (Direct Movement/Turn = min viable), XRToolsFunctionPickup +
+               XRToolsPickable + grab points + XRToolsSnapZone, function_teleport,
+               XRToolsFunctionPointer + Viewport2Din3D (pointer mainly for 2D panels OOTB).
+               StartXR (start_xr.tscn) vs manual init = pick ONE (don't double-init).
+               Honest caveats: PIN versions (every minor bump raises Godot floor + breaks;
+               4.5.0 → min 4.4); no 4.6-specific tag (4.5.1 stable predates 4.6, runs on it
+               per the official template — "template-verified" not "officially tagged");
+               GDScript perf on standalone; hand tracking is the WEAK leg (functions assume
+               controllers; GodotXRHandPoseDetector bridges hand→virtual-controller). Research
+               flagged: re-check releases page + exact teleport node name at event time.
+  :STAGED_EN:  content/staging/news/2026-06-08-godot-xr-tools-interaction.en.md
+  :STAGED_JA:  content/staging/news/2026-06-08-godot-xr-tools-interaction.ja.md
+  :PUBLISHED_EN: content/news/2026-06-08-godot-xr-tools-interaction.en.md
+  :PUBLISHED_JA: content/news/2026-06-08-godot-xr-tools-interaction.ja.md
+  :END:
+  Godot XR Tools as the interaction layer on top of the published OpenXR
+  starter: grab (pickables/snap zones), teleport, locomotion providers,
+  and a laser pointer driving Viewport2Din3D UI — prefab scenes you
+  instance, not code you hand-write. Caveats: pin versions, GDScript perf,
+  hand tracking is the weak leg. Staged 2026-06-08 (Godot cluster 2 of 3).
+
+* STAGED Ship Godot XR as a URL — the WebXR export path
+  SCHEDULED: <2026-06-09 Tue>
+  :PROPERTIES:
+  :SERIES:     Godot XR cluster (3 of 3)
+  :TAG:        STARTER
+  :SLUG_EN:    godot-webxr-browser
+  :SLUG_JA:    godot-webxr-入門
+  :SOURCE:     https://docs.godotengine.org/en/stable/classes/class_webxrinterface.html
+  :ANGLE:      The "no install, ship a URL" deploy route vs the native OpenXR/Quest APK.
+               WebXR ≠ OpenXR: the BROWSER is the runtime; init WebXRInterface (signal-
+               driven, async), XRServer.find_interface("WebXR"). Two hard constraints up
+               front: (1) Compatibility renderer ONLY (WebGL 2.0; Forward+/Mobile/WebGPU
+               don't run on web); (2) HTTPS required + COOP/COEP cross-origin-isolation
+               headers IF threaded (SharedArrayBuffer) — hackathon move = export SINGLE-
+               THREADED (re-added 4.3) → no headers, just HTTPS. Immersive session must
+               start from a USER GESTURE (Enter-VR button). NOTABLE: native Godot OpenXR
+               can't reach AVP, but WebXR CAN — AVP Safari immersive-vr by default since
+               visionOS 2; BUT immersive-ar non-functional → opaque VR only, gaze+pinch
+               (select events) not controllers. Runs: Quest 3 browser (primary), AVP Safari
+               (VR-only), Android XR/Galaxy XR Chrome. Caveats: headers gotcha = #1 breakage;
+               perf << native; input thinner than OpenXR; less battle-tested. UNVERIFIED
+               (flag): whether WebXR strictly needs threads (it doesn't — threads only help);
+               AVP immersive-ar flag status shifts between visionOS builds.
+  :STAGED_EN:  content/staging/news/2026-06-09-godot-webxr-browser.en.md
+  :STAGED_JA:  content/staging/news/2026-06-09-godot-webxr-browser.ja.md
+  :END:
+  Godot's WebXR export as the zero-install deploy route: same project, the
+  WebXRInterface (browser is the runtime), Compatibility renderer, and the
+  HTTPS/COOP-COEP hosting gotcha (go single-threaded to dodge it). Reaches
+  Quest 3 browser AND — unlike native Godot OpenXR — AVP Safari as VR-only.
+  Staged 2026-06-09 (Godot cluster 3 of 3).
+
 * PUBLISHED Your first Vision Pro mixed-reality scene — RealityKit + ARKit in Swift
   CLOSED: [2026-06-05 Fri] SCHEDULED: <2026-06-04 Thu>
   :PROPERTIES:
@@ -76,8 +142,8 @@
   entities. Builds on article 1's RealityKit/ARKit foundation. visionOS 26 /
   Xcode 26 only; device-only. Staged 2026-06-05 (cluster 2 of 4).
 
-* STAGED Vision Pro mixed reality in Unity — getting started with PolySpatial
-  SCHEDULED: <2026-06-06 Sat>
+* PUBLISHED Vision Pro mixed reality in Unity — getting started with PolySpatial
+  CLOSED: [2026-06-10 Wed] SCHEDULED: <2026-06-06 Sat>
   :PROPERTIES:
   :SERIES:     Apple Vision Pro native-development cluster (3 of 4)
   :TAG:        STARTER
@@ -99,14 +165,16 @@
                (engine route) + the Swift core article.
   :STAGED_EN:  content/staging/news/2026-06-06-vision-pro-mixed-reality-unity-polyspatial.en.md
   :STAGED_JA:  content/staging/news/2026-06-06-vision-pro-mixed-reality-unity-polyspatial.ja.md
+  :PUBLISHED_EN: content/news/2026-06-06-vision-pro-mixed-reality-unity-polyspatial.en.md
+  :PUBLISHED_JA: content/news/2026-06-06-vision-pro-mixed-reality-unity-polyspatial.ja.md
   :END:
   AVP passthrough MR in Unity with PolySpatial — choose the right app mode
   (Unbounded = MR), wire gaze+pinch and AR Foundation, and dodge the two
   classic traps: the Unity Pro license gate and the Shader Graph/MaterialX
   limits. Staged 2026-06-06 (cluster 3 of 4).
 
-* STAGED Unreal Engine on Vision Pro — native visionOS and the Polyarc fork
-  SCHEDULED: <2026-06-07 Sun>
+* PUBLISHED Unreal Engine on Vision Pro — native visionOS and the Polyarc fork
+  CLOSED: [2026-06-10 Wed] SCHEDULED: <2026-06-07 Sun>
   :PROPERTIES:
   :SERIES:     Apple Vision Pro native-development cluster (4 of 4)
   :TAG:        STARTER
@@ -128,6 +196,8 @@
                Pixel-streaming = separate fallback, don't conflate. Date-sensitive (PR pending).
   :STAGED_EN:  content/staging/news/2026-06-07-unreal-engine-vision-pro-getting-started.en.md
   :STAGED_JA:  content/staging/news/2026-06-07-unreal-engine-vision-pro-getting-started.ja.md
+  :PUBLISHED_EN: content/news/2026-06-07-unreal-engine-vision-pro-getting-started.en.md
+  :PUBLISHED_JA: content/news/2026-06-07-unreal-engine-vision-pro-getting-started.ja.md
   :END:
   Native UE5 on AVP is real but experimental (full-immersion VR solid,
   MR passthrough fragile); Polyarc's UE 5.6 visionOS fork closes the perf
@@ -538,6 +608,9 @@
   Add new topics below as IDEA headlines. On request they'll be
   scheduled (one/day, after the last scheduled item), researched,
   and drafted into staging.
+
+** IDEA Add a feature of sharpflow for photo to splat transforms made easy: https://github.com/IoTone/SharpFlow
+** IDEA WWDC2026: https://www.youtube.com/watch?v=jED4zYKO4J8
 
 ** IDEA <add the next topic here>
    (All four prior backlog IDEAs — Scaniverse, ml-lito/LiTo, LichtFeld+MCP,
