@@ -16,6 +16,66 @@
 # To publish: ask "publish <topic>"; the STAGED item with the nearest
 # SCHEDULED date is promoted to production and flipped to PUBLISHED.
 
+* PUBLISHED Agentic coding in Android Studio — Claude, Cursor, Gemini for Android XR
+  CLOSED: [2026-06-10 Wed] SCHEDULED: <2026-06-10 Wed>
+  :PROPERTIES:
+  :SERIES:     AI-assisted XR development (companion to vibe-coding-spectacles, the Lens Studio analog)
+  :TAG:        STARTER
+  :SLUG_EN:    agentic-coding-android-studio
+  :SLUG_JA:    agentic-coding-android-studio-入門
+  :SOURCE:     https://developer.android.com/studio/gemini/agent-mode
+  :ANGLE:      User-requested + PRIORITIZED: "use Claude or Cursor with Android Studio
+               to maximize skills + efficient agentic coding; advise an Android XR setup."
+               Hook: Jetpack XR = plain Kotlin/Compose → the SAME agentic tooling that builds
+               a phone app builds a spatial one; no separate "XR agent." THREE routes, all
+               in/around Android Studio, all Claude-drivable:
+               (1) Gemini in Android Studio AGENT MODE — built-in, STABLE since Narwhal
+               (Jul 2025), big expansion in Otter 3 (Jan 2026). Multi-file edits (review
+               drawer), runs Gradle, detects+fixes build errors iteratively, generates
+               Compose/tests, device interaction (deploy/screenshot/Logcat/adb shell input).
+               KEY: Otter 3 made it MODEL-FLEXIBLE → can be backed by Anthropic Claude / GPT
+               via custom endpoint, or local Ollama/LM Studio. So "Claude in Android Studio"
+               needs no extra tool.
+               (2) Claude Code — official JetBrains plugin lists Android Studio (BETA);
+               IDE diff viewer, selection/tab context, diagnostics fed back, /ide; + official
+               Kotlin LSP plugin (JetBrains Kotlin LS) for .kt/.kts intelligence. CLAUDE.md,
+               MCP, skills, plan mode; runs ./gradlew + adb in terminal.
+               (3) Cursor — VS Code fork, multi-provider (can run Claude); NO native Android
+               tooling → Cursor for code + Gradle CLI + ADB, Android Studio alongside for
+               emulator/debugger/Logcat/XR tooling. Trust Gradle build over LSP squiggles.
+               MAXIMIZE: project-memory file (CLAUDE.md / AGENTS.md, Narwhal4 Canary+; GEMINI.md
+               wins) with exact gradle/adb cmds; Skills + MCP (ADB MCP); let it close the
+               ./gradlew loop. Includes a copy-paste AGENTS.md/CLAUDE.md grounding stub.
+               XR ANGLE: same Compose model + spatial primitives (Subspace/SpatialPanel/Orbiter/
+               SpatialGltfModel; SceneCore Session+GltfModelEntity; ARCore Session/Anchor/Hand);
+               setup = standard Android XR (latest AS Canary = Quail 2 Canary Jun 2026, XR
+               system image + AVD emulator-only, pinned alpha deps) → cross-links androidxr-入門.
+               THE CATCH (whole point): Jetpack XR APIs are 1.0.0-alphaNN and OUTRUN model
+               training — models know EARLY alphas, not the current set (stale-but-confident,
+               worse than ignorant). EMPIRICALLY TESTED 2026-06-10 against Fable 5 (cutoff
+               Jan 2026): nailed the architecture (artifacts, Subspace/SpatialPanel/Orbiter,
+               ARCore Session/Anchor/Hand all verbatim-correct) BUT rated the long-removed
+               `Volume` composable "confident" (current surface = SceneCoreEntity/
+               SpatialGltfModel), missed SpatialGltfModel (DP4, post-cutoff), couldn't name
+               alpha14/15, guessed "beta by late 2025" (wrong), self-estimated 30–50%
+               no-docs compile rate. No XR-specific agent knowledge documented in any of
+               the three routes. Fix = grounding + compile loop as backstop (not optional). VERIFY AT EVENT: AS Canary codename
+               churn (Quail→next), Gemini CLI consumer EOL 18 Jun 2026 → Antigravity CLI,
+               model lineups in Agent Mode/Cursor. Cross-links androidxr-getting-started
+               (XR setup it builds on) + vibe-coding-spectacles (Lens Studio AI analog).
+  :STAGED_EN:  content/staging/news/2026-06-10-agentic-coding-android-studio.en.md
+  :STAGED_JA:  content/staging/news/2026-06-10-agentic-coding-android-studio.ja.md
+  :PUBLISHED_EN: content/news/2026-06-10-agentic-coding-android-studio.en.md
+  :PUBLISHED_JA: content/news/2026-06-10-agentic-coding-android-studio.ja.md
+  :END:
+  AI-assisted Android XR coding: three Claude-drivable routes in/around Android
+  Studio — Gemini Agent Mode (now model-flexible, can run Claude), Claude Code
+  (official Android Studio plugin + Kotlin LSP), and Cursor alongside. How to
+  wire project memory, skills, MCP, and the gradle build-fix loop, then point it
+  all at Jetpack XR — where the catch is the alpha APIs post-date the models, so
+  the agent must be grounded or it hallucinates androidx.xr.* APIs. User-requested
+  + prioritized. Staged 2026-06-10; version 1.26 → 1.27.
+
 * PUBLISHED Grab, teleport, point — VR interactions in Godot with XR Tools
   CLOSED: [2026-06-10 Wed] SCHEDULED: <2026-06-08 Mon>
   :PROPERTIES:
@@ -50,8 +110,8 @@
   instance, not code you hand-write. Caveats: pin versions, GDScript perf,
   hand tracking is the weak leg. Staged 2026-06-08 (Godot cluster 2 of 3).
 
-* STAGED Ship Godot XR as a URL — the WebXR export path
-  SCHEDULED: <2026-06-09 Tue>
+* PUBLISHED Ship Godot XR as a URL — the WebXR export path
+  CLOSED: [2026-06-10 Wed] SCHEDULED: <2026-06-09 Tue>
   :PROPERTIES:
   :SERIES:     Godot XR cluster (3 of 3)
   :TAG:        STARTER
@@ -75,6 +135,8 @@
                AVP immersive-ar flag status shifts between visionOS builds.
   :STAGED_EN:  content/staging/news/2026-06-09-godot-webxr-browser.en.md
   :STAGED_JA:  content/staging/news/2026-06-09-godot-webxr-browser.ja.md
+  :PUBLISHED_EN: content/news/2026-06-09-godot-webxr-browser.en.md
+  :PUBLISHED_JA: content/news/2026-06-09-godot-webxr-browser.ja.md
   :END:
   Godot's WebXR export as the zero-install deploy route: same project, the
   WebXRInterface (browser is the runtime), Compatibility renderer, and the
