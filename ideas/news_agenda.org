@@ -16,6 +16,49 @@
 # To publish: ask "publish <topic>"; the STAGED item with the nearest
 # SCHEDULED date is promoted to production and flipped to PUBLISHED.
 
+* PUBLISHED Photo to splat in under a second — Apple SHARP into WebXR
+  CLOSED: [2026-06-11 Thu] SCHEDULED: <2026-06-11 Thu>
+  :PROPERTIES:
+  :SERIES:     Splat workflows (generative side, with lito-single-image-3dgs-webxr; capture side = scaniverse / 3dgs-360)
+  :TAG:        WORKFLOW
+  :SLUG_EN:    sharp-photo-to-splat-webxr
+  :SLUG_JA:    sharp-photo-to-splat-webxr-入門
+  :SOURCE:     https://github.com/apple/ml-sharp
+  :ANGLE:      From backlog IDEA "Add a feature of sharpflow for photo to splat
+               transforms made easy: github.com/IoTone/SharpFlow". IMPORTANT
+               (verified 2026-06-11): that SharpFlow repo 404s — not public, no
+               trace anywhere (org search, global GitHub search, web search all
+               empty). Article therefore framed on the REAL, citable substrate
+               and does NOT name SharpFlow: (1) apple/ml-sharp = SHARP, "Sharp
+               Monocular View Synthesis in Less Than a Second" (arXiv:2512.10685),
+               single photo → 3DGS .ply in <1s on GPU, feedforward monocular (no
+               COLMAP/multi-view), 8.5k stars, prediction on CPU/CUDA/MPS (M1+
+               MacBook works; --render video is CUDA-only), Apple custom license
+               (LICENSE + LICENSE_MODEL), PLY-only export (.spz request = issue #8);
+               (2) IoTone/ml-sharp fork — delta is purely DX: uv quickstart
+               (uv venv / uv python install 3.13 / uv pip sync / activate),
+               commits Dec 2025–Jan 2026; (3) IoTone/gsplats-to-webxr (updated
+               2026-06-04) — spark-threejs-webxr template, Spark + three.js,
+               HTTPS-serving docs (self-signed+http-server or Vite), CORS note.
+               Positioning: speed-optimized sibling of LiTo (diffusion,
+               view-dependent lighting, slower) on the generative side vs
+               capture-based Scaniverse/360. Caveats: monocular ≠ walk-around
+               capture; research license; PLY only; starter repos very young
+               (few commits, no license file on gsplats-to-webxr). REVISIT: if
+               IoTone publishes SharpFlow, write a follow-up naming it and fold
+               these repos in as its lineage.
+  :STAGED_EN:  content/staging/news/2026-06-11-sharp-photo-to-splat-webxr.en.md
+  :STAGED_JA:  content/staging/news/2026-06-11-sharp-photo-to-splat-webxr.ja.md
+  :PUBLISHED_EN: content/news/2026-06-11-sharp-photo-to-splat-webxr.en.md
+  :PUBLISHED_JA: content/news/2026-06-11-sharp-photo-to-splat-webxr.ja.md
+  :END:
+  Single photo → 3D Gaussian splat in under a second with Apple's SHARP
+  (runs on a MacBook), installed via IoTone's uv quickstart fork, delivered
+  to Quest 3 / Vision Pro browsers with the IoTone gsplats-to-webxr Spark +
+  three.js starter. Backlog "SharpFlow" repo was unverifiable (404), so the
+  piece covers the real workflow instead. Staged + published 2026-06-11;
+  version 1.30 → 1.31.
+
 * PUBLISHED Agentic coding in Android Studio — Claude, Cursor, Gemini for Android XR
   CLOSED: [2026-06-10 Wed] SCHEDULED: <2026-06-10 Wed>
   :PROPERTIES:
@@ -671,11 +714,13 @@
   scheduled (one/day, after the last scheduled item), researched,
   and drafted into staging.
 
-** IDEA Add a feature of sharpflow for photo to splat transforms made easy: https://github.com/IoTone/SharpFlow
 ** IDEA WWDC2026: https://www.youtube.com/watch?v=jED4zYKO4J8
 
 ** IDEA <add the next topic here>
    (All four prior backlog IDEAs — Scaniverse, ml-lito/LiTo, LichtFeld+MCP,
    MIDI Bleep Blop — were researched, drafted, and PUBLISHED in the
-   2026-06-03 batch above.)
+   2026-06-03 batch above. The SharpFlow IDEA became the 2026-06-11
+   SHARP-into-WebXR article: github.com/IoTone/SharpFlow 404s, so the piece
+   covers apple/ml-sharp + the IoTone fork + gsplats-to-webxr instead — see
+   that entry's REVISIT note if SharpFlow goes public.)
 
