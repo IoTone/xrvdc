@@ -12,6 +12,8 @@ This is the first in a series of **starter-project guides** to help you hit the 
 
 Spectacles are standalone AR glasses with hand tracking, world meshing, and on-device ML. Lenses are built in **Lens Studio**, Snap's free authoring tool, using a visual scene editor plus TypeScript/JavaScript. For a 2.5-day hackathon, the fastest path to a working demo is to start from an official sample and remix it — so this guide covers the toolchain and walks through every sample in Snap's reference repository.
 
+Lens Studio is the **native** route, and the focus of this guide — but it is not the only way onto Spectacles. Since Snap OS 2.0, the glasses also run **WebXR** apps directly through the on-device **[Browser Lens](https://developers.snap.com/spectacles/about-spectacles-features/webxr)** (no Lens Studio required), in `immersive-ar` mode with hand tracking as the primary input. If your team prefers the web stack, that path is fully supported — see our [A-Frame WebXR starter](/news/aframe-webxr-starter/), which targets Spectacles alongside Quest 3 and Vision Pro.
+
 ## Get Lens Studio
 
 Lens Studio is a free download for macOS and Windows.

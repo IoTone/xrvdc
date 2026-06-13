@@ -12,6 +12,8 @@ XR VisionDevCamp Fukuoka 2026 でスムーズにスタートを切るための *
 
 Spectacles はハンドトラッキング、ワールドメッシュ、オンデバイス ML を備えたスタンドアロン型 AR グラスです。レンズは Snap の無料オーサリングツール **Lens Studio** で、ビジュアルなシーンエディタと TypeScript / JavaScript を使って制作します。2.5 日間のハッカソンで動くデモに最短で到達するには、公式サンプルを出発点にしてリミックスするのが近道です。本ガイドではツールチェーンと、Snap の公式サンプルリポジトリの全プロジェクトを紹介します。
 
+Lens Studio は **ネイティブ** の経路で、本ガイドの主題です — ただし Spectacles への唯一の道ではありません。Snap OS 2.0 以降、グラスはオンデバイスの **[Browser Lens](https://developers.snap.com/spectacles/about-spectacles-features/webxr)** を通じて **WebXR** アプリを直接（Lens Studio 不要で）実行でき、`immersive-ar` モードでハンドトラッキングを主入力として動作します。ウェブのスタックを好むなら、その経路は完全にサポートされています — Quest 3・Vision Pro と並んで Spectacles を対象とする [A-Frame WebXR スターター](/ja/news/aframe-webxr-入門/) を参照してください。
+
 ## Lens Studio を入手する
 
 Lens Studio は macOS / Windows 向けに無料でダウンロードできます。

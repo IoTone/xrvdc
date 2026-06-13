@@ -16,6 +16,303 @@
 # To publish: ask "publish <topic>"; the STAGED item with the nearest
 # SCHEDULED date is promoted to production and flipped to PUBLISHED.
 
+* STAGED The moiré lens — two rotating plates against XR's focus problem
+  SCHEDULED: <2026-06-16 Tue>
+  :PROPERTIES:
+  :SERIES:     XR optics explainers (near-eye hardware / varifocal; outlier from the dev-tooling run)
+  :TAG:        STARTER
+  :SLUG_EN:    moire-lens-varifocal-xr
+  :SLUG_JA:    moire-lens-varifocal-xr-入門
+  :SOURCE:     https://opg.optica.org/ao/abstract.cfm?uri=ao-47-21-3722
+  :ANGLE:      User-requested + "do deep research" → ran the deep-research workflow
+               (106 agents, 23 primary sources, 25 claims verified 0 killed) then a
+               focused EXTRACTION agent over the vetted sources. Explainer, not a
+               how-to: understand the mechanism + where it sits, honest "lab not
+               shipping" thesis. PHYSICS (verified, Bernet & Ritsch-Marte, Applied
+               Optics 47:3722, 2008, Innsbruck): two cascaded DOE/metasurface plates
+               with complementary phase φ ∝ r²·φ and its inverse; neither is a lens
+               alone; rotate one by θ → combined phase ∝ r²·θ = parabolic Fresnel
+               lens; OPTICAL POWER LINEAR IN θ (1/f ∝ θ), passes through zero
+               divergent↔convergent. Visible realization ~f=−36..+12mm over ±90°.
+               FAMILY: Alvarez = translational analog (moiré = rotational); pancake
+               = fixed focus; LC tunable (Meta Mirror Lake stack, FlexEnable) =
+               electric, product-adjacent; liquid lens. WHY XR: VAC / gaze-driven
+               varifocal / thin-flat AR. STATE OF ART (all LAB): PhotoniX 2025
+               (Xiao HIT-Shenzhen / Mu Ku Chen CityU-HK / Geng Tsinghua) — 3
+               cascaded TiO₂ metasurfaces, rotation-tuned focus+pupil-steer, 532nm,
+               f=3.7–33.2mm, eyebox 4.2–5.8mm, 14.2% eff, AR demo, RGB = future;
+               Iwami/Ogawa TUAT 2022 visible moiré metalens 64%/25%/8% @ 633/532/
+               440nm. CONFLATION TRAP (load-bearing — the extraction agent caught 4
+               errors in my brief): PhotoniX is NOT a "Lee/Kim Korean group";
+               Optica-2022 "variable-focus lens" is LC Alvarez NOT moiré; Metalenz/
+               Capasso = STATIC metasurfaces (Metalenz shipped product = ST depth
+               SENSOR optic, not display/varifocal); Meta Mirror Lake = LC varifocal
+               NOT moiré. Article explicitly de-conflates these. LIMITS: chromatic
+               aberration (f∝1/λ, 64→8% red→blue) = central blocker; low eff/stray
+               light/higher orders; Talbot-length spacing; 2µm misalignment distorts;
+               no dynamic rotational actuator demoed (manual mounts); ~2mm apertures,
+               e-beam fab not consumer scale. TAKEAWAY: NO moiré varifocal shipping;
+               only shipped consumer metasurface = static sensor; "varifocal is
+               coming" (LC/Alvarez, Meta ~2nd half decade) TRUE but "moiré shipping"
+               FALSE. HEDGED/omitted: sciadv.abe4458 doublet numbers (403/search-
+               only — kept qualitative, exact figures dropped). Cross-links: xreal,
+               wwdc-2026, spatial-video (forward ref, publishes 06-13). Voice fix:
+               removed "honest summary" → "accurate summary" (forbidden trope).
+  :STAGED_EN:  content/staging/news/2026-06-16-moire-lens-varifocal-xr.en.md
+  :STAGED_JA:  content/staging/news/2026-06-16-moire-lens-varifocal-xr.ja.md
+  :END:
+  Explainer on moiré rotational varifocal lenses for XR: two stacked diffractive/
+  metasurface plates whose relative rotation tunes focal power linearly through
+  zero (Bernet 2008; PhotoniX 2025 AR metalens). Where it sits vs Alvarez/pancake/
+  LC; why XR cares (VAC); all lab, not shipping. Carefully de-conflates moiré from
+  static metalenses (Metalenz/Capasso) and LC varifocal (Meta Mirror Lake). Held
+  back by chromatic aberration, ~14% efficiency, sub-µm mechanical rotation.
+  Deep-research workflow + extraction pass. Staged 2026-06-16; version 1.36 → 1.37.
+
+* STAGED Every STYLY SDK for AR and VR — the whole toolchain map
+  SCHEDULED: <2026-06-15 Mon>
+  :PROPERTIES:
+  :SERIES:     Platform/SDK overviews (Japan-focused; companion to the WebAR HOLD item below)
+  :TAG:        STARTER
+  :SLUG_EN:    styly-sdks-ar-vr
+  :SLUG_JA:    styly-sdks-ar-vr-入門
+  :SOURCE:     https://document.styly.cc/
+  :ANGLE:      User-requested ("overview of all STYLY SDKs for AR and VR"). NOTE:
+               distinct from the HOLD "STYLY WebAR contributed post" below — this
+               is our own editorial overview; covers WebAR only at a glance and
+               flags the contributed deep-dive as planned. Two research agents
+               (build-side SDKs + AR/VR delivery targets). DISAMBIGUATION: styly.cc
+               (Psychic VR Lab XR), NOT styly.io (interior-design AI). CORE INSIGHT
+               (the spine): "STYLY SDK" = FOUR authoring tools incl. TWO parallel,
+               MUTUALLY-INCOMPATIBLE Unity toolchains, and ONE rule across all —
+               NO custom C# anywhere. Live GitHub org = github.com/styly-dev
+               (styly-inc/psychic-vr-lab paths are dead). TOOLS: (1) STYLY Studio —
+               no-code browser, free, imports glTF/.glb/FBX/OBJ/.blend + PNG/JPEG/
+               GIF + MP3 + YouTube; (2) STYLY Plugin for Unity (CLASSIC, VR/mobile/
+               web) — .unitypackage from styly.cc/download, Unity 2022.3.24f1
+               (mobile/web/Studio/Quest2-3/PICO4) OR 2019.4.29f1 (Steam/VIVEPORT/
+               VIVE Flow+XR Elite/XREAL/SR Display), Built-in pipeline + GAMMA only,
+               survives: Timeline/Shuriken/Animator/audio/baked lighting/Built-in
+               shaders; STRIPS custom C# MonoBehaviour ("security"); (3) scripting
+               = PlayMaker (bundled 1.9.2f3, custom actions ChangeStylyScene/
+               OpenURL/GetHttpRequest, injects controller global events VR-app-only)
+               OR Interaction SDK (STYLY_Attr_* / STYLY_Action_* components; UI
+               Pointer Click is the one cross-device VR+web+mobile tap); (4) STYLY
+               Spatial Layer Plugin (VISION PRO, separate world) — OpenUPM
+               com.styly.styly-spatial-layer-plugin ~v0.6.x, UNITY 6, URP + LINEAR
+               (opposite of classic), Bounded(1m³)/Unbounded volumes, Visual
+               Scripting ONLY (no C#/PlayMaker), companions STYLY-Hands-Unity /
+               STYLY-NetSync / enterprise camera access; (5) STYLY WebAR — launched
+               2026-05-19, ex-palanAR (palan merger), no-code browser AR, 12 AR
+               types, URL/QR, free tier. NEWVIEW SDK = old name of classic plugin.
+               AR TARGETS: Mobile app (marker/markerless plane + location via
+               Immersal + City Anchor/Google VPS; doubles as no-headset VR viewer),
+               WebAR, AR glasses (XREAL + SR Display CONFIRMED; Spectacles/HoloLens/
+               Magic Leap/Android XR NOT). VR TARGETS: Quest 2/3 + PICO 4/4 Ultra
+               app (free), SteamVR/PCVR (Rift/VIVE/Index/WMR), Vision Pro (SEPARATE
+               app, "not compatible with legacy STYLY", visionOS 26+), Web Player
+               (non-immersive; true immersive headset-browser WebXR UNCONFIRMED).
+               PRICING: Creator free / Business $799-mo / Enterprise. AI = Tripo AI
+               asset-gen (NOT scene-gen). 2025-26: World Canvas (Jun 2025), STYLY×
+               palan merger (full integ end-2026), WebAR rebrand (May 2026).
+               HEDGED: Spatial Layer release-year (GitHub renders 2024, likely
+               2025), classic plugin has no public version#, immersive WebXR
+               unconfirmed, MP4/WAV direct upload + Studio size limits undocumented.
+               Cross-links: xreal, immersive-web-sdk, webspatial, aframe,
+               reactvision, vibe-coding-spectacles (the unsupported one).
+  :STAGED_EN:  content/staging/news/2026-06-15-styly-sdks-ar-vr.en.md
+  :STAGED_JA:  content/staging/news/2026-06-15-styly-sdks-ar-vr.ja.md
+  :END:
+  Overview of STYLY's authoring SDKs and AR/VR delivery targets. Four tools —
+  STYLY Studio (no-code), the classic Unity plugin (VR/mobile/web, Built-in/
+  Gamma, PlayMaker/Interaction SDK), the Spatial Layer plugin (Vision Pro,
+  Unity 6/URP, Visual Scripting), and WebAR — with one rule: no custom C#.
+  Two incompatible Unity toolchains; pick by target device. AR = mobile app /
+  WebAR / XREAL+SR Display (not Spectacles); VR = Quest/PICO/Steam/Vision Pro
+  (separate pipeline). Staged 2026-06-15; version 1.35 → 1.36.
+
+* STAGED Make art inside the headset — and get it into your build
+  SCHEDULED: <2026-06-14 Sun>
+  :PROPERTIES:
+  :SERIES:     Capture-to-XR workflows (creative inverse of the splat/video capture cluster)
+  :TAG:        WORKFLOW
+  :SLUG_EN:    make-art-inside-xr
+  :SLUG_JA:    make-art-inside-xr-入門
+  :SOURCE:     https://openbrush.app/
+  :ANGLE:      User-requested ("research on making art inside of XR"). Fills the
+               creative-authoring gap: cluster had capture (splats/video) +
+               engines, not in-headset 3D art CREATION. Framing = the inverse of
+               capture (author geometry from nothing) but SAME asset-pipeline
+               discipline; hackathon decision = "exports engine-ready geometry,
+               for free?" + don't let it break on import. Two research agents
+               (tools landscape + export pipeline). VERIFIED CENTERPIECE: Open
+               Brush — Tilt Brush successor, Icosa Foundation, free Apache-2.0,
+               Quest-native + PCVR, exports GLB/FBX/OBJ/USD/JSON/LATK, NO native
+               visionOS yet. Companions: Open Brush Toolkit (Unity SDK v24.x,
+               reassigns brush materials) + three-icosa npm (GOOGLE_tilt_brush_
+               material glTF ext for three.js/WebXR). FREE TOOLKIT by output:
+               Open Blocks (OSS, Quest, OBJ); Gravity Sketch (genuine free tier
+               reworked Feb 2026, OBJ/FBX/glTF in-headset, IGES paid); Masterpiece
+               X (Quest, free+250 credits, AI text→3D, GLB); Quill (free, PCVR/
+               Windows-tether, USD/FBX/Alembic, NO glTF, anim only via Alembic);
+               Arkio (Quest3 MR free Starter, glTF/OBJ); Substance 3D Modeler
+               (no free tier, 30-day trial, USD/glTF/FBX/OBJ). SKIP for pipeline:
+               2D painters Vermillion/Painting VR/Kingspray (flat images, not
+               meshes). EXPORT DISCIPLINE (the bite): GLB = universal key, USDZ =
+               Vision Pro key; KHR_materials_unlit (else PBR washes painted color
+               out); doubleSided (single-plane strokes vanish); AVOID Draco
+               (corrupts vertex colors); brush shaders need extension-aware loader
+               (three-icosa / Toolkit), particle+transparent brushes lossy even
+               then; GODOT 4.3-4.4.x vertex-color-black bug → "Use Vertex Colors
+               as Albedo" + Forward+/Mobile. Convert glTF→USDZ via Blender (solid)
+               or Google usd_from_gltf (archived Jun 2024 but works). RECIPES:
+               Quest=GLB→Meta Spatial SDK (no conv); WebXR=GLB→three.js+three-icosa
+               (unlit+doublesided, no Draco); AVP=GLB→Blender/usd_from_gltf→USDZ→
+               QuickLook/RCP/Safari <model>; Quill=Alembic→Unreal Geometry Cache /
+               Unity Alembic, vertexcolor→emissive. VISION PRO INPUT: hand/eye
+               default poor for drawing, but visionOS 26 (2025) added 6DoF
+               accessories — Logitech Muse stylus ($129.95, Oct 2025), PSVR2 Sense
+               ($249.95, Nov 2025); by 26.2 Apple Freeform/Notes accept Muse;
+               native AVP art = small USDZ apps (Spatial Drawing, VoxScan
+               glTF/OBJ/USDZ); big painters NOT ported. SPECTACLES: Lens art locked
+               as Snap Cloud JSON, NO mesh export → create/display target, not a
+               pipeline source (Lens Studio does import glTF/FBX/OBJ). HOSTING:
+               Icosa Gallery (OSS Poly successor, upload-from-Open-Brush, API) +
+               poly.pizza (CC0/CC-BY, API). FLAGGED: Open Brush exact version
+               (agents disagreed v2.29 vs v2.24) → kept prose version-light;
+               Quill 2026 pricing, Gravity Sketch Plus $, several tier prices =
+               snippet-level (hedged in prose). Cross-links: sharp, spatial-video
+               (forward ref — publishes 06-13 first), 3dgs-360, aframe, babylonjs,
+               realitykit-arkit, wwdc-2026, vibe-coding-spectacles.
+  :STAGED_EN:  content/staging/news/2026-06-14-make-art-inside-xr.en.md
+  :STAGED_JA:  content/staging/news/2026-06-14-make-art-inside-xr.ja.md
+  :END:
+  In-headset 3D art creation → asset pipeline into engines/WebXR/Vision Pro.
+  Centerpiece Open Brush (free/OSS, GLB/FBX/OBJ/USD + Unity Toolkit +
+  three-icosa for WebXR); free supporting cast (Open Blocks, Gravity Sketch,
+  Masterpiece X AI, Quill, Arkio). The real work is export hygiene — unlit +
+  double-sided + no-Draco + the Godot vertex-color bug. Vision Pro art now
+  possible via Logitech Muse stylus (visionOS 26 6DoF accessories); Spectacles
+  art has no mesh export. Staged 2026-06-14; version 1.34 → 1.35.
+
+* PUBLISHED Spatial video, end to end — shoot on an iPhone, play in every headset
+  CLOSED: [2026-06-13 Sat] SCHEDULED: <2026-06-13 Sat>
+  :PROPERTIES:
+  :SERIES:     Capture-to-XR workflows (video sibling of the splat cluster: scaniverse / 3dgs-360 / sharp / lito)
+  :TAG:        WORKFLOW
+  :SLUG_EN:    spatial-video-capture-to-headset
+  :SLUG_JA:    spatial-video-capture-to-headset-入門
+  :SOURCE:     https://blog.mikeswanson.com/spatial/
+  :ANGLE:      User-requested ("research spatial video"). Fills a real gap — the
+               cluster had splat/photogrammetry + interactive XR but no
+               stereoscopic VIDEO. Hook: spatial video is the most accessible XR
+               format (an iPhone is a stereo camera, plays on AVP with zero
+               processing); the work is cross-device, because of a FORMAT FORK.
+               Spine = capture → convert → play-per-device, WebXR as the one
+               portable viewer. VERIFIED FACTS used: spatial video = MV-HEVC
+               stereo in .mov, "spatial" is a METADATA label (needs HFOV + baseline
+               or disparity), distinct from Apple Immersive Video (.aivu, pro 180°
+               8K/eye, Blackmagic/Canon dual-lens, HLS — out of scope) and from
+               generic VR180/360 SBS/over-under. CAPTURE: iPhone 15 Pro + all 16/17
+               (main+ultrawide 19.2mm, 1080p30 still on 17 Pro, Settings>Camera>
+               Formats, landscape, ~130MB/min); AVP 2200²/eye 30fps; QooCam EGO
+               (~65mm SBS); 2-cam rigs (sync = pain); 2D→3D apps (Depthify etc.);
+               Quest 3 does NOT capture spatial (passthrough is flat). CONVERT:
+               Swanson `spatial` CLI (subcmds info/export/make/combine/metadata —
+               VERIFIED VERBATIM against live docs via WebFetch): export `-f ou`,
+               make with `--cdist 19.24 --hfov 63.4 --hadjust 0.02 --primary right
+               --projection rect`; rule = hfov + (cdist or hadjust). Also
+               SpatialMediaKit, avconvert, Compressor/Resolve. FFMPEG CAVEAT
+               (stated plainly): decodes MV-HEVC (7.1+ view-select), x265 4.0
+               encodes experimentally BUT strips vexu metadata → AVP won't see it
+               as spatial. PLAYBACK: AVP = Quick Look (free) or RealityKit
+               VideoPlayerComponent (.portal / .progressive visionOS26+ /
+               .spatial), older VideoMaterial; Quest 3 = convert to over-under MP4
+               + VR180 meta → Meta Quest TV/DeoVR/Skybox, ≥3840²/eye H.265/AV1;
+               WebXR = portable path, WebXR Layers XRMediaBinding.createEquirectLayer
+               layout "stereo-top-bottom" (Quest) / createQuadLayer for flat;
+               AVP Safari WebXR is immersive-vr ONLY + NO media-layer binding →
+               render yourself (three.js dual-mesh layers.set(1/2), A-Frame
+               aframe-stereo-component, Babylon VideoDome MODE_TOPBOTTOM but has
+               black-render bugs in-session). HEVC-in-browser unreliable → ship
+               H.264/AV1 over-under MP4. Spectacles = NOT a video target (AR-Lens
+               lane, Snap OS 2.0 WebXR is immersive-ar/compute-limited). Spatial
+               web: Safari 27 <img controls> spatial photo/pano, <video> APMP
+               immersive on fullscreen, <model> — Apple-only, ties to WWDC piece.
+               STANDARDIZED on OVER-UNDER throughout so commands chain verified
+               (export -f ou → layout stereo-top-bottom). Cross-links: scaniverse,
+               3dgs-360, sharp, realitykit-arkit, aframe, babylonjs, wwdc-2026,
+               vibe-coding-spectacles.
+  :STAGED_EN:  content/staging/news/2026-06-13-spatial-video-capture-to-headset.en.md
+  :STAGED_JA:  content/staging/news/2026-06-13-spatial-video-capture-to-headset.ja.md
+  :PUBLISHED_EN: content/news/2026-06-13-spatial-video-capture-to-headset.en.md
+  :PUBLISHED_JA: content/news/2026-06-13-spatial-video-capture-to-headset.ja.md
+  :END:
+  Capture → convert → play-per-device guide for stereoscopic spatial video.
+  iPhone shoots MV-HEVC that plays on Vision Pro untouched; the format fork
+  means Quest/Spectacles/WebXR need frame-packed over-under stereo. Convert
+  with Swanson's free `spatial` tool; play back via Quick Look / RealityKit
+  VideoPlayerComponent (AVP), Meta Quest TV / WebXR Layers (Quest), and a
+  three.js/A-Frame dual-mesh viewer on Vision Pro Safari (VR-only, no media
+  layers). WebXR is the one portable viewer. Staged 2026-06-13; version
+  1.33 → 1.34.
+
+* PUBLISHED WWDC 2026 for XR builders — visionOS 27, RealityKit splats, the spatial web
+  CLOSED: [2026-06-12 Fri] SCHEDULED: <2026-06-12 Fri>
+  :PROPERTIES:
+  :SERIES:     Apple spatial (recap orienting the Vision Pro + WebXR cluster)
+  :TAG:        STARTER
+  :SLUG_EN:    wwdc-2026-xr-visionos-27
+  :SLUG_JA:    wwdc-2026-xr-visionos-27-入門
+  :SOURCE:     https://developer.apple.com/visionos/whats-new/
+  :ANGLE:      From backlog IDEA "WWDC2026: youtube.com/watch?v=jED4zYKO4J8".
+               NOTE: that video is NOT the keynote — it is the developer session
+               "Explore advances in RealityKit" (WWDC26 #279); featured as a
+               pointer in the lede. WWDC 2026 keynote = Mon 8 Jun 2026; dev betas
+               live now, public beta ~mid-Jul, GA fall 2026. Developer's-eye recap
+               filtering signal from noise for an end-of-June hackathon (AVP +
+               WebXR audience). VERIFIED HEADLINES used: OS lineup all "27"
+               (visionOS 27, Xcode 27, Safari 27; Swift 6.4 NOT 7); RealityKit
+               renders 3D Gaussian splats natively (GaussianSplatResource/
+               Component) — ties the week's splat cluster (SHARP/LiTo/Scaniverse)
+               to AVP; RealityKit cross-platform (visionOS/iOS/iPadOS/macOS/tvOS),
+               ARKit object tracking on iOS; Physical Space Lighting, Projective
+               Textures, real-time cloth, Reverb Mesh, Navigation Mesh; Compositor
+               Services adoptable by engines on visionOS+macOS (Godot RealityKit
+               plugin); Spatial Accessories opened to 3rd-party HW (6DoF 90Hz);
+               Spatial Widgets; Apple Immersive Video .aivu (90fps, 100+MP/eye);
+               Foveated Streaming (from 26.4) + Spatial Preview; Reality Composer
+               Pro 3; Xcode 27 agentic coding adds Gemini (keeps Claude/OpenAI) +
+               on-device Neural Engine completion + plan artifacts; betas now.
+               SPATIAL-WEB CORRECTION (load-bearing): WebXR immersive-vr on by
+               default since visionOS 2 (NOT new), WebXR immersive-AR STILL
+               non-functional → the 2026 web story is the HTML <model> element
+               (now on iOS/iPadOS/macOS) + Immersive API + Web Environments
+               default-on in Safari 27. HEDGED (single-source-ish, phrased as
+               "reported"): Foundation Models provider-swap protocol (Apple/Claude/
+               Gemini); Xcode Agent Skills list / MCP host (omitted as too thin).
+               CARRYOVER FLAGGED as visionOS 26, not 27: volumetric Persona
+               overhaul, enterprise main-camera/Insta360 APIs. RUMOR (not
+               announced): no new AVP hardware (M5 was Oct 2025), no glasses (N50
+               ~late 2027). Sim caveat: splats/lighting/tracking/accessories need
+               real AVP. Cross-links: realitykit-arkit, object-manipulation-
+               visionos26, sharp, lito, scaniverse, aframe-webxr, godot-xr-quest-3,
+               unity-polyspatial, agentic-coding-android-studio.
+  :STAGED_EN:  content/staging/news/2026-06-12-wwdc-2026-xr-visionos-27.en.md
+  :STAGED_JA:  content/staging/news/2026-06-12-wwdc-2026-xr-visionos-27.ja.md
+  :PUBLISHED_EN: content/news/2026-06-12-wwdc-2026-xr-visionos-27.en.md
+  :PUBLISHED_JA: content/news/2026-06-12-wwdc-2026-xr-visionos-27.ja.md
+  :END:
+  Developer's-eye recap of WWDC 2026 (keynote 8 Jun) for the end-of-June
+  hackathon: visionOS 27 + dev-beta SDK. Headlines that land here —
+  RealityKit renders Gaussian splats natively (connects the week's splat
+  cluster to Vision Pro), the HTML <model> element brings immersive 3D to
+  the web on every Apple platform (the real spatial-web story, NOT WebXR,
+  whose AR module is still non-functional), and Xcode 27's agentic coding
+  adds a provider-swappable model layer. Flags carryover-from-26, rumor,
+  and simulator-only items. Staged + published 2026-06-12; version 1.31 →
+  1.32 (stage), 1.32 → 1.33 (publish).
+
 * PUBLISHED Photo to splat in under a second — Apple SHARP into WebXR
   CLOSED: [2026-06-11 Thu] SCHEDULED: <2026-06-11 Thu>
   :PROPERTIES:
@@ -714,13 +1011,13 @@
   scheduled (one/day, after the last scheduled item), researched,
   and drafted into staging.
 
-** IDEA WWDC2026: https://www.youtube.com/watch?v=jED4zYKO4J8
-
 ** IDEA <add the next topic here>
    (All four prior backlog IDEAs — Scaniverse, ml-lito/LiTo, LichtFeld+MCP,
    MIDI Bleep Blop — were researched, drafted, and PUBLISHED in the
    2026-06-03 batch above. The SharpFlow IDEA became the 2026-06-11
    SHARP-into-WebXR article: github.com/IoTone/SharpFlow 404s, so the piece
    covers apple/ml-sharp + the IoTone fork + gsplats-to-webxr instead — see
-   that entry's REVISIT note if SharpFlow goes public.)
+   that entry's REVISIT note if SharpFlow goes public. The WWDC2026 IDEA
+   became the 2026-06-12 visionOS-27 recap (PUBLISHED); the linked YouTube
+   video was the RealityKit session #279, not the keynote.)
 
