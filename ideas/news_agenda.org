@@ -131,8 +131,8 @@
   WebAR / XREAL+SR Display (not Spectacles); VR = Quest/PICO/Steam/Vision Pro
   (separate pipeline). Staged 2026-06-15; version 1.35 → 1.36.
 
-* STAGED Make art inside the headset — and get it into your build
-  SCHEDULED: <2026-06-14 Sun>
+* PUBLISHED Make art inside the headset — and get it into your build
+  CLOSED: [2026-06-14 Sun] SCHEDULED: <2026-06-14 Sun>
   :PROPERTIES:
   :SERIES:     Capture-to-XR workflows (creative inverse of the splat/video capture cluster)
   :TAG:        WORKFLOW
@@ -186,6 +186,8 @@
                realitykit-arkit, wwdc-2026, vibe-coding-spectacles.
   :STAGED_EN:  content/staging/news/2026-06-14-make-art-inside-xr.en.md
   :STAGED_JA:  content/staging/news/2026-06-14-make-art-inside-xr.ja.md
+  :PUBLISHED_EN: content/news/2026-06-14-make-art-inside-xr.en.md
+  :PUBLISHED_JA: content/news/2026-06-14-make-art-inside-xr.ja.md
   :END:
   In-headset 3D art creation → asset pipeline into engines/WebXR/Vision Pro.
   Centerpiece Open Brush (free/OSS, GLB/FBX/OBJ/USD + Unity Toolkit +
