@@ -102,8 +102,8 @@
   back by chromatic aberration, ~14% efficiency, sub-µm mechanical rotation.
   Deep-research workflow + extraction pass. Staged 2026-06-16; version 1.36 → 1.37.
 
-* STAGED Every STYLY SDK for AR and VR — the whole toolchain map
-  SCHEDULED: <2026-06-15 Mon>
+* PUBLISHED Every STYLY SDK for AR and VR — the whole toolchain map
+  CLOSED: [2026-06-15 Mon] SCHEDULED: <2026-06-15 Mon>
   :PROPERTIES:
   :SERIES:     Platform/SDK overviews (Japan-focused; companion to the WebAR HOLD item below)
   :TAG:        STARTER
@@ -155,6 +155,8 @@
                reactvision, vibe-coding-spectacles (the unsupported one).
   :STAGED_EN:  content/staging/news/2026-06-15-styly-sdks-ar-vr.en.md
   :STAGED_JA:  content/staging/news/2026-06-15-styly-sdks-ar-vr.ja.md
+  :PUBLISHED_EN: content/news/2026-06-15-styly-sdks-ar-vr.en.md
+  :PUBLISHED_JA: content/news/2026-06-15-styly-sdks-ar-vr.ja.md
   :END:
   Overview of STYLY's authoring SDKs and AR/VR delivery targets. Four tools —
   STYLY Studio (no-code), the classic Unity plugin (VR/mobile/web, Built-in/
