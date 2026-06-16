@@ -16,6 +16,39 @@
 # To publish: ask "publish <topic>"; the STAGED item with the nearest
 # SCHEDULED date is promoted to production and flipped to PUBLISHED.
 
+* STAGED STYLY returns as a sponsor — XR devices and platform access
+  SCHEDULED: <2026-06-17 Wed>
+  :PROPERTIES:
+  :SERIES:     Sponsor announcements (companion to the manabu-hubs-sponsor post)
+  :TAG:        SPONSOR
+  :SLUG_EN:    styly-sponsor
+  :SLUG_JA:    styly-スポンサー
+  :SOURCE:     https://styly.cc
+  :ANGLE:      Tie-in to the sponsors-page work (added STYLY as a 2026 sponsor,
+               returning from 2025; official horizontal-white logo installed,
+               sponsor weight 4, version 1.39→1.43). No external research — drawn
+               from STYLY's supplied sponsor copy: provides XR DEVICES + STYLY
+               PLATFORM ACCESS to participants. Company line verbatim from their PR
+               (EN mission "FREE INNER CREATIVITY" / JA「人類の超能力を解放する」;
+               WebAR→LBE for landowners/urban developers). Mirrors the Manabu
+               SPONSOR-post structure: welcome → what participants get → make-the-
+               most → sponsorship-open → useful-links. Cross-links: styly-sdks-ar-vr
+               (FORWARD REF — staged 06-15, publishes before this 06-17 slot; the
+               /news/styly-sdks-ar-vr/ link will MISS in build until that one is
+               published), /sponsors/, /hackathon/. Resources surfaced: styly.cc,
+               document.styly.cc, github.com/styly-dev. Voice: editorial "we"
+               (matches manabu post); no forbidden tropes. NOT to be confused with
+               the HOLD "STYLY WebAR — contributed post" item (still awaiting the
+               STYLY team) — this is the organizer-written sponsor announcement.
+  :STAGED_EN:  content/staging/news/2026-06-17-styly-sponsor.en.md
+  :STAGED_JA:  content/staging/news/2026-06-17-styly-sponsor.ja.md
+  :END:
+  Organizer-written announcement that STYLY returns as a 2026 sponsor, providing
+  XR devices and STYLY platform access for participants. Brief company intro from
+  their supplied PR copy; "make the most of STYLY" points to the staged STYLY SDK
+  overview; standard sponsorship-open + useful-links footer. Staged 2026-06-17;
+  version 1.43 → 1.44.
+
 * STAGED The moiré lens — two rotating plates against XR's focus problem
   SCHEDULED: <2026-06-16 Tue>
   :PROPERTIES:
