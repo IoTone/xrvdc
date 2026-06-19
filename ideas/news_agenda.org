@@ -49,8 +49,8 @@
   overview; standard sponsorship-open + useful-links footer. Staged 2026-06-17;
   version 1.43 → 1.44.
 
-* STAGED The moiré lens — two rotating plates against XR's focus problem
-  SCHEDULED: <2026-06-16 Tue>
+* PUBLISHED The moiré lens — two rotating plates against XR's focus problem
+  CLOSED: [2026-06-19 Fri] SCHEDULED: <2026-06-16 Tue>
   :PROPERTIES:
   :SERIES:     XR optics explainers (near-eye hardware / varifocal; outlier from the dev-tooling run)
   :TAG:        STARTER
@@ -93,6 +93,8 @@
                removed "honest summary" → "accurate summary" (forbidden trope).
   :STAGED_EN:  content/staging/news/2026-06-16-moire-lens-varifocal-xr.en.md
   :STAGED_JA:  content/staging/news/2026-06-16-moire-lens-varifocal-xr.ja.md
+  :PUBLISHED_EN: content/news/2026-06-16-moire-lens-varifocal-xr.en.md
+  :PUBLISHED_JA: content/news/2026-06-16-moire-lens-varifocal-xr.ja.md
   :END:
   Explainer on moiré rotational varifocal lenses for XR: two stacked diffractive/
   metasurface plates whose relative rotation tunes focal power linearly through
