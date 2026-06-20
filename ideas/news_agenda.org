@@ -16,6 +16,62 @@
 # To publish: ask "publish <topic>"; the STAGED item with the nearest
 # SCHEDULED date is promoted to production and flipped to PUBLISHED.
 
+* STAGED Vibe Coding XR — let an AI agent write the headset app
+  SCHEDULED: <2026-06-18 Thu>
+  :PROPERTIES:
+  :SERIES:     AI-assisted XR development (companion to agentic-coding-android-studio + vibe-coding-spectacles)
+  :TAG:        STARTER
+  :SLUG_EN:    vibe-coding-xr
+  :SLUG_JA:    vibe-coding-xr-入門
+  :SOURCE_1:   https://www.youtube.com/watch?v=-GE_CpRvY4o&t=1218s
+  :SOURCE_2:   https://www.youtube.com/watch?v=pmsVCwAeVKk
+  :ANGLE:      Promoted from the backlog IDEA ("AWE talks on XR + AI agentic loops"),
+               researched + drafted 2026-06-19, staged 2026-06-20. The user's two
+               YouTube links (YouTube blocks WebFetch — resolved via oEmbed + search)
+               are BOTH Terry Schussler "vibe coding for XR" talks; "XR + AI agentic
+               loops" = AI coding agents iterating to build native XR apps. Sits above
+               agentic-coding-android-studio (Android-specific) and vibe-coding-
+               spectacles (Lens Studio) as the engine-agnostic overview.
+               STRUCTURE = practitioner view → research-backed loop → why-XR-is-hard →
+               hackathon recipe → caveats. PRACTITIONER (the two given links):
+               VID 1 = "Vibe Coding for XR," AWE USA 2025, Thu 12 Jun 2025, Terry
+               Schussler (Sr. Dir. Next-Gen Devices, Deutsche Telekom); Cursor +
+               Windsurf driven by Claude Sonnet (3.5→4.x) + Grok; NL/voice prompts →
+               VR+AR apps; prompt-eng + troubleshooting + model-limits. VID 2 = "Dual
+               Reality: Vibe Coding Native XR for visionOS and Android XR" (UnitedXR
+               Europe channel) — same method at the two native targets. RESEARCH SPINE
+               (not from the videos; the citable backbone): Google XR Labs "Vibe Coding
+               XR" (arXiv:2603.24591 + research.google blog; xrblocks.github.io). XR
+               Blocks = open-source LLM-native WebXR framework (three.js+WebXR), concise
+               "Reality Model" vocabulary that fits the context window; Gemini system-
+               prompted as XR designer w/ curated samples. THE AGENTIC LOOP (article
+               backbone): intent → LLM plan (scene/perception/interaction) → desktop
+               "simulated reality" preview → deploy Android XR headset (body+hand) →
+               refine/reshare. Eval: VCXR60 60-prompt set, high one-shot; Flash ~20s,
+               Pro slower-but-more-reliable — ALL phrased "reported/in the authors'
+               pilot" (second-hand via blog summary, not pinned as hard fact).
+               KARPATHY origin Feb 2025 (verified). WHY-XR-HARD ties back to the
+               agentic-coding-android-studio grounding lesson (alpha APIs post-date the
+               model) + the on-device-eval point the XR Blocks authors concede. Voice:
+               third-person, NO honest/let's/正直; editorial "we" used once ("this
+               series covered") matching precedent. Cross-links (all slugs verified
+               present): agentic-coding-android-studio, vibe-coding-spectacles,
+               vision-pro-mixed-reality-realitykit-arkit, androidxr-getting-started.
+               HEDGED/FLAGGED: could not watch the videos (described from verified AWE
+               abstract + oEmbed titles, not transcript); t=1218s deep-link not cited in
+               body; VCXR60 exact %/timing reported-not-asserted. VERIFY-AT-EVENT: Vid-2
+               event/date, current XR Blocks version + arXiv id, editor model lineups.
+  :STAGED_EN:  content/staging/news/2026-06-18-vibe-coding-xr.en.md
+  :STAGED_JA:  content/staging/news/2026-06-18-vibe-coding-xr.ja.md
+  :END:
+  Engine-agnostic overview of vibe coding XR: drive an AI coding agent from intent
+  to a working headset app. Practitioner anchor = Terry Schussler's two AWE-circuit
+  talks (Cursor/Windsurf + Claude/Grok; native visionOS + Android XR); research
+  spine = Google XR Labs' XR Blocks + Gemini, where the agentic loop is intent →
+  plan → desktop sim preview → headset deploy → refine. Why XR is the hard case
+  (post-training APIs, on-device eval) and a hackathon recipe. Staged 2026-06-18;
+  version 1.46 → 1.47.
+
 * STAGED STYLY returns as a sponsor — XR devices and platform access
   SCHEDULED: <2026-06-17 Wed>
   :PROPERTIES:
@@ -1050,6 +1106,9 @@
   scheduled (one/day, after the last scheduled item), researched,
   and drafted into staging.
 
+   (The "AWE talks on XR + AI agentic loops" IDEA — Terry Schussler's two
+   vibe-coding talks — was researched 2026-06-19 and STAGED 2026-06-20 as the
+   vibe-coding-xr article; see the STAGED entry at the top of this file.)
 ** IDEA <add the next topic here>
    (All four prior backlog IDEAs — Scaniverse, ml-lito/LiTo, LichtFeld+MCP,
    MIDI Bleep Blop — were researched, drafted, and PUBLISHED in the
