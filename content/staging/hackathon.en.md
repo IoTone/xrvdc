@@ -120,9 +120,27 @@ To be eligible for a special award, an entry must satisfy all of the following:
 
 ---
 
-## Award Categories & Prizes
+## Award Categories
 
-The full prize-category list for 2026 — **Best Unity, Best AVP, Best Android XR, Best XR, Best Team, Best Solo, Best AI, Best Artistic, Best Concept, Best System Design,** plus categorical awards (Game · Utility · Health & Fitness · EDU/Training · Storytelling) — is on the [Schedule page](/staging/schedule/2026/).
+Winners are selected across the following categories. Specific prizes and sponsors are announced as they are confirmed — see the [Prize Categories](/staging/judges/prizes/) page for the maintained list.
+
+- **Best Unity**
+- **Best AVP**
+- **Best Android XR**
+- **Best XR**
+- **Best Team**
+- **Best Solo**
+- **Best AI**
+- **Best Artistic**
+- **Best Concept**
+- **Best System Design**
+- **Best by Category** — Game · Utility · Health & Fitness · EDU / Training · Storytelling
+
+## Prizes
+
+- 7 × Cardputer ADV
+- 1 × Cardputer ADV + Meshtastic add-on
+- 1 × Month of CIC Coworking
 
 [Sponsorship of devices and prizes](/staging/sponsors/) for the 2026 event is open.
 

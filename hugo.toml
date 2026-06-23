@@ -19,7 +19,7 @@ buildFuture = true
   description = "XR VisionDevCamp returns to Fukuoka in Summer 2026."
 
 [params.staging]
-  version = "1.47"
+  version = "1.50"
   eventDates = "26 – 28 June 2026"
   eventDateShort = "06.26.26"
 
@@ -72,15 +72,15 @@ buildFuture = true
       pageRef = "/gallery/"
       weight = 25
     [[languages.en.menus.main]]
-      identifier = "badge"
-      name = "Badge"
-      pageRef = "/badge/"
-      weight = 27
-    [[languages.en.menus.main]]
       identifier = "organizers"
       name = "Organizers"
       pageRef = "/organizers/"
       weight = 30
+    [[languages.en.menus.main]]
+      identifier = "judges"
+      name = "Judges"
+      pageRef = "/judges/"
+      weight = 35
     [[languages.en.menus.main]]
       identifier = "sponsors"
       name = "Sponsors"
@@ -133,15 +133,15 @@ buildFuture = true
       pageRef = "/gallery/"
       weight = 25
     [[languages.ja.menus.main]]
-      identifier = "badge"
-      name = "バッジ"
-      pageRef = "/badge/"
-      weight = 27
-    [[languages.ja.menus.main]]
       identifier = "organizers"
       name = "主催"
       pageRef = "/organizers/"
       weight = 30
+    [[languages.ja.menus.main]]
+      identifier = "judges"
+      name = "審査員"
+      pageRef = "/judges/"
+      weight = 35
     [[languages.ja.menus.main]]
       identifier = "sponsors"
       name = "スポンサー"

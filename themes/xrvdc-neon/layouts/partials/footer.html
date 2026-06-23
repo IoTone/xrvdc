@@ -7,6 +7,10 @@
         {{ if $isStaging }}STAGING · {{ end }}v{{ .version }}<span class="ts">// BUILD {{ now.Format "2006-01-02" }}</span>
       </span>
     {{ end }}
+    {{ $badgeURL := cond $isStaging ("/staging/badge/" | relLangURL) ("/badge/" | relLangURL) }}
+    {{ if ne .RelPermalink $badgeURL }}
+      <a href="{{ $badgeURL }}">{{ i18n "badge" | default "Badge" }}</a>
+    {{ end }}
     {{ $contactURL := cond $isStaging ("/staging/contact/" | relLangURL) ("/contact/" | relLangURL) }}
     {{ if ne .RelPermalink $contactURL }}
       <a href="{{ $contactURL }}">{{ i18n "contact" | default "Contact" }} →</a>

@@ -119,9 +119,27 @@ date: 2026-06-26T17:00:00+09:00
 
 ---
 
-## 賞カテゴリーと賞品
+## 賞カテゴリー
 
-2026 年版の賞カテゴリーの一覧 — **Best Unity / Best AVP / Best Android XR / Best XR / Best Team / Best Solo / Best AI / Best Artistic / Best Concept / Best System Design**、加えてカテゴリー別賞 (ゲーム ・ ユーティリティ ・ 健康/フィットネス ・ 教育/トレーニング ・ ストーリーテリング) — は [スケジュールページ](/schedule/2026/) に掲載しています。
+受賞は以下のカテゴリーで選出されます。具体的な賞品とスポンサーは確定し次第発表します — 最新の一覧は [賞カテゴリー](/judges/prizes/) ページをご覧ください。
+
+- **Best Unity**
+- **Best AVP**
+- **Best Android XR**
+- **Best XR**
+- **Best Team**
+- **Best Solo**
+- **Best AI**
+- **Best Artistic**
+- **Best Concept**
+- **Best System Design**
+- **Best by Category** — ゲーム ・ ユーティリティ ・ 健康/フィットネス ・ 教育/トレーニング ・ ストーリーテリング
+
+## 賞品
+
+- Cardputer ADV × 7
+- Cardputer ADV + Meshtastic アドオン × 1
+- CIC コワーキング 1 ヶ月分 × 1
 
 2026 年大会の [デバイス・賞品スポンサー募集](/sponsors/) を受け付け中です。
 
