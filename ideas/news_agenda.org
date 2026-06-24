@@ -16,8 +16,8 @@
 # To publish: ask "publish <topic>"; the STAGED item with the nearest
 # SCHEDULED date is promoted to production and flipped to PUBLISHED.
 
-* STAGED Vibe Coding XR — let an AI agent write the headset app
-  SCHEDULED: <2026-06-18 Thu>
+* PUBLISHED Vibe Coding XR — let an AI agent write the headset app
+  CLOSED: [2026-06-24 Wed] SCHEDULED: <2026-06-18 Thu>
   :PROPERTIES:
   :SERIES:     AI-assisted XR development (companion to agentic-coding-android-studio + vibe-coding-spectacles)
   :TAG:        STARTER
@@ -63,6 +63,8 @@
                event/date, current XR Blocks version + arXiv id, editor model lineups.
   :STAGED_EN:  content/staging/news/2026-06-18-vibe-coding-xr.en.md
   :STAGED_JA:  content/staging/news/2026-06-18-vibe-coding-xr.ja.md
+  :PUBLISHED_EN: content/news/2026-06-18-vibe-coding-xr.en.md
+  :PUBLISHED_JA: content/news/2026-06-18-vibe-coding-xr.ja.md
   :END:
   Engine-agnostic overview of vibe coding XR: drive an AI coding agent from intent
   to a working headset app. Practitioner anchor = Terry Schussler's two AWE-circuit
@@ -72,8 +74,8 @@
   (post-training APIs, on-device eval) and a hackathon recipe. Staged 2026-06-18;
   version 1.46 → 1.47.
 
-* STAGED STYLY returns as a sponsor — XR devices and platform access
-  SCHEDULED: <2026-06-17 Wed>
+* PUBLISHED STYLY returns as a sponsor — XR devices and platform access
+  CLOSED: [2026-06-23 Tue] SCHEDULED: <2026-06-17 Wed>
   :PROPERTIES:
   :SERIES:     Sponsor announcements (companion to the manabu-hubs-sponsor post)
   :TAG:        SPONSOR
@@ -98,6 +100,8 @@
                STYLY team) — this is the organizer-written sponsor announcement.
   :STAGED_EN:  content/staging/news/2026-06-17-styly-sponsor.en.md
   :STAGED_JA:  content/staging/news/2026-06-17-styly-sponsor.ja.md
+  :PUBLISHED_EN: content/news/2026-06-17-styly-sponsor.en.md
+  :PUBLISHED_JA: content/news/2026-06-17-styly-sponsor.ja.md
   :END:
   Organizer-written announcement that STYLY returns as a 2026 sponsor, providing
   XR devices and STYLY platform access for participants. Brief company intro from
