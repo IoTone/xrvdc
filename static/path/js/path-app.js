@@ -43,6 +43,9 @@ function pathCard(p, kind) {
       ${p.avpRuntime ? `<p class="pt-avp">▸ Apple Vision Pro</p>` : ''}
       <p class="pt-articles-label">${esc(T.result_articles)}</p>
       <ul class="pt-articles">${path.articles.map(articleLink).join('')}</ul>
+      ${path.devices ? `<p class="pt-articles-label">${esc(T.result_devices)}</p>
+      <ul class="pt-articles pt-devices">${path.devices.map((d) =>
+        `<li><a href="${esc(d.url)}" target="_blank" rel="noopener">${esc(d.name)} ↗</a></li>`).join('')}</ul>` : ''}
     </div>`;
 }
 

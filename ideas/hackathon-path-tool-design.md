@@ -14,9 +14,16 @@
 >
 > **Verification results:** 18/18 golden personas pass; all invariants hold
 > across all 3,744 legal combinations (no dead path, guards intact, every path
-> reachable); 62/62 catalog links (31 articles × EN/JA) resolve in the build;
+> reachable); 68/68 catalog links (34 articles × EN/JA) resolve in the build;
 > Hugo build clean; both `/path/` and `/ja/path/` render. Pending: on-device
 > mobile/AVP tap-through (manual).
+>
+> **Content additions (2026-06-25, v1.54):** wrote three bilingual starters to
+> fill recommendation gaps — `threejs-webxr-starter` (added to P3 WebXR),
+> `video-to-gaussian-splats` and `spatial-video-youtube-vr` (added to P8, which
+> now leads with spatial-video → YouTube-VR → video-to-splats for videographers).
+> P3 also carries a `devices` note (Meta Quest 3 + PICO 4 Ultra Enterprise,
+> available at the event), rendered on the result card.
 
 
 A mobile-first, client-side decision tool linked from the xrvdc.org home page.

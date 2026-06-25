@@ -16,6 +16,75 @@
 # To publish: ask "publish <topic>"; the STAGED item with the nearest
 # SCHEDULED date is promoted to production and flipped to PUBLISHED.
 
+* PUBLISHED Camera to YouTube VR — the no-code spatial video path
+  CLOSED: [2026-06-25 Thu] SCHEDULED: <2026-06-21 Sun>
+  :PROPERTIES:
+  :SERIES:     Creative / capture (companion to spatial-video-capture-to-headset)
+  :TAG:        STARTER
+  :SLUG_EN:    spatial-video-youtube-vr
+  :SLUG_JA:    spatial-video-youtube-vr-入門
+  :ANGLE:      Authored 2026-06-25 to fill a Hackathon Path Tool gap (videographer
+               route). The no-code counterpart to the build-it-yourself spatial-video
+               pipeline: shoot 180/360 → inject spherical/stereo metadata (Google
+               spatialmedia / exiftool) → upload → YouTube VR on Quest/PICO/Vision Pro.
+               Names PICO 4 Ultra Enterprise (event devices). Hand-off to WebXR viewer.
+               Voice: third-person, no honest/let's/正直. Cross-links verified:
+               spatial-video-capture-to-headset, video-to-gaussian-splats, aframe,
+               threejs. VERIFY-AT-EVENT: YouTube VR app link, exact spatialmedia flags.
+  :STAGED_EN:  content/staging/news/2026-06-21-spatial-video-youtube-vr.en.md
+  :STAGED_JA:  content/staging/news/2026-06-21-spatial-video-youtube-vr.ja.md
+  :PUBLISHED_EN: content/news/2026-06-21-spatial-video-youtube-vr.en.md
+  :PUBLISHED_JA: content/news/2026-06-21-spatial-video-youtube-vr.ja.md
+  :END:
+  No-code path from a 180/360 camera to a headset via YouTube VR — metadata injection
+  is the one real step. Pairs with the spatial-video pipeline and hands off to WebXR.
+  Authored to back the Path Tool videographer route; version 1.53 → 1.54.
+
+* PUBLISHED Video to Gaussian splats — turn a clip into a walkable scene
+  CLOSED: [2026-06-25 Thu] SCHEDULED: <2026-06-20 Sat>
+  :PROPERTIES:
+  :SERIES:     Creative / capture (splat pipelines: scaniverse, sharp, 3dgs-360, lichtfeld)
+  :TAG:        WORKFLOW
+  :SLUG_EN:    video-to-gaussian-splats
+  :SLUG_JA:    video-to-gaussian-splats-入門
+  :ANGLE:      Authored 2026-06-25 to fill a Path Tool gap (videographer → "video into
+               splats"). Static 3DGS (orbit a still subject) is the weekend case;
+               4DGS (moving subject) flagged as research-grade stretch. Pipeline:
+               ffmpeg frame extract → Postshot / Nerfstudio+gsplat / Brush → .ply/.splat
+               → WebXR (Babylon native, three.js GaussianSplats3D, SuperSplat/PlayCanvas).
+               Voice clean. Cross-links verified: scaniverse, sharp, 3dgs-360, lichtfeld,
+               threejs. VERIFY-AT-EVENT: tool versions, 4DGS repo status.
+  :STAGED_EN:  content/staging/news/2026-06-20-video-to-gaussian-splats.en.md
+  :STAGED_JA:  content/staging/news/2026-06-20-video-to-gaussian-splats.ja.md
+  :PUBLISHED_EN: content/news/2026-06-20-video-to-gaussian-splats.en.md
+  :PUBLISHED_JA: content/news/2026-06-20-video-to-gaussian-splats.ja.md
+  :END:
+  Treat a video orbit as photogrammetry input: extract frames, train a 3D Gaussian
+  splat (Postshot/Nerfstudio/Brush), view in WebXR. Static vs 4D regimes spelled out.
+  Authored to back the Path Tool videographer route; version 1.53 → 1.54.
+
+* PUBLISHED Three.js — the standard library of WebXR
+  CLOSED: [2026-06-25 Thu] SCHEDULED: <2026-06-19 Fri>
+  :PROPERTIES:
+  :SERIES:     WebXR starters (alongside aframe, babylonjs, immersive-web-sdk)
+  :TAG:        STARTER
+  :SLUG_EN:    threejs-webxr-starter
+  :SLUG_JA:    threejs-webxr-入門
+  :ANGLE:      Authored 2026-06-25 — the user wanted a Three.js WebXR starter
+               recommended alongside the other WebXR options in the Path Tool. Covers
+               renderer.xr + VRButton/ARButton + setAnimationLoop, single-file import-map
+               starter, controllers/hands, deploy. Names event devices Meta Quest 3 +
+               PICO 4 Ultra Enterprise. Voice clean. Cross-links verified: aframe,
+               babylonjs, video-to-gaussian-splats, spatial-video-capture-to-headset.
+  :STAGED_EN:  content/staging/news/2026-06-19-threejs-webxr-starter.en.md
+  :STAGED_JA:  content/staging/news/2026-06-19-threejs-webxr-starter.ja.md
+  :PUBLISHED_EN: content/news/2026-06-19-threejs-webxr-starter.en.md
+  :PUBLISHED_JA: content/news/2026-06-19-threejs-webxr-starter.ja.md
+  :END:
+  The lean, imperative WebXR engine A-Frame is built on; the reference dialect for
+  WebXR examples and AI-generated code. Single-file import-map starter for Quest 3,
+  PICO 4 Ultra Enterprise, Vision Pro, Spectacles. Added for the Path Tool; v1.53 → 1.54.
+
 * PUBLISHED Vibe Coding XR — let an AI agent write the headset app
   CLOSED: [2026-06-24 Wed] SCHEDULED: <2026-06-18 Thu>
   :PROPERTIES:
