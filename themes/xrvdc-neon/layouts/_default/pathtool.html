@@ -1,0 +1,72 @@
+{{ define "main" }}
+<style>
+  /* Hackathon Path Tool — self-contained, mobile-first, neon theme. */
+  #pathtool { --pt-cyan:#23f0ff; --pt-mag:#ff3cac; --pt-ink:#e8f6ff; --pt-dim:#8aa7b6;
+    --pt-panel:#0a0f14; --pt-line:#163040; max-width:680px; margin:1.5rem auto 4rem;
+    padding:0 1rem; font-family:"Share Tech Mono",ui-monospace,monospace; color:var(--pt-ink); }
+  .pt-card { background:var(--pt-panel); border:1px solid var(--pt-line); border-radius:10px;
+    padding:1.25rem 1.15rem 1.4rem; box-shadow:0 0 24px rgba(35,240,255,.06); }
+  .pt-id { color:var(--pt-cyan); letter-spacing:.12em; font-size:.72rem; margin:0 0 .4rem; }
+  #pathtool h2 { font-family:"Orbitron",sans-serif; font-size:1.35rem; line-height:1.25;
+    margin:.1rem 0 .7rem; color:#fff; }
+  #pathtool h3 { font-family:"Orbitron",sans-serif; font-size:1.05rem; margin:.1rem 0 .45rem; color:var(--pt-cyan); }
+  #pathtool p { line-height:1.55; margin:.4rem 0; }
+  /* Progress */
+  .pt-progress { display:flex; align-items:center; justify-content:space-between; gap:.75rem;
+    color:var(--pt-dim); font-size:.78rem; margin-bottom:.5rem; }
+  .pt-dots { display:flex; gap:.3rem; }
+  .pt-dot { width:.5rem; height:.5rem; border-radius:50%; background:var(--pt-line); display:inline-block; }
+  .pt-dot.is-now { background:var(--pt-cyan); box-shadow:0 0 8px var(--pt-cyan); }
+  .pt-dot.is-done { background:var(--pt-mag); }
+  /* Options — full-width, ≥44px tap targets */
+  .pt-opts { display:flex; flex-direction:column; gap:.55rem; margin:.9rem 0 .4rem; }
+  .pt-opt { min-height:48px; text-align:left; padding:.7rem .9rem; font:inherit; color:var(--pt-ink);
+    background:#0d141b; border:1px solid var(--pt-line); border-radius:8px; cursor:pointer;
+    transition:border-color .15s, box-shadow .15s, transform .05s; }
+  .pt-opt:hover,.pt-opt:focus { border-color:var(--pt-cyan); box-shadow:0 0 12px rgba(35,240,255,.25); outline:none; }
+  .pt-opt:active { transform:translateY(1px); }
+  .pt-opt.is-sel { border-color:var(--pt-mag); color:#fff; }
+  /* Buttons */
+  .pt-btn { min-height:48px; padding:.65rem 1.2rem; font:inherit; border-radius:8px; cursor:pointer;
+    border:1px solid var(--pt-cyan); background:transparent; color:var(--pt-cyan); }
+  .pt-btn--go { background:var(--pt-cyan); color:#001016; font-weight:700; border:none; }
+  .pt-btn--ghost { border-color:var(--pt-line); color:var(--pt-dim); }
+  .pt-nav { display:flex; justify-content:space-between; margin-top:1rem; }
+  /* Result */
+  .pt-matched { color:var(--pt-dim); font-size:.82rem; }
+  .pt-chip { display:inline-block; background:#0d141b; border:1px solid var(--pt-line); border-radius:999px;
+    padding:.12rem .55rem; margin:.15rem .25rem .15rem 0; font-size:.74rem; color:var(--pt-ink); }
+  .pt-section-label { text-transform:uppercase; letter-spacing:.1em; font-size:.72rem;
+    color:var(--pt-mag); margin:1.3rem 0 .4rem; }
+  .pt-path { border:1px solid var(--pt-line); border-radius:9px; padding:.95rem 1rem; margin:.5rem 0; }
+  .pt-path--primary { border-color:var(--pt-cyan); box-shadow:0 0 18px rgba(35,240,255,.12); }
+  .pt-blurb { font-size:.92rem; }
+  .pt-flag { color:#ffd23c; font-size:.84rem; }
+  .pt-ai { color:var(--pt-mag); font-size:.84rem; }
+  .pt-avp { color:var(--pt-cyan); font-size:.82rem; letter-spacing:.04em; }
+  .pt-articles-label { text-transform:uppercase; letter-spacing:.08em; font-size:.68rem; color:var(--pt-dim); margin-top:.7rem; }
+  .pt-articles { list-style:none; padding:0; margin:.3rem 0 0; }
+  .pt-articles li { margin:.3rem 0; }
+  .pt-articles a { color:var(--pt-ink); text-decoration:none; border-bottom:1px solid var(--pt-line); }
+  .pt-articles a:hover { color:var(--pt-cyan); border-color:var(--pt-cyan); }
+  .pt-avp-footer { margin-top:1.5rem; padding:.9rem 1rem; border:1px dashed var(--pt-line);
+    border-radius:9px; background:rgba(35,240,255,.03); }
+  .pt-avp-footer strong { color:var(--pt-cyan); }
+  .pt-avp-footer p { font-size:.84rem; color:var(--pt-dim); margin:.35rem 0 0; }
+  @media (max-width:480px) { #pathtool h2 { font-size:1.2rem; } .pt-card { padding:1.05rem .9rem 1.2rem; } }
+</style>
+
+<article class="container">
+  <header class="page-header">
+    <span class="page-header__id">// path-finder</span>
+    <h1>{{ .Title }}</h1>
+  </header>
+  {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+  <div id="pathtool" data-lang="{{ .Site.Language.Lang }}">
+    <noscript><p>JavaScript is required for the Path Tool. Browse the
+      <a href="{{ "/news/" | relLangURL }}">starter projects</a> instead.</p></noscript>
+  </div>
+</article>
+
+<script type="module" src="{{ "/path/js/path-app.js" | relURL }}"></script>
+{{ end }}

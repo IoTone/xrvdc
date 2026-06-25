@@ -76,3 +76,6 @@ other = "ニュース一覧へ戻る"
 [samples_demo_gif]
 other = "デモ GIF を見る"
 
+[path_cta]
+other = "パス診断"
+

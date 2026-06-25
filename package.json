@@ -1,0 +1,9 @@
+{
+  "name": "xrvdc-site-tooling",
+  "private": true,
+  "type": "module",
+  "description": "Node `type:module` so the Hackathon Path Tool engine (static/path/js/*.js, ES modules used by the browser) can also be imported by the headless tests in tests/path/. Hugo ignores this file.",
+  "scripts": {
+    "test:path": "node tests/path/run-tests.mjs"
+  }
+}

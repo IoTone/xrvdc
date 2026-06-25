@@ -19,7 +19,7 @@ buildFuture = true
   description = "XR VisionDevCamp returns to Fukuoka in Summer 2026."
 
 [params.staging]
-  version = "1.52"
+  version = "1.53"
   eventDates = "26 – 28 June 2026"
   eventDateShort = "06.26.26"
 
@@ -66,6 +66,11 @@ buildFuture = true
       name = "Hackathon"
       pageRef = "/hackathon/"
       weight = 22
+    [[languages.en.menus.main]]
+      identifier = "path"
+      name = "Find Your Path"
+      pageRef = "/path/"
+      weight = 23
     [[languages.en.menus.main]]
       identifier = "gallery"
       name = "Gallery"
@@ -127,6 +132,11 @@ buildFuture = true
       name = "ハッカソン"
       pageRef = "/hackathon/"
       weight = 22
+    [[languages.ja.menus.main]]
+      identifier = "path"
+      name = "パス診断"
+      pageRef = "/path/"
+      weight = 23
     [[languages.ja.menus.main]]
       identifier = "gallery"
       name = "ギャラリー"
